@@ -13,3 +13,8 @@ Counter-argument generation dataset for fallacious statements, can be repurposed
 
 LogicClimate
 
+
+# Note that Argotario and LogicClimate are (partially) included in MAFALDA. But this is somewhat fine ish because we don't train our models on that data.
+To offset this, we discard samples with labels that are not easily mapped to the MAFALDA labels, to ensure that the used samples are less ambiguous.
+Only using e.g., ElecDeb is also problematic because it only contains ~5 unique ish labels.
+Label casting is based on Table 3 in the MAFALDA paper.
