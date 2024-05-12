@@ -1,0 +1,81 @@
+Given the input text, classify if it contains a fallacious argument. Start by giving the formal reasoning and follow with the name of the fallacy.
+
+A = attack
+E, Ei = entity (persons, organizations) or group of entities
+P, Pi = premises, properties, or possibilities
+C = conclusion
+
+Choose exactly one of the following options:
+Formal:
+Fallacy: No fallacy
+
+Formal: E (John) claims P (the earth is round). John’s character is attacked (A) (being a criminal). Therefore, -P (the earth is not round).
+Fallacy: Ad Hominem
+
+Formal: Many people believe in P (astrology). Therefore, P (astrology is true).
+Fallacy: Ad Populum
+
+Formal: E (famous actor) claims P (the health supplement works). Therefore, P (it must be effective).
+Fallacy: Appeal to False Authority
+
+Formal: P1 (herbs are natural) and P2 (synthetic medicines are not natural), leading to P1 is better than P2.
+Fallacy: Appeal to Nature
+
+Formal: P (always had a meat dish at Thanksgiving) should continue. Therefore, continue P.
+Fallacy: Appeal to Tradition
+
+Formal: E1 (Alice) claims P (belief in climate change). E2 (Bob) also claims P. However E2’s character (A) is attacked (being discredited). Therefore -P.
+Fallacy: Guilt by Association
+
+Formal: E (Laura) claims P (advocates for healthy eating), but E is acting as if -P (eating a burger, which is unhealthy eating). Therefore -P (advice on diet is invalid).
+Fallacy: Tu Quoque
+
+Formal: P1 (the president) caused C (economic crisis), while ignoring other contributing factors (P2 (worldwide economical context), P3 (previous policies), etc.).
+Fallacy: Causal Oversimplification
+
+Formal: C (iPhone is the best smartphone) because P (Apple creates the best products), which in turn is justified by the claim C.
+Fallacy: Circular Reasoning
+
+Formal: P1 (many cases of credible UFOs have been reported) uses the term UFO with the meaning M1 (unidentified flying objects). P2 (aliens have already visited Earth) uses UFO with a different meaning M2 (implying that aliens = UFOs), misleading the conclusion.
+Fallacy: Equivocation
+
+Formal: E1 (a country in debt plans to explore space) is linked to E2 (a family in debt plans fancy vacations). E2 has property P (expensive and not advisable), implying E1 should also have P.
+Fallacy: False Analogy
+
+Formal: P (rooster crows) is associated with C (sunrise), but the link is temporal, not causal, leading to the false conclusion that P causes C.
+Fallacy: False Causality
+
+Formal: Presents a choice between P1 (with us) and P2 (against us), excluding other possibilities.
+Fallacy: False Dilemma
+
+Formal: A small sample E1 (two aggressive dogs) is taken from a larger population E (all dogs). Therefore C (all dogs are aggressive).
+Fallacy: Hasty Generalization
+
+Formal: P1 (allowing kids to play video games) implies P2 (seeing fights, guns, and violence), which in turns implies P3 (to like violence, etc.) leading to C (kids becomes violent adults). Therefore, -P1.
+Fallacy: Slippery Slope
+
+Formal: E1 (an unspecified person (He)) claims P (need for better internet security), E2 (the speaker) distorts the claim as P′ (panic about hackers). Therefore -P.
+Fallacy: Straw Man
+
+Formal: E1 (every player) is part of E (the team). E has the property P (great), then E1 also has P.
+Fallacy: Fallacy of Division
+
+Formal: P (smoking cigarettes looks cool) leads to P (try smoking).
+Fallacy: Appeal to Positive Emotion
+
+Formal: E (the speaker) claims P (the accused is guilty) and expresses outrage. Therefore, P (guilt).
+Fallacy: Appeal to Anger
+
+Formal: If -P1 (not supporting the politician), then P2 (country in ruins) will happen. Therefore, P1 (must support the politician).
+Fallacy: Appeal to Fear
+
+Formal: P (he’s struggling) is presented as a pitiful situation, leading to C (he should get the job), despite a merely superficial link between P and C.
+Fallacy: Appeal to Pity
+
+Formal: E1 (unspecified entity) claims P (proposal to reduce the carbon emissions). E2 (the speaker) makes P looks ridiculous by suggesting an extreme scenario P′ (stop breathing). Therefore, -P (reducing carbon emissions is unreasonable).
+Fallacy: Appeal to Ridicule
+
+Formal: P1 (littering) is compared to P2 (global warming), which is a worse problem, leading to the conclusion that P1 is not important.
+Fallacy: Appeal to Worse Problem
+
+Input:
