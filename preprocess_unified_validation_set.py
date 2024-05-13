@@ -118,7 +118,9 @@ def main():
 
     argotario["MAFALDA Label"] = argotario["Intended Fallacy"].map(ARGOTARIO_TO_MAFALDA)
     elecdeb["MAFALDA Label"] = elecdeb["subcategory"].map(ELECDEB_TO_MAFALDA)
-    logicclimate["MAFALDA Label"] = logicclimate["logical_fallacies"].map(LOGICLIMATE_TO_MAFALDA)
+    logicclimate["MAFALDA Label"] = logicclimate["logical_fallacies"].map(
+        LOGICLIMATE_TO_MAFALDA
+    )
     logicedu["MAFALDA Label"] = logicedu["updated_label"].map(LOGIEDU_TO_MAFALDA)
 
     argotario["Input"] = argotario["Topic"] + " " + argotario["Text"]
@@ -128,10 +130,16 @@ def main():
 
     unified = pd.concat([argotario, elecdeb, logicclimate, logicedu], ignore_index=True)
     unified = unified[["Input", "MAFALDA Label"]]
-    unified = unified.dropna(subset=["MAFALDA Label", "Input"]).sort_values(by=['Input']).drop_duplicates()
+    unified = (
+        unified.dropna(subset=["MAFALDA Label", "Input"])
+        .sort_values(by=["Input"])
+        .drop_duplicates()
+    )
 
     unified["MAFALDA Superlabel"] = unified["MAFALDA Label"].map(MAFALDA_TO_SUPERLABELS)
-    unified["MAFALDA Label"] = unified["MAFALDA Label"].replace(["Fallacy of Emotion", "Fallacy of Credibility", "Fallacy of Logic"], None)
+    unified["MAFALDA Label"] = unified["MAFALDA Label"].replace(
+        ["Fallacy of Emotion", "Fallacy of Credibility", "Fallacy of Logic"], None
+    )
 
     print(unified)
     unified.to_csv("datasets/unified_validation_set.tsv", index=False, sep="\t")
