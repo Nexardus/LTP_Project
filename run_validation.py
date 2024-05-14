@@ -13,32 +13,34 @@ def read_prompt(prompt_technique, input_text):
     with open(f"prompts/{prompt_technique}.txt", "r", encoding="utf-8") as file:
         prompt = file.read()
         if "Input:" in prompt:
-            prompt += input_text
+            prompt += input_text.replace('\n', ' ').strip('"')
     return prompt
 
 
-def generate(model_name, prompt):
-    tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-    # Perhaps we should use a different model type
-    model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16)
-
-    input = tokenizer(prompt, return_tensors="pt")
+def generate(model, tokenizer, prompt):
+    input = tokenizer(prompt, return_tensors="pt").to("cuda")
     # Perhaps we should use different parameters here
-    output = model.generate(**input, max_length=1024, num_return_sequences=1)
+    output = model.generate(**input, max_new_tokens=1024, num_return_sequences=1)
     return tokenizer.decode(output[0])
 
 
 def generate_all_models(models, prompt_techniques):
     output_data = read_dataset()
-    for model in models:
+    for model_name in models:
+        tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+        # Perhaps we should use a different model type
+        model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16).to("cuda")
+
         for prompt_technique in prompt_techniques:
             for input_text in output_data["Input"]:
                 prompt = read_prompt(prompt_technique, input_text)
-                output = generate(model, prompt)
+                output = generate(model, tokenizer, prompt)
                 print(f"Model: {model}, Prompt Technique: {prompt_technique}")
                 print(f"Input Text: {input_text}")
                 print(f"Output: {output}")
                 output_data[f"{model}_{prompt_technique}"] = output
+        del model # Nuke from memory just to be sure
+        del tokenizer
     return output_data
 
 
@@ -46,4 +48,4 @@ if __name__ == "__main__":
     prompt_techniques = ["gcot", "logicot", "ccot"]
     models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5"]
     output_data = generate_all_models(models, prompt_techniques)
-    output_data.to_csv("output/output_data.csv", index=False, sep="\t")                
+    output_data.to_csv("output/output_data.csv", index=False, sep="\t")
