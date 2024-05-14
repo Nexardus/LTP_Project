@@ -44,6 +44,6 @@ def generate_all_models(models, prompt_techniques):
 
 if __name__ == "__main__":
     prompt_techniques = ["gcot", "logicot", "ccot"]
-    models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5"]
+    models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5","NousResearch/Hermes-2-Pro-Llama-3-8B"]
     output_data = generate_all_models(models, prompt_techniques)
-    output_data.to_csv("output/output_data.csv", index=False, sep="\t")                
+    output_data.to_csv("output/output_data.csv", index=False, sep="\t")
