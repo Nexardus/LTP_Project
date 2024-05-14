@@ -81,10 +81,10 @@ Example: If we allow kids to play video games, they will see fights, guns, and v
 Correct Explanation: The example is a Slippery Slope fallacy because it assumes that allowing children to play video games will inevitably lead them down a path to becoming violent adults. This argument jumps to extreme conclusions based on a sequence of hypothetical steps that lack evidence or logical certainty, exaggerating the causal links between playing video games and violent behavior. 
 Incorrect Explanation: This example is not a Slippery Slope fallacy because children who are exposed to violent video games will naturally become desensitized to violence, and this exposure will condition them to be more aggressive, making them prone to violent behavior as adults.
 
-Strawman Fallacy
+Straw Man
 Example: He says we need better internet security, but I think his panic about hackers is overblown.
-Correct Explanation: The example demonstrates a Strawman Fallacy because the speaker distorts the original argument for improved internet security by mischaracterizing it as "panic about hackers." This distorted version (P′) is easier to dismiss and attack than the original argument, allowing the speaker to reject the need for better security (¬P) without directly addressing the core issue. 
-Incorrect Explanation: This example is not a Strawman Fallacy because concerns about internet security are often rooted in unwarranted fear of hackers. Thus, it's reasonable to argue that the panic over hackers is excessive and doesn't justify stronger security measures.
+Correct Explanation: The example demonstrates a Straw Man because the speaker distorts the original argument for improved internet security by mischaracterizing it as "panic about hackers." This distorted version (P′) is easier to dismiss and attack than the original argument, allowing the speaker to reject the need for better security (¬P) without directly addressing the core issue. 
+Incorrect Explanation: This example is not a Straw Man because concerns about internet security are often rooted in unwarranted fear of hackers. Thus, it's reasonable to argue that the panic over hackers is excessive and doesn't justify stronger security measures.
 
 Fallacies of Credibility
 Abusive Ad Hominem

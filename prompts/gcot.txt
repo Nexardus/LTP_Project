@@ -67,7 +67,7 @@ Fallacy: Slippery Slope Informal
 Example: If we allow kids to play video games, they will see fights, guns, and violence, and then they’ll become violent adults.
 
 
-Fallacy: Straw Man Fallacy 
+Fallacy: Straw Man
 Example: He says we need better internet security, but I think his panic about hackers is overblown.
 
 
