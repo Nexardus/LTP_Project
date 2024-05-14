@@ -19,11 +19,9 @@ def read_prompt(prompt_technique, input_text):
 
 def generate(model_name, prompt):
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
-    # Perhaps we should use a different model type
     model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16)
 
     input = tokenizer(prompt, return_tensors="pt")
-    # Perhaps we should use different parameters here
     output = model.generate(**input, max_length=1024, num_return_sequences=1)
     return tokenizer.decode(output[0])
 
@@ -44,6 +42,6 @@ def generate_all_models(models, prompt_techniques):
 
 if __name__ == "__main__":
     prompt_techniques = ["gcot", "logicot", "ccot"]
-    models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5","NousResearch/Hermes-2-Pro-Llama-3-8B"]
+    models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5", "NousResearch/Hermes-2-Pro-Llama-3-8B"]
     output_data = generate_all_models(models, prompt_techniques)
     output_data.to_csv("output/output_data.csv", index=False, sep="\t")
