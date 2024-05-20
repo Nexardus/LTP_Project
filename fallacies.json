@@ -1,0 +1,32 @@
+{
+  "No fallacy": [],
+  "Fallacy of Credibility": [
+    "Abusive Ad Hominem",
+    "Ad Populum",
+    "Appeal to False Authority",
+    "Appeal to Nature",
+    "Appeal to Tradition",
+    "Guilt by Association",
+    "Tu Quoque"
+  ],
+  "Fallacy of Logic": [
+    "Causal Oversimplification",
+    "Circular Reasoning",
+    "Equivocation",
+    "False Analogy",
+    "False Causality",
+    "False Dilemma",
+    "Hasty Generalization",
+    "Slippery Slope",
+    "Straw Man",
+    "Fallacy of Division"
+  ],
+  "Appeal to Emotion": [
+    "Appeal to Positive Emotion",
+    "Appeal to Anger",
+    "Appeal to Fear",
+    "Appeal to Pity",
+    "Appeal to Ridicule",
+    "Appeal to Worse Problem"
+  ]
+}
