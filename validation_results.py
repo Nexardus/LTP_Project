@@ -69,6 +69,9 @@ def get_prec_rec(example, idx, **fn_kwargs):
 
     # Iterate over the predicted Super labels and document in prec_dict
     for pred_sup_label in example["<predicted super label>"]:
+        # Exclude "No fallacy" because it overlaps with the level 2 label
+        if pred_sup_label == "No fallacy":
+            continue
         fn_kwargs["prec_dict"][pred_sup_label]["pred"] += 1
         if example[pred_sup_label] in example["MAFALDA Superlabel"]:
             fn_kwargs["prec_dict"]["MAFALDA Label"]["corr"] += 1
@@ -81,6 +84,9 @@ def get_prec_rec(example, idx, **fn_kwargs):
 
     # Iterate over the gold Super labels and document in rec_dict
     for gold_sup_label in example["MAFALDA Superlabel"]:
+        # Exclude "No fallacy" because it overlaps with the level 2 label
+        if gold_sup_label == "No fallacy":
+            continue
         fn_kwargs["rec_dict"][gold_sup_label]["occu"] += 1
         if gold_sup_label in example["<predicted super label>"]:
             fn_kwargs["rec_dict"][gold_sup_label]["pred"] += 1
@@ -117,6 +123,7 @@ def get_prec_rec(example, idx, **fn_kwargs):
     sup_label_c = 0
     sup_label_f1 = 0
     for key in fn_kwargs["f1_dict"].keys():
+        # Exclude "No fallacy" because it overlaps with the level 2 label
         if key not in ["Fallacy of Credibility", "Fallacy of Logic", "Appeal to Emotion"]:
             label_c += 1
             label_f1 += fn_kwargs["f1_dict"][key]["f1"]
