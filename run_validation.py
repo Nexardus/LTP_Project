@@ -37,7 +37,7 @@ def generate_all_models(models, prompt_techniques):
 
             max_new_tokens = 64
             if prompt_technique == "ccot":
-                max_new_tokens = 256
+                max_new_tokens = 512
 
             for input_text in output_data["Input"]:
                 prompt = read_prompt(prompt_technique, input_text)
