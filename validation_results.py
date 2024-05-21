@@ -60,7 +60,8 @@ def make_dicts(data):
 
     return prec_dict, rec_dict, f1_dict
 
-def get_prec_rec(example, idx, **fn_kwargs):
+
+def get_prec_rec(example, idx, **fn_kwargs: dict[str, dict[str, any]]):
     """"""
 
     # Iterate over the predicted labels and document in prec_dict
@@ -146,7 +147,7 @@ def get_prec_rec(example, idx, **fn_kwargs):
     return fn_kwargs["f1_dict"]
 
 
-def visuals(data_dict):
+def visuals(data_dict: dict, model_name: str) -> pd.DataFrame:
     """"""
     # Read data into Pandas df so Seaborn and Matplotlib can handle it \
     # Put each (super) label on a row with the prec, rec and F1 as columns.
@@ -156,6 +157,42 @@ def visuals(data_dict):
         columns=["Precision", "Recall", "F1 score"]
     )
 
+    # Set style for Seaborn plots
+    sns.set(style="whitegrid")
+
+    # Precision per label
+    plt.figure(figsize=(8, 6))
+    sns.barplot(x=data_df.index, y=data_df["Precision"])
+    plt.title("Precision per label")
+    plt.xticks(rotation=45)
+    plt.xlabel("Label")
+    plt.ylabel("Precision")
+    plt.tight_layout()
+    plt.savefig(f"plots/{model_name}_val_precision.png")
+
+    # Recall per label
+    plt.figure(figsize=(8, 6))
+    sns.barplot(x=data_df.index, y=data_df["Recall"])
+    plt.title("Recall per label")
+    plt.xticks(rotation=45)
+    plt.xlabel("Label")
+    plt.ylabel("Recall")
+    plt.tight_layout()
+    plt.savefig(f"plots/{model_name}_val_recall.png")
+
+    # F1 score per label
+    plt.figure(figsize=(8, 6))
+    sns.barplot(x=data_df.index, y=data_df["F1 score"])
+    plt.title("F1 Score per label")
+    plt.xticks(rotation=45)
+    plt.xlabel("Label")
+    plt.ylabel("F1 Score")
+    plt.tight_layout()
+    plt.savefig(f"plots/{model_name}_val_f1.png")
+
+    # Return dataframe so we can output it as a csv
+    return data_df
+
 
 
 if __name__ == "__main__":
@@ -163,7 +200,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data_file_path",
         "-dp",
-        help="Path to the input data.",
+        help="Path to the input data (csv file with tab as separator). For example: 'output/output_data.csv'.",
         required=True,
         type=str,
     )
@@ -175,10 +212,17 @@ if __name__ == "__main__":
        type=str,
     )
     parser.add_argument(
+       "--model_name",
+       "-m",
+       required=True,
+       help="The name of the used model to include in the plot savings. For example: T5-base.",
+       type=str,
+    )
+    parser.add_argument(
         "--random_seed",
         "-seed",
         #required=True,
-        help="The random seed to use.",
+        help="The random seed to use. Default: 0",
         default=0,
         type=int,
     )
@@ -199,6 +243,7 @@ if __name__ == "__main__":
 
     prec_dict, rec_dict, f1_dict = make_dicts(val_data)
 
+    logger.info(f"Computing evaluation scores...")
     eval_scores = val_data.map(
         get_prec_rec,
         with_indices=True,
@@ -209,12 +254,18 @@ if __name__ == "__main__":
         }
     )
 
-    visuals(eval_scores)
+    f1_label = eval_scores.pop("total_label_macro", "F1 score of all labels not found.")
+    f1_superlabel = eval_scores.pop("total_super_label_macro", "F1 score of all super labels not found.")
+    logger.info(f"Total F1 score of the labels: {f1_label}.")
+    logger.info(f"Total F1 score of the super labels: {f1_superlabel}.")
+
+    logger.info(f"Generating the visuals...")
+    output_df = visuals(eval_scores, args.model_name)
 
     # Export dataframe
     #os.makedirs(args.output_file_path, exist_ok=True)
-    #logger.info(f"Exporting dataframe to '{args.output_file_path}.[json|csv]'...")
-    #output_df.to_csv(args.output_file_path + ".csv", index=False, sep=',')
+    logger.info(f"Exporting dataframe to '{args.output_file_path}.csv'...")
+    output_df.to_csv(args.output_file_path + ".csv", index=False, sep=',')
     #output_df.to_json(args.output_file_path + ".json", orient="records", lines=True)
 
 
