@@ -2,101 +2,100 @@
 
 Choose exactly one of the following options:
 
-
+Example: Climate change is a problem because it will lead to more natural disasters.
 Fallacy: No fallacy
-Example: 
 
 
-Fallacy: Appeal to Anger 
 Example: The victim’s family has been torn apart by this act of terror. Put yourselves in their terrible situation, you will see that he is guilty.
+Fallacy: Appeal to Anger
 
 
-Fallacy: Appeal to Fear
 Example: If you don’t support this politician, our country will be in ruins, so you must support them. 
+Fallacy: Appeal to Fear
 
 
-Fallacy: Appeal to Pity Informal
 Example: He’s really struggling, so he should get the job despite lacking qualifications.
+Fallacy: Appeal to Pity Informal
 
 
-Fallacy: Appeal to Positive Emotion 
 Example: Smoking a cigarette will make you look cool, you should try it!
+Fallacy: Appeal to Positive Emotion
 
 
-Fallacy: Appeal to Ridicule Informal: 
 Example: There’s a proposal to reduce carbon emissions by 50% in the next decade. What’s next? Are we all going to stop breathing to reduce CO2?
+Fallacy: Appeal to Ridicule Informal:
 
 
-Fallacy: Appeal to Worse Problems Informal: 
 Example: Why worry about littering when there are bigger problems like global warming?
+Fallacy: Appeal to Worse Problems Informal:
 
 
-Fallacy: Causal Oversimplification 
 Example: There is an economic crisis in the country, the one to blame is the president.
+Fallacy: Causal Oversimplification
 
 
-Fallacy: Circular Reasoning Informal
 Example: The best smartphone is the iPhone because Apple creates the best products.
+Fallacy: Circular Reasoning Informal
 
 
-Fallacy: Equivocation Informal
 Example: The government admitted that many cases of credible UFOs (Unidentified flying objects) have been reported. Therefore, that means that Aliens have already visited Earth. 
+Fallacy: Equivocation Informal
 
 
-Fallacy: Fallacy of Division
 Example: The team is great, so every player on the team must be great.
+Fallacy: Fallacy of Division
 
 
-Fallacy: False Analogy Informal
 Example: We should not invest in Space Exploration. It’s like saying that a person in debt should pay for fancy vacations.
+Fallacy: False Analogy Informal
 
 
-Fallacy: False Causality Informal
 Example: After the rooster crows, the sun rises; therefore, the rooster causes the sunrise. 
+Fallacy: False Causality Informal
 
 
-Fallacy: False Dilemma Informal
 Example: You’re either with us, or against us.
+Fallacy: False Dilemma Informal
 
 
-Fallacy: Hasty Generalization Informal
 Example: I met two aggressive dogs, so all dogs must be aggressive.
+Fallacy: Hasty Generalization Informal
 
 
-Fallacy: Slippery Slope Informal
 Example: If we allow kids to play video games, they will see fights, guns, and violence, and then they’ll become violent adults.
+Fallacy: Slippery Slope Informal
 
 
-Fallacy: Straw Man
 Example: He says we need better internet security, but I think his panic about hackers is overblown.
+Fallacy: Straw Man
 
 
-Fallacy: Ad Hominem
 Example: “John says the earth is round, but he’s a convicted criminal, so he must be wrong.” 
+Fallacy: Ad Hominem
 
 
-Fallacy: Ad Populum Informal
 Example: Millions of people believe in astrology, so it must be true.
+Fallacy: Ad Populum Informal
 
 
-Fallacy: Appeal to Authority Informal
 Example: A famous actor says this health supplement works, so it must be effective.
+Fallacy: Appeal to Authority Informal
 
 
-Fallacy: Appeal to Nature Informal
 Example: Herbs are natural, so they are better than synthetic medicines.
+Fallacy: Appeal to Nature Informal
 
 
-Fallacy: Appeal to Tradition Informal
 Example: We’ve always had a meat dish at Thanksgiving, so we should not change it.
+Fallacy: Appeal to Tradition Informal
 
 
-Fallacy: Guilt by Association Informal
 Example: Alice believes in climate change, just like the discredited scientist Bob, so her belief must be false.
+Fallacy: Guilt by Association Informal
 
 
-Fallacy: Tu Quoque 
 Example: Laura advocates for healthy eating but was seen eating a burger, so her advice on diet is invalid.
+Fallacy: Tu Quoque
 
 
 Input: 
