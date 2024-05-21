@@ -7,6 +7,8 @@ import logging
 import warnings
 import os
 from statistics import harmonic_mean
+import seaborn as sns
+from matplotlib import pyplot as plt
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 warnings.simplefilter(action='ignore', category=UserWarning)
@@ -144,6 +146,17 @@ def get_prec_rec(example, idx, **fn_kwargs):
     return fn_kwargs["f1_dict"]
 
 
+def visuals(data_dict):
+    """"""
+    # Read data into Pandas df so Seaborn and Matplotlib can handle it \
+    # Put each (super) label on a row with the prec, rec and F1 as columns.
+    data_df = pd.DataFrame.from_dict(
+        data=data_dict,
+        orient="index",
+        columns=["Precision", "Recall", "F1 score"]
+    )
+
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -195,6 +208,8 @@ if __name__ == "__main__":
             "f1_dict": f1_dict
         }
     )
+
+    visuals(eval_scores)
 
     # Export dataframe
     #os.makedirs(args.output_file_path, exist_ok=True)
