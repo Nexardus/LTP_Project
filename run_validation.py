@@ -17,10 +17,10 @@ def read_prompt(prompt_technique, input_text):
     return prompt
 
 
-def generate(model, tokenizer, prompt):
+def generate(model, tokenizer, prompt, max_new_tokens):
     input = tokenizer(prompt, return_tensors="pt").to("cuda")
     # Perhaps we should use different parameters here
-    output = model.generate(**input, max_new_tokens=64, num_return_sequences=1)
+    output = model.generate(**input, max_new_tokens=max_new_tokens, num_return_sequences=1)
     return tokenizer.decode(output[0])
 
 
@@ -34,9 +34,14 @@ def generate_all_models(models, prompt_techniques):
         model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16).to("cuda")
 
         for prompt_technique in prompt_techniques:
+
+            max_new_tokens = 64
+            if prompt_technique == "ccot":
+                max_new_tokens = 256
+
             for input_text in output_data["Input"]:
                 prompt = read_prompt(prompt_technique, input_text)
-                output = generate(model, tokenizer, prompt)
+                output = generate(model, tokenizer, prompt, max_new_tokens)
                 print(f"Sample: {progress}, Model: {model_name}, Prompt Technique: {prompt_technique}")
                 print(f"Input Text: {input_text}")
                 print(f"Output: {output}")

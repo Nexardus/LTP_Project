@@ -120,4 +120,5 @@ Fallacy: Tu Quoque
 Example: Laura advocates for healthy eating but was seen eating a burger, so her advice on diet is invalid
 Correct Explanation: The example demonstrates a Tu Quoque fallacy because it dismisses Laura's advice on healthy eating (P) by pointing out that she was seen eating a burger (acting as if ¬P). This reasoning attacks Laura's perceived inconsistency instead of directly addressing the substance of her advice, which could still hold true despite her behavior. 
 Incorrect Explanation: This example is not a Tu Quoque fallacy because if Laura cannot follow her own advice consistently, then her advice is inherently flawed and should not be trusted.
+
 Input:
