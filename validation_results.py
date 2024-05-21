@@ -7,6 +7,8 @@ import logging
 import warnings
 import os
 from statistics import harmonic_mean
+import seaborn as sns
+from matplotlib import pyplot as plt
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 warnings.simplefilter(action='ignore', category=UserWarning)
@@ -29,7 +31,7 @@ def get_data(file_path: str):
     return Dataset.from_pandas(data_df)
 
 
-def get_prec_rec(example, idx):
+def make_dicts(data):
     """"""
     # Precision dictionary:
     # For each label, document how often the label has been predicted (pred)\
@@ -46,54 +48,74 @@ def get_prec_rec(example, idx):
     f1_dict = {}
 
     # Insert all the (Super) labels into both dicts
-    for label in np.unique(example["MAFALDA Label"]):
+    for label in np.unique(data["MAFALDA Label"]):
         prec_dict[f"{label}"] = {"pred": 0, "corr": 0}
-        rec_dict[f"{label}"] = {"occu": 0, "pred": 0, "recall": 0}
+        rec_dict[f"{label}"] = {"occu": 0, "pred": 0}
         f1_dict[f"{label}"] = {"precision": 0, "recall": 0, "f1": 0}
 
-    for sup_label in np.unique(example["MAFALDA Superlabel"]):
+    for sup_label in np.unique(data["MAFALDA Superlabel"]):
         prec_dict[f"{sup_label}"] = {"pred": 0, "corr": 0}
         rec_dict[f"{sup_label}"] = {"occu": 0, "pred": 0}
         f1_dict[f"{sup_label}"] = {"precision": 0, "recall": 0, "f1": 0}
 
-    # Iterate over the predicted labels and document in pred_dict
-    for pred_label in example["<predicted label>"]:
-        prec_dict[pred_label]["pred"] += 1
-        if example[pred_label] in example["MAFALDA Label"]:
-            prec_dict["MAFALDA Label"]["corr"] += 1
+    return prec_dict, rec_dict, f1_dict
 
-    # Iterate over the predicted Super labels and document in pred_dict
+def get_prec_rec(example, idx, **fn_kwargs):
+    """"""
+
+    # Iterate over the predicted labels and document in prec_dict
+    for pred_label in example["<predicted label>"]:
+        fn_kwargs["prec_dict"][pred_label]["pred"] += 1
+        if example[pred_label] in example["MAFALDA Label"]:
+            fn_kwargs["prec_dict"]["MAFALDA Label"]["corr"] += 1
+
+    # Iterate over the predicted Super labels and document in prec_dict
     for pred_sup_label in example["<predicted super label>"]:
-        prec_dict[pred_sup_label]["pred"] += 1
+        # Exclude "No fallacy" because it overlaps with the level 2 label
+        if pred_sup_label == "No fallacy":
+            continue
+        fn_kwargs["prec_dict"][pred_sup_label]["pred"] += 1
         if example[pred_sup_label] in example["MAFALDA Superlabel"]:
-            prec_dict["MAFALDA Label"]["corr"] += 1
+            fn_kwargs["prec_dict"]["MAFALDA Label"]["corr"] += 1
 
     # Iterate over the gold labels and document in rec_dict
     for gold_label in example["MAFALDA Label"]:
-        rec_dict[gold_label]["occu"] += 1
+        fn_kwargs["rec_dict"][gold_label]["occu"] += 1
         if gold_label in example["<predicted label>"]:
-            rec_dict[gold_label]["pred"] += 1
+            fn_kwargs["rec_dict"][gold_label]["pred"] += 1
 
     # Iterate over the gold Super labels and document in rec_dict
     for gold_sup_label in example["MAFALDA Superlabel"]:
-        rec_dict[gold_sup_label]["occu"] += 1
+        # Exclude "No fallacy" because it overlaps with the level 2 label
+        if gold_sup_label == "No fallacy":
+            continue
+        fn_kwargs["rec_dict"][gold_sup_label]["occu"] += 1
         if gold_sup_label in example["<predicted super label>"]:
-            rec_dict[gold_sup_label]["pred"] += 1
+            fn_kwargs["rec_dict"][gold_sup_label]["pred"] += 1
 
     # Compute precision, recall and F1 per label
-    for item in prec_dict.items():
+    for item in fn_kwargs["prec_dict"].items():
         k = item[0], v = item[1]
         # Add rounding and error handling such as ZeroDivisionError --> try-except statement
-        f1_dict[k]["precision"] = v["corr"] / v["pred"]
+        try:
+            fn_kwargs["f1_dict"][k]["precision"] = v["corr"] / v["pred"]
+        except ZeroDivisionError:
+            fn_kwargs["f1_dict"][k]["precision"] = 0
 
-    for item in rec_dict.items():
+    for item in fn_kwargs["rec_dict"].items():
         k = item[0], v = item[1]
         # Add rounding and error handling such as ZeroDivisionError --> try-except statement
-        f1_dict[k]["recall"] = v["pred"] / v["occu"]
+        try:
+            fn_kwargs["f1_dict"][k]["recall"] = v["pred"] / v["occu"]
+        except ZeroDivisionError:
+            fn_kwargs["f1_dict"][k]["recall"] = 0
 
-    for item in f1_dict.items():
+    for item in fn_kwargs["f1_dict"].items():
         k = item[0], v = item[1]
-        f1_dict[k]["f1"] = harmonic_mean([v["precision"], v["recall"]])
+        try:
+            fn_kwargs["f1_dict"][k]["f1"] = harmonic_mean([v["precision"], v["recall"]])
+        except:
+            fn_kwargs["f1_dict"][k]["f1"] = 0
         # Or this fancy-pancy manual calculation
         # len([v["precision"], v["recall"]]) / sum([1/x for x in [v["precision"], v["recall"]]])
 
@@ -102,19 +124,37 @@ def get_prec_rec(example, idx):
     label_f1 = 0
     sup_label_c = 0
     sup_label_f1 = 0
-    for key in f1_dict.keys():
-        if key not in np.unique(example["MAFALDA Superlabel"]):
+    for key in fn_kwargs["f1_dict"].keys():
+        # Exclude "No fallacy" because it overlaps with the level 2 label
+        if key not in ["Fallacy of Credibility", "Fallacy of Logic", "Appeal to Emotion"]:
             label_c += 1
-            label_f1 += f1_dict[key]["f1"]
-        if key in np.unique(example["MAFALDA Superlabel"]):
+            label_f1 += fn_kwargs["f1_dict"][key]["f1"]
+        if key in ["Fallacy of Credibility", "Fallacy of Logic", "Appeal to Emotion"]:
             sup_label_c += 1
-            sup_label_f1 += f1_dict[key]["f1"]
+            sup_label_f1 += fn_kwargs["f1_dict"][key]["f1"]
 
     # Add rounding and error handling such as ZeroDivisionError --> try-except statement
-    f1_dict["total_label_macro"] = label_f1 / label_c
-    f1_dict["total_super_label_macro"] = sup_label_f1 / sup_label_c
+    try:
+        fn_kwargs["f1_dict"]["total_label_macro"] = label_f1 / label_c
+    except ZeroDivisionError:
+        fn_kwargs["f1_dict"]["total_label_macro"] = 0
+    try:
+        fn_kwargs["f1_dict"]["total_super_label_macro"] = sup_label_f1 / sup_label_c
+    except ZeroDivisionError:
+        fn_kwargs["f1_dict"]["total_super_label_macro"] = 0
 
-    return f1_dict
+    return fn_kwargs["f1_dict"]
+
+
+def visuals(data_dict):
+    """"""
+    # Read data into Pandas df so Seaborn and Matplotlib can handle it \
+    # Put each (super) label on a row with the prec, rec and F1 as columns.
+    data_df = pd.DataFrame.from_dict(
+        data=data_dict,
+        orient="index",
+        columns=["Precision", "Recall", "F1 score"]
+    )
 
 
 
@@ -157,10 +197,19 @@ if __name__ == "__main__":
     logger.info(f"Loading the data...")
     val_data = get_data(data_path)
 
+    prec_dict, rec_dict, f1_dict = make_dicts(val_data)
+
     eval_scores = val_data.map(
         get_prec_rec,
-        with_indices=True
+        with_indices=True,
+        fn_kwargs={
+            "prec_dict": prec_dict,
+            "rec_dict": rec_dict,
+            "f1_dict": f1_dict
+        }
     )
+
+    visuals(eval_scores)
 
     # Export dataframe
     #os.makedirs(args.output_file_path, exist_ok=True)
