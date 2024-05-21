@@ -20,12 +20,14 @@ def read_prompt(prompt_technique, input_text):
 def generate(model, tokenizer, prompt):
     input = tokenizer(prompt, return_tensors="pt").to("cuda")
     # Perhaps we should use different parameters here
-    output = model.generate(**input, max_new_tokens=1024, num_return_sequences=1)
+    output = model.generate(**input, max_new_tokens=64, num_return_sequences=1)
     return tokenizer.decode(output[0])
 
 
 def generate_all_models(models, prompt_techniques):
     output_data = read_dataset()
+    new_rows = []
+    progress = 0
     for model_name in models:
         tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
         # Perhaps we should use a different model type
@@ -35,17 +37,24 @@ def generate_all_models(models, prompt_techniques):
             for input_text in output_data["Input"]:
                 prompt = read_prompt(prompt_technique, input_text)
                 output = generate(model, tokenizer, prompt)
-                print(f"Model: {model}, Prompt Technique: {prompt_technique}")
+                print(f"Sample: {progress}, Model: {model_name}, Prompt Technique: {prompt_technique}")
                 print(f"Input Text: {input_text}")
                 print(f"Output: {output}")
-                output_data[f"{model}_{prompt_technique}"] = output
+                new_rows.append({
+                        "Model": model_name,
+                        "Technique": prompt_technique,
+                        "Input": input_text,
+                        "Output": output
+                    })
+                pd.DataFrame(new_rows).to_csv("output/output_data_temp.csv", index=False, sep="\t")
+                progress += 1
         del model # Nuke from memory just to be sure
         del tokenizer
-    return output_data
+    return new_rows
 
 
 if __name__ == "__main__":
     prompt_techniques = ["gcot", "logicot", "ccot"]
     models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5", "NousResearch/Hermes-2-Pro-Llama-3-8B"]
-    output_data = generate_all_models(models, prompt_techniques)
-    output_data.to_csv("output/output_data.csv", index=False, sep="\t")
+    new_rows = generate_all_models(models, prompt_techniques)
+    pd.DataFrame(new_rows).to_csv("output/output_data.csv", index=False, sep="\t")
