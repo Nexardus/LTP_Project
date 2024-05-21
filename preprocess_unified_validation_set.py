@@ -142,6 +142,7 @@ def main():
     )
 
     print(unified)
+    unified.groupby("MAFALDA Label").sample(n=20, random_state=42).to_csv("datasets/unified_validation_set_downsampled.tsv", index=False, sep="\t")
     unified.to_csv("datasets/unified_validation_set.tsv", index=False, sep="\t")
 
 
