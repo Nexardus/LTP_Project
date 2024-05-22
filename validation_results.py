@@ -183,10 +183,10 @@ def visuals(data_dict: dict, model_name: str) -> pd.DataFrame:
     # F1 score per label
     plt.figure(figsize=(8, 6))
     sns.barplot(x=data_df.index, y=data_df["F1 score"])
-    plt.title("F1 Score per label")
+    plt.title("F1 score per label")
     plt.xticks(rotation=45)
     plt.xlabel("Label")
-    plt.ylabel("F1 Score")
+    plt.ylabel("F1 score")
     plt.tight_layout()
     plt.savefig(f"plots/{model_name}_val_f1.png")
 
