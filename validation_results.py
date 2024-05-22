@@ -253,6 +253,7 @@ if __name__ == "__main__":
             "f1_dict": f1_dict
         }
     )
+    del val_data, prec_dict, rec_dict
 
     f1_label = eval_scores.pop("total_label_macro", "F1 score of all labels not found.")
     f1_superlabel = eval_scores.pop("total_super_label_macro", "F1 score of all super labels not found.")
