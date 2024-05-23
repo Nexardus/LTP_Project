@@ -1,5 +1,8 @@
 import pandas as pd
 
+from infer_label import LabelExtractor
+
+
 def read_prompts(prompt_techniques):
     prompts = {}
 
@@ -24,5 +27,10 @@ if __name__ == "__main__":
     prompts = read_prompts(prompt_techniques)
     df = pd.read_csv("./output/inference_output_21_may.csv", sep="\t")
     df['Cleared_output'] = df.apply(lambda row: extract_response(row, prompts), axis=1)
+
+    extractor = LabelExtractor('fallacies.json')
+
+    df['MAFALDA Label'] = df.apply(lambda row: extractor.extract_label(row["Cleared_output"])[1], axis=1)
+    df['MAFALDA Superlabel'] = df.apply(lambda row: extractor.extract_label(row["Cleared_output"])[0], axis=1)
 
     df.to_csv("./output/inference_output_21_may_cleaned.csv", index=False, sep="\t")
