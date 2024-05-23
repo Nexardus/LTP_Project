@@ -21,7 +21,11 @@ def generate(model, tokenizer, prompt, max_new_tokens):
     input = tokenizer(prompt, return_tensors="pt").to("cuda")
     # Perhaps we should use different parameters here
     output = model.generate(**input, max_new_tokens=max_new_tokens, num_return_sequences=1)
-    return tokenizer.decode(output[0])
+
+    # return only the model's output (+ the initial input)
+    decoded_output = tokenizer.decode(output[0])
+    generated_response = decoded_output[len(tokenizer.decode(input["input_ids"][0])):]
+    return generated_response
 
 
 def generate_all_models(models, prompt_techniques):
