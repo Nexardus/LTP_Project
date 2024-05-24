@@ -40,7 +40,7 @@ def main():
         plt.figure()
         sns.countplot(
             data=data,
-            x="MAFALDA Superlabel",
+            y="MAFALDA Superlabel",
             order=data["MAFALDA Superlabel"].value_counts().index,
         )
         plt.tight_layout()
@@ -51,7 +51,7 @@ def main():
         plt.xticks(rotation=90)
         sns.countplot(
             data=data,
-            x="MAFALDA Label",
+            y="MAFALDA Label",
             order=data["MAFALDA Label"].value_counts().index,
             hue="MAFALDA Superlabel",
         )
