@@ -9,6 +9,7 @@ import os
 from statistics import harmonic_mean
 import seaborn as sns
 from matplotlib import pyplot as plt
+from sklearn.metrics import classification_report
 
 warnings.simplefilter(action='ignore', category=FutureWarning)
 warnings.simplefilter(action='ignore', category=UserWarning)
@@ -27,6 +28,12 @@ def get_data(file_path: str):
         Dataset object: The data as a Dataset object.
     """
     data_df = pd.read_csv(file_path, sep="\t")
+    logger.info(f"{data_df.shape = }")
+    data_df = data_df[["Technique", "Extracted Label", "Extracted Superlabel", "True Label", "True Superlabel"]]
+    logger.info(f"{data_df.shape = }")
+    # Drop rows with None/NaN for either of the five retained columns
+    data_df = data_df.dropna(subset=["True Label", "True Superlabel"])
+    logger.info(f"{data_df.shape = }")
 
     return Dataset.from_pandas(data_df)
 
@@ -48,12 +55,15 @@ def make_dicts(data):
     f1_dict = {}
 
     # Insert all the (Super) labels into both dicts
-    for label in np.unique(data["MAFALDA Label"]):
+    #logger.info(data["True Label"][:10])
+    logger.info(f"All unique true labels: {np.unique(data['True Label'])}")
+
+    for label in np.unique(data["True Label"]):
         prec_dict[f"{label}"] = {"pred": 0, "corr": 0}
         rec_dict[f"{label}"] = {"occu": 0, "pred": 0}
         f1_dict[f"{label}"] = {"precision": 0, "recall": 0, "f1": 0}
 
-    for sup_label in np.unique(data["MAFALDA Superlabel"]):
+    for sup_label in np.unique(data["True Superlabel"]):
         prec_dict[f"{sup_label}"] = {"pred": 0, "corr": 0}
         rec_dict[f"{sup_label}"] = {"occu": 0, "pred": 0}
         f1_dict[f"{sup_label}"] = {"precision": 0, "recall": 0, "f1": 0}
@@ -65,38 +75,43 @@ def get_prec_rec(example, idx, **fn_kwargs: dict[str, dict[str, any]]):
     """"""
 
     # Iterate over the predicted labels and document in prec_dict
-    for pred_label in example["<predicted label>"]:
-        fn_kwargs["prec_dict"][pred_label]["pred"] += 1
-        if example[pred_label] in example["MAFALDA Label"]:
-            fn_kwargs["prec_dict"]["MAFALDA Label"]["corr"] += 1
+    #for pred_label in example["Extracted Label"]:
+    #logger.info(f"{pred_label = }")
+    logger.info(f"{example['Extracted Label'] = }")
+    logger.info((f"{fn_kwargs['prec_dict'] = }"))
+    logger.info((f"{fn_kwargs['rec_dict'] = }"))
+    logger.info((f"{fn_kwargs['f1_dict'] = }"))
+    fn_kwargs["prec_dict"][example["Extracted Label"]]["pred"] += 1
+    if example["Extracted Label"] in example["True Label"]:
+        fn_kwargs["prec_dict"][example["Extracted Label"]]["corr"] += 1
 
     # Iterate over the predicted Super labels and document in prec_dict
-    for pred_sup_label in example["<predicted super label>"]:
-        # Exclude "No fallacy" because it overlaps with the level 2 label
-        if pred_sup_label == "No fallacy":
-            continue
-        fn_kwargs["prec_dict"][pred_sup_label]["pred"] += 1
-        if example[pred_sup_label] in example["MAFALDA Superlabel"]:
-            fn_kwargs["prec_dict"]["MAFALDA Label"]["corr"] += 1
+    #for pred_sup_label in example["Extracted Superlabel"]:
+    # Exclude "No fallacy" because it overlaps with the level 2 label
+    if example["Extracted Superlabel"] != "No fallacy":
+        fn_kwargs["prec_dict"][example["Extracted Superlabel"]]["pred"] += 1
+        if example["Extracted Superlabel"] in example["True Superlabel"]:
+            fn_kwargs["prec_dict"][example["Extracted Superlabel"]]["corr"] += 1
 
     # Iterate over the gold labels and document in rec_dict
-    for gold_label in example["MAFALDA Label"]:
-        fn_kwargs["rec_dict"][gold_label]["occu"] += 1
-        if gold_label in example["<predicted label>"]:
-            fn_kwargs["rec_dict"][gold_label]["pred"] += 1
+    #for gold_label in example["True Label"]:
+    fn_kwargs["rec_dict"][example["True Label"]]["occu"] += 1
+    if example["True Label"] in example["Extracted Label"]:
+        fn_kwargs["rec_dict"][example["True Label"]]["pred"] += 1
 
     # Iterate over the gold Super labels and document in rec_dict
-    for gold_sup_label in example["MAFALDA Superlabel"]:
-        # Exclude "No fallacy" because it overlaps with the level 2 label
-        if gold_sup_label == "No fallacy":
-            continue
-        fn_kwargs["rec_dict"][gold_sup_label]["occu"] += 1
-        if gold_sup_label in example["<predicted super label>"]:
-            fn_kwargs["rec_dict"][gold_sup_label]["pred"] += 1
+    #for gold_sup_label in example["True Superlabel"]:
+    # Exclude "No fallacy" because it overlaps with the level 2 label
+    if example["True Superlabel"] != "No fallacy":
+        fn_kwargs["rec_dict"][example["True Superlabel"]]["occu"] += 1
+        if example["True Superlabel"] in example["Extracted Superlabel"]:
+            fn_kwargs["rec_dict"][example["True Superlabel"]]["pred"] += 1
 
     # Compute precision, recall and F1 per label
     for item in fn_kwargs["prec_dict"].items():
         k = item[0], v = item[1]
+        logger.info(f"{k = }")
+        logger.info(f"{v = }")
         # Add rounding and error handling such as ZeroDivisionError --> try-except statement
         try:
             fn_kwargs["f1_dict"][k]["precision"] = v["corr"] / v["pred"]
@@ -147,7 +162,7 @@ def get_prec_rec(example, idx, **fn_kwargs: dict[str, dict[str, any]]):
     return fn_kwargs["f1_dict"]
 
 
-def visuals(data_dict: dict, model_name: str) -> pd.DataFrame:
+def visuals(data_dict: dict, model_name: str, tech: str) -> pd.DataFrame:
     """"""
     # Read data into Pandas df so Seaborn and Matplotlib can handle it \
     # Put each (super) label on a row with the prec, rec and F1 as columns.
@@ -168,7 +183,7 @@ def visuals(data_dict: dict, model_name: str) -> pd.DataFrame:
     plt.xlabel("Label")
     plt.ylabel("Precision")
     plt.tight_layout()
-    plt.savefig(f"plots/{model_name}_val_precision.png")
+    plt.savefig(f"temp_plots/{tech}/{model_name}_val_precision.png")
 
     # Recall per label
     plt.figure(figsize=(8, 6))
@@ -178,7 +193,7 @@ def visuals(data_dict: dict, model_name: str) -> pd.DataFrame:
     plt.xlabel("Label")
     plt.ylabel("Recall")
     plt.tight_layout()
-    plt.savefig(f"plots/{model_name}_val_recall.png")
+    plt.savefig(f"temp_plots/{tech}/{model_name}_val_recall.png")
 
     # F1 score per label
     plt.figure(figsize=(8, 6))
@@ -188,11 +203,10 @@ def visuals(data_dict: dict, model_name: str) -> pd.DataFrame:
     plt.xlabel("Label")
     plt.ylabel("F1 score")
     plt.tight_layout()
-    plt.savefig(f"plots/{model_name}_val_f1.png")
+    plt.savefig(f"temp_plots/{tech}/{model_name}_val_f1.png")
 
     # Return dataframe so we can output it as a csv
-    return data_df
-
+    #return data_df
 
 
 if __name__ == "__main__":
@@ -204,13 +218,13 @@ if __name__ == "__main__":
         required=True,
         type=str,
     )
-    parser.add_argument(
-       "--output_file_path",
-       "-out",
-       required=True,
-       help="Path where to save the output file.",
-       type=str,
-    )
+    #parser.add_argument(
+    #   "--output_file_path",
+    #   "-out",
+    #   required=True,
+    #   help="Path where to save the output file.",
+    #   type=str,
+    #)
     parser.add_argument(
        "--model_name",
        "-m",
@@ -241,33 +255,73 @@ if __name__ == "__main__":
     logger.info(f"Loading the data...")
     val_data = get_data(data_path)
 
-    prec_dict, rec_dict, f1_dict = make_dicts(val_data)
+    logger.info(f"All unique true labels: {np.unique(val_data['True Label'])}")
+    logger.info(f"All unique extracted labels: {np.unique(val_data['Extracted Label'])}")
+    logger.info(f"All unique true superlabels: {np.unique(val_data['True Superlabel'])}")
+    logger.info(f"All unique extracted superlabels: {np.unique(val_data['Extracted Superlabel'])}")
 
-    logger.info(f"Computing evaluation scores...")
-    eval_scores = val_data.map(
-        get_prec_rec,
-        with_indices=True,
-        fn_kwargs={
-            "prec_dict": prec_dict,
-            "rec_dict": rec_dict,
-            "f1_dict": f1_dict
-        }
+    logger.info(f"Labels (Level 2):")
+    print(
+       classification_report(
+           y_true=val_data["True Label"],
+           y_pred=val_data["Extracted Label"],
+           zero_division=0.0
+       )
     )
-    del val_data, prec_dict, rec_dict
+    logger.info(f"Superlabels (Level 1):")
+    print(
+       classification_report(
+           y_true=val_data["True Superlabel"],
+           y_pred=val_data["Extracted Superlabel"],
+           zero_division=0.0
+       )
+    )
+    exit()
 
-    f1_label = eval_scores.pop("total_label_macro", "F1 score of all labels not found.")
-    f1_superlabel = eval_scores.pop("total_super_label_macro", "F1 score of all super labels not found.")
-    logger.info(f"Total F1 score of the labels: {f1_label}.")
-    logger.info(f"Total F1 score of the super labels: {f1_superlabel}.")
+    for tech in np.unique(val_data["Technique"]):
+        #print(
+        #    classification_report(
+        #        y_true=val_data["True Label"],
+        #        y_pred=val_data["Extracted Label"],
+        #        zero_division=0.0
+        #    )
+        #)
+        #print(
+        #    classification_report(
+        #        y_true=val_data["True Superlabel"],
+        #        y_pred=val_data["Extracted Superlabel"],
+        #        zero_division=0.0
+        #    )
+        #)
+        #exit()
+        prec_dict, rec_dict, f1_dict = make_dicts(val_data)
 
-    logger.info(f"Generating the visuals...")
-    output_df = visuals(eval_scores, args.model_name)
+        logger.info(f"Computing evaluation scores for technique {tech}...")
+        eval_scores = val_data.map(
+            get_prec_rec,
+            with_indices=True,
+            fn_kwargs={
+                "prec_dict": prec_dict,
+                "rec_dict": rec_dict,
+                "f1_dict": f1_dict
+            }
+        )
+        del val_data, prec_dict, rec_dict
 
-    # Export dataframe
-    #os.makedirs(args.output_file_path, exist_ok=True)
-    logger.info(f"Exporting dataframe to '{args.output_file_path}.csv'...")
-    output_df.to_csv(args.output_file_path + ".csv", index=False, sep=',')
-    #output_df.to_json(args.output_file_path + ".json", orient="records", lines=True)
+        f1_label = eval_scores.pop("total_label_macro", "F1 score of all labels not found.")
+        f1_superlabel = eval_scores.pop("total_super_label_macro", "F1 score of all super labels not found.")
+        logger.info(f"Total F1 score of the labels for {tech}: {f1_label}.")
+        logger.info(f"Total F1 score of the super labels for {tech}: {f1_superlabel}.")
+
+        logger.info(f"Generating the visuals for {tech}...")
+        #output_df = visuals(eval_scores, args.model_name)
+        visuals(eval_scores, args.model_name, tech)
+
+        # Export dataframe
+        #os.makedirs(args.output_file_path, exist_ok=True)
+        #logger.info(f"Exporting dataframe to '{args.output_file_path}.csv'...")
+        #output_df.to_csv(args.output_file_path + ".csv", index=False, sep='\t')
+        #output_df.to_json(args.output_file_path + ".json", orient="records", lines=True)
 
 
 
