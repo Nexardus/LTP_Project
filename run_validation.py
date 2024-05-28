@@ -39,7 +39,7 @@ def generate_all_models(models, prompt_techniques):
         for prompt_technique in prompt_techniques:
 
             max_new_tokens = 64
-            if prompt_technique == "ccot":
+            if prompt_technique in ["ccot", "multi-agent"]:
                 max_new_tokens = 512
 
             for input_text in output_data["Input"]:
