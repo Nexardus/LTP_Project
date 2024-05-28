@@ -12,8 +12,7 @@ def read_dataset():
 def read_prompt(prompt_technique, input_text):
     with open(f"prompts/{prompt_technique}.txt", "r", encoding="utf-8") as file:
         prompt = file.read()
-        if "Input:" in prompt:
-            prompt += input_text.replace('\n', ' ').strip('"')
+        prompt += input_text.replace('\n', ' ').strip('"')
     return prompt
 
 
@@ -59,8 +58,10 @@ def generate_all_models(models, prompt_techniques):
                         output = output1
                     else:                   # The checker concluded that the fallacy classification was not okay
                         # Generate a new response
-                        prompt_model1_version2 = read_prompt(prompt_technique+"-reasoner-regenerate", output2)
-                        output1_regenerated = generate(model, tokenizer, prompt_model1_version2, max_new_tokens)
+                        prompt_model1_interaction1 = read_prompt(prompt_technique+"-reasoner-regenerate1", output1)
+                        prompt_model1_interaction2 = read_prompt(prompt_technique+"-reasoner-regenerate2", output2)
+                        prompt_interaction = prompt_model1_interaction1 + "\n" + prompt_model1_interaction2
+                        output1_regenerated = generate(model, tokenizer, prompt_interaction, max_new_tokens)
 
                         # Use this latest response as the final answer
                         output = output1_regenerated
