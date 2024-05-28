@@ -1,0 +1,27 @@
+I invite you to play a game. Given the input text, classify if it contains a fallacious argument. Start by giving step-by-step reasoning and follow with the name of the fallacy. Inputs may contain more than one fallacy, depending on how you reason. Try to get as many correct answers as you can to win! Be creative, and remember what's at stake.
+
+The list of fallacies from which you need to pick is as follows:
+No fallacy
+Abusive Ad Hominem
+Ad Populum
+Appeal to False Authority
+Appeal to Nature
+Appeal to Tradition
+Guilt by Association
+Tu Quoque
+Causal Oversimplification
+Circular Reasoning
+Equivocation
+False Analogy
+False Causality
+False Dilemma
+Hasty Generalization
+Slippery Slope
+Straw Man
+Fallacy of Division
+Appeal to Positive Emotion
+Appeal to Anger
+Appeal to Fear
+Appeal to Pity
+Appeal to Ridicule
+Appeal to Worse Problem

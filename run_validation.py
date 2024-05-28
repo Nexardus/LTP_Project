@@ -44,8 +44,30 @@ def generate_all_models(models, prompt_techniques):
                 max_new_tokens = 512
 
             for input_text in output_data["Input"]:
-                prompt = read_prompt(prompt_technique, input_text)
-                output = generate(model, tokenizer, prompt, max_new_tokens)
+                # In this approach the model has two roles: the reasoner, and the checker
+                if prompt_technique == "multi-agent":
+                    # Load the logicot prompt as the initial prompt for the reasoner and feed it into the model
+                    prompt_model1 = read_prompt("logicot", input_text)
+                    output1 = generate(model, tokenizer, prompt_model1, max_new_tokens)
+
+                    # Load the prompt for the checker and the output from the reasoner to feed into the model
+                    prompt_model2 = read_prompt(prompt_technique+"-checker", output1)
+                    output2 = generate(model, tokenizer, prompt_model2, max_new_tokens)
+
+                    if output2 == "OK":     # The checker concluded that the fallacy classification was okay
+                        # Use this reasoning as the final answer
+                        output = output1
+                    else:                   # The checker concluded that the fallacy classification was not okay
+                        # Generate a new response
+                        prompt_model1_version2 = read_prompt(prompt_technique+"-reasoner-regenerate", output2)
+                        output1_regenerated = generate(model, tokenizer, prompt_model1_version2, max_new_tokens)
+
+                        # Use this latest response as the final answer
+                        output = output1_regenerated
+                else:
+                    prompt = read_prompt(prompt_technique, input_text)
+                    output = generate(model, tokenizer, prompt, max_new_tokens)
+
                 print(f"Sample: {progress}, Model: {model_name}, Prompt Technique: {prompt_technique}")
                 print(f"Input Text: {input_text}")
                 print(f"Output: {output}")
@@ -63,7 +85,8 @@ def generate_all_models(models, prompt_techniques):
 
 
 if __name__ == "__main__":
-    prompt_techniques = ["gcot", "logicot", "ccot"]
+    prompt_techniques = ["multi-agent"]
+    # prompt_techniques = ["gcot", "logicot", "ccot", "multi-agent"]
     models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5", "NousResearch/Hermes-2-Pro-Llama-3-8B"]
     new_rows = generate_all_models(models, prompt_techniques)
     pd.DataFrame(new_rows).to_csv("output/output_data.csv", index=False, sep="\t")
