@@ -39,12 +39,17 @@ def generate_all_models(models, prompt_techniques):
         for prompt_technique in prompt_techniques:
 
             max_new_tokens = 64
-            if prompt_technique in ["ccot", "multi-agent"]:
+
+            if prompt_technique == "multi-agent":
+                max_new_tokens = 256
+
+            if prompt_technique == "ccot":
                 max_new_tokens = 512
 
             for input_text in output_data["Input"]:
                 # In this approach the model has two roles: the reasoner, and the checker
                 if prompt_technique == "multi-agent":
+                    print(progress)
                     # Load the logicot prompt as the initial prompt for the reasoner and feed it into the model
                     prompt_model1 = read_prompt("logicot", input_text)
                     output1 = generate(model, tokenizer, prompt_model1, max_new_tokens)
@@ -86,8 +91,7 @@ def generate_all_models(models, prompt_techniques):
 
 
 if __name__ == "__main__":
-    prompt_techniques = ["multi-agent"]
-    # prompt_techniques = ["gcot", "logicot", "ccot", "multi-agent"]
+    prompt_techniques = ["gcot", "logicot", "ccot", "multi-agent"]
     models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5", "NousResearch/Hermes-2-Pro-Llama-3-8B"]
     new_rows = generate_all_models(models, prompt_techniques)
     pd.DataFrame(new_rows).to_csv("output/output_data.csv", index=False, sep="\t")
