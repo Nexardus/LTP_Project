@@ -27,17 +27,19 @@ def process_mafalda(mafalda_path: str,
                 labels = ["No Fallacy"] # there was no fallacy at all
                 superlabels = ["No Fallacy"]
             else:
-                superlabels = [label_to_superlabel[label.lower()] for label in labels if
-                               label.lower() in label_to_superlabel]
+                superlabels = [label_mapping[label.lower()] for label in labels if
+                               label.lower() in label_mapping]
 
             assert len(labels) == len(superlabels), f"Labels: {labels}, Superlabels: {superlabels}"
-            rows.append({"Input": text, "MAFALDA Label": labels, "MAFALDA Superlabel": superlabels})
+            rows.append({"Input": text,
+                         "MAFALDA Label": labels,
+                         "MAFALDA Superlabel": superlabels})
 
     df = pd.DataFrame(rows)
-    df.to_csv(output_path, index=False)
+    df.to_csv(output_path, index=False, sep="\t")
 
 if __name__ == "__main__":
     label_to_superlabel = label_mapping()
     process_mafalda("datasets/MAFALDA_gold.jsonl",
-                    "datasets/MAFALDA_gold_processed.csv",
+                    "datasets/MAFALDA_gold_processed.tsv",
                     label_to_superlabel)

@@ -3,8 +3,9 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 
-def read_dataset(dataset_path: str = "datasets/unified_validation_set_downsampled.tsv"):
+def read_dataset(dataset_path: str):
     data = pd.read_csv(dataset_path, sep="\t")
+    print(f"Column names: {data.columns}")
     data = data.dropna(subset=["MAFALDA Label", "Input"]).sort_values(by=['Input'])
     return data
 
@@ -27,8 +28,8 @@ def generate(model, tokenizer, prompt, max_new_tokens):
     return generated_response
 
 
-def generate_all_models(models, prompt_techniques):
-    output_data = read_dataset()
+def generate_all_models(models, prompt_techniques, dataset_path, output_file):
+    output_data = read_dataset(dataset_path)
     new_rows = []
     progress = 0
     for model_name in models:
@@ -87,11 +88,14 @@ def generate_all_models(models, prompt_techniques):
                 progress += 1
         del model # Nuke from memory just to be sure
         del tokenizer
-    return new_rows
+
+    pd.DataFrame(new_rows).to_csv(output_file, index=False, sep="\t")
 
 
 if __name__ == "__main__":
     prompt_techniques = ["gcot", "logicot", "ccot", "multi-agent"]
     models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5", "NousResearch/Hermes-2-Pro-Llama-3-8B"]
-    new_rows = generate_all_models(models, prompt_techniques)
-    pd.DataFrame(new_rows).to_csv("output/output_data.csv", index=False, sep="\t")
+    generate_all_models(models,
+                        prompt_techniques,
+                        "datasets/unified_validation_set_downsampled.tsv",
+                        "output/output_data.csv")
