@@ -3,8 +3,8 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 
-def read_dataset():
-    data = pd.read_csv("datasets/unified_validation_set_downsampled.tsv", sep="\t")
+def read_dataset(dataset_path: str = "datasets/unified_validation_set_downsampled.tsv"):
+    data = pd.read_csv(dataset_path, sep="\t")
     data = data.dropna(subset=["MAFALDA Label", "Input"]).sort_values(by=['Input'])
     return data
 

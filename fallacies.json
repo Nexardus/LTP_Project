@@ -2,8 +2,10 @@
   "No fallacy": [],
   "Fallacy of Credibility": [
     "Abusive Ad Hominem",
+    "Ad Hominem",
     "Ad Populum",
     "Appeal to False Authority",
+    "Appeal to (False) Authority",
     "Appeal to Nature",
     "Appeal to Tradition",
     "Guilt by Association",
@@ -27,6 +29,7 @@
     "Appeal to Fear",
     "Appeal to Pity",
     "Appeal to Ridicule",
-    "Appeal to Worse Problem"
+    "Appeal to Worse Problem",
+    "Appeal to Worse Problems"
   ]
 }
