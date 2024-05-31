@@ -71,6 +71,7 @@ if __name__ == "__main__":
     val_data = val_data.map(lambda example: {"True Superlabel": example["True Superlabel"].lower()})
     val_data = val_data.map(lambda example: {"Extracted Label": example["Extracted Label"].lower()})
     val_data = val_data.map(lambda example: {"Extracted Superlabel": example["Extracted Superlabel"].lower()})
+    val_data = val_data.map(lambda example: {"True Superlabel": "appeal to emotion"} if example["True Superlabel"] == "fallacy of emotion" else {"True Superlabel": example["True Superlabel"]})
 
     #logger.info(f"All unique true labels: {np.unique(val_data['True Label'])}")
     #logger.info(f"All unique extracted labels: {np.unique(val_data['Extracted Label'])}")
