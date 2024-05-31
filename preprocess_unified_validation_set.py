@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 ARGOTARIO_TO_MAFALDA = {
-    "Appeal to Emotion": "Fallacy of Emotion",
+    "Appeal to Emotion": "Appeal to Emotion",
     "Red Herring": "Fallacy of Logic",
     "Irrelevant Authority": "Appeal to False Authority",
     "Ad Hominem": "Abusive Ad Hominem",
@@ -11,17 +11,17 @@ ARGOTARIO_TO_MAFALDA = {
 }
 
 ELECDEB_TO_MAFALDA = {
-    "AppealtoEmotion": "Fallacy of Emotion",
-    "Loaded Language": "Fallacy of Emotion",
-    "Loaded language": "Fallacy of Emotion",
-    "loaded language": "Fallacy of Emotion",
+    "AppealtoEmotion": "Appeal to Emotion",
+    "Loaded Language": "Appeal to Emotion",
+    "Loaded language": "Appeal to Emotion",
+    "loaded language": "Appeal to Emotion",
     "Without Evidence": "Fallacy of Credibility",
-    "Slogan": "Fallacy of Emotion",
-    "Slogans": "Fallacy of Emotion",
+    "Slogan": "Appeal to Emotion",
+    "Slogans": "Appeal to Emotion",
     "Flag waving": "Appeal to Positive Emotion",
     "Name-Calling, Labeling": "Guilt by Association",
     "Name-calling": "Guilt by Association",
-    "Appeal to hypocrisy": "Fallacy of Emotion",
+    "Appeal to hypocrisy": "Appeal to Emotion",
     "Appeal to pity": "Appeal to Pity",
     "Appeal to fear": "Appeal to Fear",
     "Popular opinion": "Ad Populum",
@@ -42,10 +42,10 @@ ELECDEB_TO_MAFALDA = {
 }
 
 LOGICLIMATE_TO_MAFALDA = {
-    "intentional": "Fallacy of Emotion",
+    "intentional": "Appeal to Emotion",
     "fallacy of credibility": "Fallacy of Credibility",
     "false dilemma": "False Dilemma",
-    "appeal to emotion": "Fallacy of Emotion",
+    "appeal to emotion": "Appeal to Emotion",
     "equivocation": "Equivocation",
     "faulty generalization": "Hasty Generalization",
     "fallacy of relevance": "Fallacy of Logic",
@@ -58,10 +58,10 @@ LOGICLIMATE_TO_MAFALDA = {
 }
 
 LOGIEDU_TO_MAFALDA = {
-    "intentional": "Fallacy of Emotion",
+    "intentional": "Appeal to Emotion",
     "fallacy of credibility": "Fallacy of Credibility",
     "false dilemma": "False Dilemma",
-    "appeal to emotion": "Fallacy of Emotion",
+    "appeal to emotion": "Appeal to Emotion",
     "equivocation": "Equivocation",
     "faulty generalization": "Hasty Generalization",
     "fallacy of relevance": "Fallacy of Logic",
@@ -74,19 +74,19 @@ LOGIEDU_TO_MAFALDA = {
 }
 
 MAFALDA_TO_SUPERLABELS = {
-    "Fallacy of Emotion": "Fallacy of Emotion",
+    "Appeal to Emotion": "Appeal to Emotion",
     "Fallacy of Logic": "Fallacy of Logic",
     "Appeal to False Authority": "Fallacy of Credibility",
     "No fallacy": "No fallacy",
     "Abusive Ad Hominem": "Fallacy of Credibility",
     "Hasty Generalization": "Fallacy of Logic",
     "Fallacy of Credibility": "Fallacy of Credibility",
-    "Appeal to Pity": "Fallacy of Emotion",
-    "Appeal to Fear": "Fallacy of Emotion",
+    "Appeal to Pity": "Appeal to Emotion",
+    "Appeal to Fear": "Appeal to Emotion",
     "Ad Populum": "Fallacy of Credibility",
     "False Causality": "Fallacy of Logic",
     "Slippery Slope": "Fallacy of Logic",
-    "Appeal to Positive Emotion": "Fallacy of Emotion",
+    "Appeal to Positive Emotion": "Appeal to Emotion",
     "Tu Quoque": "Fallacy of Credibility",
     "Guilt by Association": "Fallacy of Credibility",
     "False Dilemma": "Fallacy of Logic",
@@ -138,7 +138,7 @@ def main():
 
     unified["MAFALDA Superlabel"] = unified["MAFALDA Label"].map(MAFALDA_TO_SUPERLABELS)
     unified["MAFALDA Label"] = unified["MAFALDA Label"].replace(
-        ["Fallacy of Emotion", "Fallacy of Credibility", "Fallacy of Logic"], None
+        ["Appeal to Emotion", "Fallacy of Credibility", "Fallacy of Logic"], None
     )
 
     print(unified)
