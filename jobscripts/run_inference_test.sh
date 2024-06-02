@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=24:00:00
+#SBATCH --time=04:00:00
 #SBATCH --gpus-per-node=1
 #SBATCH --partition=gpu
 #SBATCH --mem=32000
