@@ -28,7 +28,7 @@ def normalize_text(text):
 if __name__ == "__main__":
     prompt_techniques = ["gcot", "logicot", "ccot"]
     prompts = read_prompts(prompt_techniques)
-    df = pd.read_csv("./output/inference_output_21_may.csv", sep="\t")
+    df = pd.read_csv("./output/MAFALDA_gold_output.csv", sep="\t")
     df['Cleared_output'] = df.apply(lambda row: extract_response(row, prompts), axis=1)
     df['Original Input'] = df['Input']
     df['Input'] = df['Input'].apply(normalize_text)
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     df['Extracted Superlabel'] = df.apply(lambda row: extractor.extract_label(row["Cleared_output"])[0], axis=1)
     # df.to_csv("./output/inference_output_21_may_cleaned.csv", index=False, sep="\t")
 
-    true_labels = pd.read_csv("datasets/unified_validation_set_downsampled.tsv", sep="\t")
+    true_labels = pd.read_csv("datasets/MAFALDA_gold_processed.tsv", sep="\t")
     true_labels['Input'] = true_labels['Input'].apply(normalize_text)
     true_labels.rename(columns={"MAFALDA Label": "True Label", "MAFALDA Superlabel": "True Superlabel"}, inplace=True)
 
