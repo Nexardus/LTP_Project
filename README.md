@@ -31,7 +31,7 @@ These outputs can be cleaned with `clean_output.py`, and will be stored in `clea
 This cleaned output can be analyzed with `prediction_analysis.py`, which will output some statistics and plots about the model's preferences of certain classes.
 Finally, metric scores can be calculated with `calculate_scores.py`.
 
-# Reproducing the pipeline
+## Reproducing the pipeline
 The command line argument defaults are set to reproduce the pipeline as described in the paper. The following steps are required (after having installed the requirements):
 1. `python3 preprocess_unified_validation_set.py`
 2. `python3 preprocess_mafalda.py`
