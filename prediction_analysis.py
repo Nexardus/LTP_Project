@@ -1,6 +1,6 @@
+import argparse
 from pathlib import Path
 
-from nltk import wordpunct_tokenize
 import pandas as pd
 import seaborn as sns
 from matplotlib import pyplot as plt
@@ -8,7 +8,20 @@ from matplotlib import pyplot as plt
 
 def main():
 
-    data = pd.read_csv("cleaned_output/inference_output_21_may_cleaned.csv", sep="\t")
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--dataset",
+        "-d",
+        help="Path to the cleaned output data (csv file with tab as separator). For example: 'cleaned_output/inference_output_21_may_cleaned.csv'.",
+        type=str,
+        default="cleaned_output/inference_output_21_may_cleaned.csv"
+    )
+
+    args = parser.parse_args()
+
+    dataset_name = Path(args.dataset).stem
+
+    data = pd.read_csv(args.dataset, sep="\t")
 
     print(data)
 
@@ -25,7 +38,7 @@ def main():
 
         )
         plt.tight_layout()
-        plt.savefig(f"plots/downsampled_validation_predictions_label_distribution_{technique}.png")
+        plt.savefig(f"plots/{dataset_name}_predictions_label_distribution_{technique}.png")
 
         # Histogram of labels
         plt.figure()
@@ -38,7 +51,7 @@ def main():
 
         )
         plt.tight_layout()
-        plt.savefig(f"plots/downsampled_validation_predictions_superlabel_distribution_{technique}.png")
+        plt.savefig(f"plots/{dataset_name}_predictions_superlabel_distribution_{technique}.png")
 
 if __name__ == "__main__":
     main()

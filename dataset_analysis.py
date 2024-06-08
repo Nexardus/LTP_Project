@@ -1,3 +1,4 @@
+import argparse
 import ast
 
 import pandas as pd
@@ -7,16 +8,43 @@ from matplotlib import pyplot as plt
 
 def main():
 
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--gold",
+        "-g",
+        help="Path to the cleaned gold data (csv file with tab as separator). For example: 'cleaned_datasets/MAFALDA_gold_processed.tsv'.",
+        type=str,
+        default="cleaned_datasets/MAFALDA_gold_processed.tsv"
+    )
+    parser.add_argument(
+        "--validation",
+        "-m",
+        help="Path to the cleaned validation data (csv file with tab as separator). For example: 'cleaned_datasets/unified_validation_set.tsv'.",
+        type=str,
+        default="cleaned_datasets/unified_validation_set.tsv"
+    )
+    parser.add_argument(
+        "--downsampled",
+        "-d",
+        help="Path to the cleaned downsampled validation data (csv file with tab as separator). For example: 'cleaned_datasets/unified_validation_set_downsampled.tsv'.",
+        type=str,
+        default="cleaned_datasets/unified_validation_set_downsampled.tsv"
+    )
+
+    args = parser.parse_args()
+
     # Do label_distribution, superlabel_distribution, text_length_distribution, vocab_size_distribution in the same plots through hue (= dataset)
     #
+
 
     palette = {"MAFALDA": "C0", "Validation": "C1", "Downsampled": "C2"}
 
 
-    downsampled = pd.read_csv("cleaned_datasets/unified_validation_set_downsampled.tsv", sep="\t")
-    gold = pd.read_csv("cleaned_datasets/MAFALDA_gold_processed.tsv", sep="\t")
+    downsampled = pd.read_csv(args.downsampled, sep="\t")
+    gold = pd.read_csv(args.gold, sep="\t")
 
-    valid = pd.read_csv("cleaned_datasets/unified_validation_set.tsv", sep="\t").sample(n=len(gold), random_state=42)
+    valid = pd.read_csv(args.validation, sep="\t").sample(n=len(gold), random_state=42)
 
     valid["Dataset"] = "Validation"
     downsampled["Dataset"] = "Downsampled"
