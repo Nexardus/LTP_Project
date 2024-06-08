@@ -12,9 +12,9 @@ def main():
     parser.add_argument(
         "--dataset",
         "-d",
-        help="Path to the cleaned output data (csv file with tab as separator). For example: 'cleaned_output/inference_output_21_may_cleaned.csv'.",
+        help="Path to the cleaned output data (csv file with tab as separator). For example: 'cleaned_output/inference_output_cleaned.tsv'.",
         type=str,
-        default="cleaned_output/inference_output_21_may_cleaned.csv"
+        default="cleaned_output/inference_output_cleaned.tsv"
     )
 
     args = parser.parse_args()
@@ -24,6 +24,8 @@ def main():
     data = pd.read_csv(args.dataset, sep="\t")
 
     print(data)
+
+    data.rename(columns={"Extracted Label": "MAFALDA Label", "Extracted Superlabel": "MAFALDA Superlabel"}, inplace=True)
 
     for technique in data["Technique"].unique():
 

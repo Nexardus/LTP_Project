@@ -30,3 +30,16 @@ In addition, the output from our runs are included in the `output` folder.
 These outputs can be cleaned with `clean_output.py`, and will be stored in `cleaned_output`. 
 This cleaned output can be analyzed with `prediction_analysis.py`, which will output some statistics and plots about the model's preferences of certain classes.
 Finally, metric scores can be calculated with `calculate_scores.py`.
+
+# Reproducing the pipeline
+The command line argument defaults are set to reproduce the pipeline as described in the paper. The following steps are required (after having installed the requirements):
+1. `python3 preprocess_unified_validation_set.py`
+2. `python3 preprocess_mafalda.py`
+3. `python3 dataset_analysis.py`
+4. `sbatch jobscripts/run_inference_validation.sh`
+5. `sbatch jobscripts/run_inference_test.sh`
+6. `python3 clean_output.py`
+7. `python3 clean_output.py -g cleaned_datasets/MAFALDA_gold_processed.tsv -d output/MAFALDA_gold_output.tsv -o cleaned_output/MAFALDA_gold_output_cleaned.tsv`
+8. `python3 prediction_analysis.py`
+8. `python3 calculate_scores.py`
+9. `python3 calculate_scores.py -g -d cleaned_output/MAFALDA_gold_output_cleaned.tsv`

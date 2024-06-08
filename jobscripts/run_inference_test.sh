@@ -14,4 +14,4 @@ source $HOME/venvs/ltp/bin/activate
 
 pip install -r requirements.txt
 
-python3 run_inference.py -d cleaned_datasets/MAFALDA_gold_processed.tsv -m NousResearch/Hermes-2-Pro-Llama-3-8B -p logicot -o output/MAFALDA_gold_output.csv
+python3 run_inference.py -d cleaned_datasets/MAFALDA_gold_processed.tsv -m NousResearch/Hermes-2-Pro-Llama-3-8B -p logicot -o output/MAFALDA_gold_output.tsv

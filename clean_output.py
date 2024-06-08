@@ -35,21 +35,21 @@ if __name__ == "__main__":
         "-g",
         help="Path to the cleaned gold data (csv file with tab as separator). For example: 'cleaned_datasets/MAFALDA_gold_processed.tsv'.",
         type=str,
-        default="cleaned_datasets/MAFALDA_gold_processed.tsv"
+        default="cleaned_datasets/unified_validation_set_downsampled.tsv"
     )
     parser.add_argument(
         "--dataset",
         "-d",
-        help="Path to the raw output data data (csv file with tab as separator). For example: 'output/inference_output_21_may.csv'.",
+        help="Path to the raw output data data (csv file with tab as separator). For example: 'output/inference_output_21_may.tsv'.",
         type=str,
-        default="output/inference_output_21_may.csv"
+        default="output/inference_output_21_may.tsv"
     )
     parser.add_argument(
         "--output",
         "-o",
-        help="Path to the merged cleaned output file (csv file with tab as separator). For example: 'cleaned_output/inference_output_cleaned.csv'.",
+        help="Path to the merged cleaned output file (csv file with tab as separator). For example: 'cleaned_output/inference_output_cleaned.tsv'.",
         type=str,
-        default="cleaned_output/inference_output_cleaned.csv"
+        default="cleaned_output/inference_output_cleaned.tsv"
     )
     args = parser.parse_args()
 
@@ -81,4 +81,4 @@ if __name__ == "__main__":
     models = merged_df['Model'].unique()
     for model in models:
         model_df = merged_df[merged_df['Model'] == model]
-        model_df.to_csv(f"./cleaned_output/inference_output_{model.replace('/', '_')}_cleaned.csv", index=False, sep="\t")
+        model_df.to_csv(f"./cleaned_output/inference_output_{model.replace('/', '_')}_cleaned.tsv", index=False, sep="\t")

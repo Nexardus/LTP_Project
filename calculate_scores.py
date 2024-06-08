@@ -85,11 +85,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--data_file_path",
-        "-dp",
-        help="Path to the cleaned output data (csv file with tab as separator). For example: 'cleaned_output/inference_output_21_may_cleaned.csv'.",
-        required=True,
+        "-d",
+        help="Path to the cleaned output data (csv file with tab as separator). For example: 'cleaned_output/inference_output_cleaned.tsv'.",
         type=str,
-        default="cleaned_output/inference_output_21_may_cleaned.csv"
+        default="cleaned_output/inference_output_cleaned.tsv"
     )
     parser.add_argument(
         "--random_seed",
@@ -113,7 +112,7 @@ if __name__ == "__main__":
     if not os.path.exists(args.data_file_path):
         raise FileNotFoundError(f"Data file '{args.data_file_path}' not found.")
 
-    data_path = args.data_file_path  # For example, "output/output_data.csv"
+    data_path = args.data_file_path  # For example, "output/output_data.tsv"
 
     # Get the data for the analyses
     logger.info(f"Loading the data...")

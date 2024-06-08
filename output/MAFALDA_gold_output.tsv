@@ -1,0 +1,1089 @@
+Model	Technique	Input	Output
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"""Four out of five dentists recommend Happy Glossy toothpaste. Therefore, it must be great.""
+"	" - 
+
+Formal: E (4 out of 5 dentists) claims P (recommend Happy Glossy toothpaste). Therefore, C (it must be great).
+Fallacy: Appeal to Authority
+
+Input: ""I haven't experienced it myself, but my friend says that the new restaurant is amazing."" -
+
+Form"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"""I bought a ticket to win a new car at the mall, since I have never won anything like that in the past.""
+"	" Does that mean that you'll win?
+Formal: E (the person in question) hasn't won anything in the past, so P (they will win this time). This overlooks other potential winners (an unspecified and unknown number) with similar past records.
+Fallacy: Appeal to Probability
+=========================
+Fallacy"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"""If we ban Hummers because they are bad for the environment, then eventually the government will ban all cars; therefore, we should not ban Hummers.""
+"	" The fallacious in reasoning is that the conclusion that the government will ban all cars doesn't follow logically from the premise that Hummers are bad for the environment. This is known as the Slippery Slope fallacy.
+
+Explanation: The Slippery Slope fallacy is arguing that a series of logically irrelevant and infinitesimal"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"""The Cardinals are the best football team because they're better than all the other teams. They're better than all the other teams because they're the best.""
+"	" Formal: P (The Cardinals are the best football team) is defined as being better than every other football team. Yet the reasoning is circular, stating that because they are the best, they are better than every other team.
+
+Fallacy: Circular Reasoning
+
+#### 6
+The answer is: Circular Reasoning
+
+"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	1 month late, but taught every grade from 4th to 12th at any given point in 4 years as a teacher	" and tutor
+Fallacy: Hasty Generalization
+The argument given claims to be able to cover all grades and teach successfully within a time frame of 4 years. However, this statement could be considered hasty and baseless since it lacks concrete evidence and statistics to support the claim. It might be true for some"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	1. Craigslist 2. Your stuff isn't worth nearly as much as you think 3. You may end up having to pay somebody to haul some of your stuff away 4. Again, craiglist 'gigs' is a good place to find somebody to pay to haul your 'valuables' away	".
+Fallacy: 
+Appeal to Ridicule
+
+In this case, the informal argument is an ""appeal to ridicule"" because it uses humor, sarcasm, or mockery to discredit a premise or argument. This tactic tries to undermine a conclusion by making it seem unreasonable or absurd. Here, the argument dis"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	6 is a bit too young, especially a game about killing people	".
+Assuming 6 is too young for all games, what is your opinion on games that portray violence towards animals or even simulated slaughtering of animals?
+
+Fallacy: False Analogy
+Explanation: Drawing an analogy between games that portray killing people and those simulating violence towards animals, without considering the differences in the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	> There is no good reason to take stories/accounts of miracles seriously I propose that for a modern account of a miracle, if the person telling you the account is trustworthy, that is a reason to take the account seriously.	" This argument doesn't appear to offer a good reason to trust the account of the miracle itself, but rather, it offers a reason for trusting the person telling the account.
+
+Given the input text, classify if it contains a fallacious argument. Start by giving the formal reasoning and follow with the name of the fallacy.
+"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"> pewdiepie is extremely racist and very anti Semitic A) The use of""extremely"" and""very"" is hyperbolical bullshit. You know it and I know it. Please stop. B) There is nothing wrong with being racist or anti Semitic. Being tribal is a normal part of being human."	" It's not PC but it's normal.
+C) He doesn't seem to be making a conscious effort to change or stop, so he really is. 
+A) The use of “extremely” and “very” is hyperbolical bullshit. You know it and I know it. Please stop.
+B)"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	>I've never been satisfied with any businesses anywhere. If if smells like shit where ever you go, check your shoe. Or put another way If you run into an asshole in the morning, you ran into an asshole. If you run into assholes all day, you're the asshole.	" 
+
+>He's a convict, so he can't be right about much.
+
+>But he's saying he didn't like the food and the service, which is kinda valid. He did break into a restaurant, so I guess it made him a subject matter expert.
+
+>But, really, if he's got anything"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"A few students are misbehaving...therefore the whole class is bad.
+"	" Can you identify the fallacy?
+
+Answer: Hasty Generalization.
+
+Explanation:Mentioning a small sample of misbehaving students from the whole class leads to generalizing the negative behavior to the entire group. This is a swift and unreasoned assumption, lacking sufficient evidence, and ignores other students who may be well"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"According to Freud, your belief in God stems from your need for a strong father figure. So don't you see that it's silly to continue believing in God?
+"	" Therefore, God does not exist.
+Fallacy used:?
+Answer: Appeal to Authority
+Explanation: The argument relies on appealing to Sigmund Freud's claim about belief in God stemming from a need for a paternal figure. Freud's theory is used as evidence to debunk religious belief, which is an appeal to authority."
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"America is the best place to live, because it's better than any other country.
+"	" Therefore, America is the best place to live.
+Fallacy: Begging the Question.
+
+Formal: E1 (the person) claims C (that the drug works). However,P (the person is a doctor), which means Pi (the drug is more effective), is used to lead to C.
+Fallacy:"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"And he cut defense an extra $60 billion, threw a lot of people out of work. He talks about a smaller government. There are actually more people in government except for people in defense related jobs. They're gone. The government's bigger than it was when President Kennedy was around, even though he says it's not. In addition, Republican Congress cut $53 billion.
+"	2.5 billion from the EPA, the Environmental Protection Agency, and they're putting all these jobs and people on unemployment. The Republicans are cutting and doing what they can to take away their right to organize, to strike when they want to strike, to go on vacation when they want to go. The Republicans are actually
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"And judgment is what we look for in the president of the United States of America. I'm proud that important military figures who are supporting me in this race: former Chairman of the Joint Chiefs of Staff John Shalikashvili; just yesterday, General Eisenhower's son, General John Eisenhower, endorsed me; General Admiral William Crown; General Tony McBeak, who ran the Air Force war so effectively for his father -- all believe I would make a stronger commander in chief. And they believe it because they know I would not take my eye off of the goal: Osama bin Laden.
+"	"2008 is too close for us to have a president that we don't feel confident about when it comes to making a judgment in a crisis.
+
+Fallacy: Appeal to Authority
+
+Explanation: The argument appeals to the authority of the mentioned military personnel who endorse the speaker, suggesting that their support demonstrates the speaker's capability to"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Animals aren't food for us. If you wouldn't eat a dog or cat, don't eat a cow or chicken. Even if you would eat a dog or cat, don't.	" Just don't. Be kind. 
+
+The reasoning here is that if one wouldn't eat a dog or cat, then one also shouldn't eat cows or chickens because ""animals aren't food for us"". Additionally, the reasoning implies that even if one WOULD eat a dog or cat, just don't, because the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Anime. Every time I find one that I like. I mention it to other people and then they feel the need to shit on whatever I'm watching and say I should watch something else because it's better.	" It's honestly so frustrating.
+Formal: P1 (my recommendation for an anime). E1 (other people) provide critique C (they tell me to watch something else). P2 (I get frustrated). Therefore, -P1.
+Fallacy: Appeal to Liking
+
+Formal:
+For this question,"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Apart from the moral issue, ""just join the military"" does nothing for young people with disabilities or conditions that disqualify them. And before some asshole says something like, ""Harhar just lose weight,"" there are waaaay more disqualifying issues than that and many are totally out of a person's control."	" Military recruitment needs to do better in terms of accommodating or simply recruiting people with disabilities beyond just physical ones. 
+
+The statement refers to the difficulties faced by young people with disabilities in joining the military, despite the common argument to just join the military as a solution. While the statement criticizes the lack of effort in recruiting people"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Awesome! Now make it say boobs.	" #sillystring
+The text seems to contain a fallacious argument with a focus on the form of words rather than the importance of the subject. The appeal to the form of language undermines the real issue at hand.
+
+Fallacy: Appeal to Ridicule
+
+Formal: E (John) claims P (climate"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Because contrary to what the major political parties and media want you to believe, not everyone fits into boxes.	" Life, politics, and people are much more complex than that.
+
+Fallacy: False Dichotomy
+
+Input: The way you wear your hat
+Determines if you are natural or artificial, Jewish or Gentile.
+Be careful with your accent
+Don't go around saying that you love this place,
+Because you'll find"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Bill, you drive a beat-up car from the 1980s. For this reason, we can never allow you to be a lifeguard at the community pool.
+"	" Explanation: We want our pool to look clean and updated, representing the image of our community, which an old car doesn't.
+
+The conclusion drawn is based on an irrelevant consideration, the appearance of Bill's car, instead of his ability to be a lifeguard.
+
+Fallacy: Irrelevant Consideration. $\square$"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Brandon: We should have tastier lunches! Jaylen: Don't listen to him! He's a terrible person! I saw him trip another student and steal his lunch money!
+"	" Then he blamed the student for the accident. Therefore, we shouldn't improve our lunches.
+
+The fallacy present in this argument is Ad Hominem. The conclusion (that we shouldn't improve our lunches) is based on attacks (A) against the character of Brandon. These attacks (trip and accusing another student to"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	But did they check slow food? Dollars to donuts that eating at an average restaurant is unhealthier than 30 years ago by an even wider margin. Fast food isn't fueling the obesity epidemic; FOOD is fueling the obesity epidemic.	" We can't eat our way out of this problem.
+Fallacy: False Dilemma, Slippery Slope
+
+Formal:
+P1 (fast food contributes to the obesity epidemic), leading to P2 (slowing food must be better), which leads to P3 (any food consumption must be acceptable).
+
+C"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"But irrespective of whether he thinks it is or not means less than fact that this country cannot morally and socially and economically accept an economy running out the clock on the 20th Century. We're treading water. We have families that are hurting. We have people who are unemployed. We have people with no property. We have an administration that is demolishing public housing in our inner cities and not providing anything else but more public housing. Their solution to the inner city is more -- excuse the expression but it's true,""socialism.""
+"	" This proposal, ladies and gentlemen, is a Trojan horse of socialism that is designed to take us further along the road to the socialism. Once you implement it, there's no turning back.
+Fallacy: Slippery Slope
+Formal: P1 (allowing this proposal) leads to P2 (increase in"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"CLINTON: Our military is the strongest military in the world. It is the strongest, best prepared, best equipped it has ever been. There is very little difference in the budget that I proposed and the Republican budget over the next six-year period.
+"	 TRUMP: Well, she was about to say that there is very little difference in the military. The difference is, the military that I'm going to be giving funding to is only going to have the best equipment and the best allies. So we're going to have the best people working for us, the best people
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Carbon dioxide hurts nobody' s health. It' s good for plants. Climate change need not endanger anyone.
+"	"95% of scientists lie about climate change. Therefore, climate change isn't a problem.
+Fallacy: Appeal to False Authority
+
+Explanation: The speaker is dismissing the consensus of scientific opinion on climate change by alleging that 95% of scientists are lying. This is a fallacious appeal to false authority because it does not"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Chihuahuas are good inside dogs. German Shepherds are dogs; therefore, German Shepherds would be good inside dogs, too.
+"	" The conclusion that both breeds are good for living inside homes would be accurate. The reasoning here is logical and sound.
+Fallacy: None. <|end_of_text|><|begin_of_text|>://input>
+```Text:
+```
+
+Classification:  None.```Text:
+```<|end_of_text|><|begin_of_text|>://
+**Reasoning:**
+
+The argument provided is neither fallacious"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Circular/tautological reasoning. You're assuming your conclusion to be true in yoir premises, and the argument doesn't move* in any direction. > P1: Humans have moral value. (Conclusion assumed in premises.) > P2: Humans are human. (Tautology.) > C: Humans have moral value.	" (Conclusion) 
+Fallacy: Circular Reasoning
+Answer: Circular Reasoning
+Note: The given argument is the perfect example of circular reasoning. The conclusion, which is ""humans have moral value"", is assumed in the first premise, and the second premise is a tautology - ""humans are human"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Clearly, uh it was maybe the right thing to do, but we did not go in with enough information. We caused problems in the first place by denying Caribbean countries and third-world countries a chance to trade freely in the United States. It causes economic problems and turmoil, and then we turn around, as we did in Mexico, having to bail them out. We caused the problem in the first place, and it cost us 20 to 50 billion to bail them out.
+"	"10 million people were thrown out of work, mostly in the Midwest, USA, making it harder for them to get a better-paying job, more or less.
+
+Does this text contain a fallacious argument?
+Fallacy: False Causality
+Formal: The speaker implies that denying trade to third-world countries has caused"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Comment overwritten by Power Delete Suite for privacy purpose.	" 
+No fallacy is present in the given text. The statement refers to a tool used for deleting content and maintains no logical argument. 
+
+Thus, the answer is No fallacy. 
+
+Note: This answer was formulated without knowledge or assumption about the tool 'Power Delete Suite' and only based on content of the argument"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Cooking and eating meat is an artistic practice with thousands of years of history. My choice to cook and eat meat is a choice to participate in the continuation of this art form. I support eating meat for the same reason I would support classical music, theater, or sculpture: because I support art. And I am generally skeptical of attempts at soft censorship of this art by shaming meat eaters.	" This is a form of arts suppression that I will not support.
+
+Is the argument above fallacious?
+Fallacy: Appeal to Tradition
+Formal: Cooking and eating meat for thousands of years is considered as an artistic practice (P) similar to classical music, theater, or sculpture. We should support P based on the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Cover up of what?	" There is no evidence for the allegations.
+
+Given:
+Premise: Allegations
+
+Conclusion: Evidence is lacking
+
+The text does not contain a fallacious argument. Fallacy: No fallacy. 
+
+Input: If you don't like the product, you shouldn't buy it.
+
+Given:
+Premise: Disliking"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Delores is a big supporter for equal pay for equal work. This is the same policy that all those extreme feminist groups support. Extremists like Delores should not be taken seriously -- at least politically.
+"	" Therefore, Delores's view on equal pay for equal work is invalid.
+
+Formal: Delores supports P (equal pay for equal work), which is associated with E (feminist groups (extremists)), E's character is attacked (A), leading to -P.
+Fallacy: Ad Hominem"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Distracted driving is a HUGE problem but the fact that people are begging for a state run mass surveillance system is terrifying. It may seem innocuous and even helpful at first but the implications are tremendous. These are the first steps towards mass facial recognition and social credit systems... and people are clamoring for it. Its crazy.	" #nosurveillance
+The conclusion is that state run mass surveillance system is not worthy.
+
+A = attack
+E = entity (the state run mass surveillance system)
+P = premises, or properties 
+C = conclusion 
+
+The formal statement goes like this:
+
+People are in favor of implementing a state-run mass surveillance system to"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Doesn't prove anything. Could just be an error. Most people I spoke to didn't like TLJ, so if anything, it should have a lower than 55% score.	" 
+
+Given the input text, classify if it contains a fallacious argument.
+
+**Formal: E (speaker) claims P (the movie ""TLJ"" should have a lower score). Speaker refers to user opinions on P, without evaluating if these users had a critical understanding of the movie.
+Fallacy: Hasty"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Dog software on cat hardware	"
+
+Formal: E (dogs) are compared with Ei (cats) despite being different species, leading to the conclusion that one (dogs) is suitable for another's (cats) hardware. 
+Fallacy: False Analogy
+
+Choice: False Analogy
+
+Explanation:
+This comparison between dogs and cats, although"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Enter Bios and see if your hdd is detected. If it is, might be an issue with boot order. Else try this: <URL>	" to reseat or replace the hdd.
+
+Output:
+Formal: If E (HDD) has not been detected, then try doing P (re-seat or replace the HDD). Therefore, the problem may be resolved.
+Fallacy: None
+
+Note: The formal reasonings, though similar in structure, should not"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Even the Republican platform has criticized the lack of leadership in Mr. Ford and they've criticized the foreign policy of this administration. This is one instance where I agree with - with the Republican platform. I might say this in closing, and that is that as far as foreign policy goes, Mr. Kissinger has been the president of this country.
+"	" Which basically means, in my humble opinion, is the worst thing that could happen to this country in terms of foreign policy.
+
+In this statement, the speaker seems to be saying that he agrees with the Republican platform’s criticism of Mr. Ford's leadership and this administration's foreign policy. The speaker also strongly implies that Kiss"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Every action being taken against terrorists requires court order, requires scrutiny. As a matter of fact, the tools now given to the terrorist fighters are the same tools that we've been using against drug dealers and white-collar criminals. So I really don't think so.
+"	" The court order was a failure, we can do this better.
+Fallacy: Slippery Slope
+
+Formal: P (granting court order to fight terrorists) implying a chain of events that leads to P′ (the government has too much control, violation of civil liberties), which in turn, suggests -P"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Every sunrise, the rooster makes a sound. So it is the rooster which makes the sun rise.
+"	" Fallacy: False Causality
+No fallacy detected.  Fallacy: No fallacy
+The argument provided, ""Every sunrise, the rooster makes a sound, so it is the rooster which makes the sun rise,"" is an example of false causality fallacy. The key phrase in this reasoning"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Everybody who's looked at it, 500 economists, seven Nobel prize winners, say it's bad for the economy. It's going to blow a hole in the deficit It's going to raise taxes on nine million people and require bigger cuts than the one I vetoed. Our plan is better, it will take us into the future with a growing economy and healthier families.
+"	"500 economists agree with me.
+Fallacy: Ad Populum
+Correct Answer: 
+
+Formal: P (supporting a specific economic plan) is presented as something most approved of by 500 economists and seven Nobel prize winners, which creates the assumption of an expert consensus on this matter.
+Fallacy: Appeal to Authority"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	FWIW I remember this podcast episode where the guest talked about using notecards <URL>	" I'll see if I can find it again. I was going to suggest that method as it made him really productive.
+Fallacy: Appeal to Authority
+
+Fallacy: There is no fallacy in this input. It states a personal experience and shares a recommendation about a productivity method from a podcast. It is not an"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Families communicate less and less in the past forty years since feminism became mainstream. Feminism is to blame for this deterioration in the family.
+"	" Therefore families are suffering due to the impact of mainstream feminism.
+
+Formal: E (families) had a property P (ability to communicate), which is changed by C (impact of mainstream feminism). Therefore, new property P′ (can’t communicate efficiently), leading to C (families are suffering).
+Fallacy:"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	First we nearly lost Dr. Dre now we might lose Michael. This is getting progressively worse, I hope he pulls through. I'm sure he will tho	".
+The fallacy present in this statement is fallacy of false analogy. The comparison between losing Dr. Dre and potentially losing Michael is an inaccurate comparison as Dr. Dre was almost lost but he is still alive, while it is uncertain if Michael is in the same situation. The comparison misleads the reader into thinking the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"For want of a nail the shoe was lost. For want of a shoe the horse was lost. For want of a horse the rider was lost. For want of a rider the battle was lost. For want of a battle the kingdom was lost. And all for the want of a nail.""For Want of a Nail,"" medieval proverb
+"	"15th Century.
+
+Answer: False Causality
+Explanation: The proverb illustrates a sequence of events that were ultimately caused by a missing nail. However, it incorrectly attributes each event as a direct cause of the next, rather than identifying the actual, more likely causal factors behind the loss of the kingdom. The missing nail"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Fortnite is the best game ever. Everyone is playing it!
+"	"50 million people play it. 
+Formal: 50 million people play Fortnite -> P (it is loved by many). Therefore, C (Fortnite is the best game ever).
+Fallacy: Appeal to Popularity
+
+1. Ad Hominem
+2. Ad Populum
+3. Appeal to False Authority"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Four years of faith in internet strangers over their own friends and families is ending exactly as expected.	" The political divide has gotten deeper and our discourse angrier, proving the exact opposite of what was promised – a united, connected community.
+Fallacy: Appeal to Consequences of Belief
+
+Input: The fact that many people believe in the idea of heaven is the only reason we don’t consider other alternatives for murder cases"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Fred, the German, stole my wallet. Therefore, all Germans are thieves.
+"	" // Fallacy: Hasty Generalization
+
+In this case, the statement commits the ""hasty generalization"" fallacy. The reasoning goes as follows:
+
+Premise 1: Fred, who is German, stole the speaker's wallet.
+Conclusion: All Germans are thieves.
+
+The conclusion is drawn based on a single"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Good thing CA is able to focus on this hugely important issue and doesn't have massive homelessness plaguing it's cities or an ever increasing affordable housing crisis to worry about. This and banning plastic straws are the issues we need to solve to create a better life and society for people. I'm so glad CA is at the forefront of tackling our nation's most pressing issues. Keep being a beacon of hope CA and I'm sure other states will follow.	" #progress #sustainability
+
+Classification: Appeal to Positive Emotion
+- In the last sentence, the author uses positive emotion to show support for the actions being taken by California (CA) in regards to these issues. 
+
+Answer: Appeal to Positive Emotion
+```python
+answer = ""Appeal to Positive Em"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Guess what? police need to interact with people at close quarters. they often need to touch or grapple. The masks do little. Cool it. Once they wear masks your anxiety will force you to demand the next step. biohazard suits? get real.	" Guess what? that's an oxy-moron.
+Fallacy: Appeal to Consequence of Belief
+
+Formal: E1 (police officers) wearing P (masks) leads to C (people will demand more protection). P2 (the next step, biohazard suits) is deemed as ridiculous,"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Have you talked to a local recruiter? They can often place you in a position that fits your skills.	" That's how I got my current job. This is the best way to find a job.
+Fallacy: Appeal to Authority
+
+In this input, the speaker claims that talking to a local recruiter is the best way to find a job based on their personal experience. This is an example of an appeal to authority fallacy"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"He *does* talk about politics. What JP *doesn't* do is circle jerk with the right. I think that's what you meant to say - ""can we stop with the right-wing circle jerk?"""	""". Right?
+Fallacy: Ad Hominem
+
+Input: I have a dog so *I* am not part of the solution, I am part of the problem.
+Fallacy: False Dilemma
+
+Input: I think they're going bankrupt because they spend too much money on advertising.
+Fallacy: C"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"He has smoked cigarettes his entire life and he doesn't have lung cancer. Therefore smoking doesn't cause lung cancer.
+"	" Fallacy: Post hoc ergo propter hoc 
+
+1. Formal: E, P1 (smoking cigarettes), P2 (not having lung cancer), and C (does not cause lung cancer)
+2. Fallacy: Post hoc ergo propter hoc 
+
+The fallacy is ""Post hoc ergo pro"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"He was born to Catholic parents and raised as a Catholic until his confirmation in 8th grade. Therefore, he is bound to want to defend some Catholic traditions and, therefore, cannot be taken seriously.
+"	" We should dismiss anything he says about religion.
+
+Fallacy: No fallacy
+
+Input: She has been an employee here for over 20 years, which shows that she is faithful and dedicated. Therefore, she should be trusted with managing the department.
+
+Fallacy: Appeal to Length of Service
+
+Input: The Earth is"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Hi, those are SMD components. You need a parts list or a donor board. EDIT: The good news is they will be cheap, the bad news is you need someone who can do smd soldering, which, for no good reason, is a dark art. Check out Lewis Rossman on youtube to see tutorials, but it will require expensive kit, unless you can borrow some.	" Also check diymore.com for the components.
+Fallacy: No fallacy
+
+Given the input text, there is no fallacious argument present. The text provides information and advice about SMD components, their cost, soldering, and where to find tutorials and components.  Thus, it does not contain any fall"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Honestly though, a PhD is not necessary to have an informed opinion. If that were the case, a lot of pro vaxxers wouldn't have an informed opinion either and let's be honest: they don't. Herd mentality is as much a thing as herd immunity. What antivaxxers need is someone with a PhD drawing a conclusion they agree with so they can repeat and circlejerk that to oblivion. And someone with a PhD should know the difference between an actual result and""oh hey one number out of 100 says this so it must be true"". And even then they will be a minority, but at least it can sufficiently instigate some doubt."	" 
+Fallacy: Appeal to False Authority
+The text argues that just because someone has a PhD, it doesn't mean they are automatically knowledgeable and right, referencing the ""pro-vaxxers"" and ""antivaxxers"" as examples. It then goes on to express the sentiment that a PhD is valuable"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	How would you ever forget someone who is allowed in Tarrey Town	"'s secret garden? Just the thought brings a smile to my lips. 
+
+There are certain places that hold memories, places that hold magic for certain people. The enchanting secret garden in Tarrey Town is one of them. It’s impossible to forget someone who’s been allowed into this mystical place.
+
+Let's look closer"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Human are omnivores. End of argument. If she doesnt want to live with meat eating, make a parenting plan in court and she can pay child support for the kid that lives with you fill time that she wont raise since meat is around. Easy.	" 
+Fallacy: Appeal to Ridicule
+Answer: Appeal to Ridicule
+
+25
+The process takes 3 minutes to complete. Click the button to start it. 
+Time left: 03 minutes. 
+Start the process? 
+
+No
+Answer: Start the process? No
+
+The answer to the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I disagree with every comment on this thread. Almost 3k upvotes show that most people agree with me. A furry is not something Ive ever seen in real life and I would not even know the term existed if not for these strange Reddit posts/comments. Its weird, its not socially or mentally healthy, its not a thing. Bring on the downvotes.	" It's also clear that those who claim to be furries are either heavily misled or lying, maybe even both.
+Fallacy: Guilt by Association
+
+Correct answer: Guilt by Association
+
+Explanation: The input text is attacking not only the furry subculture but also those who claim to be furries, insin"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I don't make fun of anyone's parents dying. I don't know, it's just a thing with me because I've been helping orphans for a long time and their mental health is seriously fucked up because of it.	" I'm also kind of a loner, or autistic or something, so I just don't like being around people.
+Fallacy: Ad Hominem
+
+Reasoning: The speaker's character and emotions are attacked, and their personal struggle with mental health is used to discredit their perspective on making fun of orphan's parents"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I don't think this poor duck was being helped	" at all; it seemed like it just wanted to be left alone.
+Fallacy: Ad Hominem
+Fallacy: False Dilemma
+Fallacy: Appeal to Emotion
+Fallacy: Irrelevant Reasoning
+Fallacy: Appeal to Authority
+Fallacy: False Cause
+Fallacy: Slippery"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I dont have to justify it, vegans assume most people consider an animal life to be on par with human life, its not. If I was in the position to save my pet or a stranger Id never met before of course I would save the human. I dont want animals to suffer and I earn enough that I can afford to buy free range meat from reliable sources, I dont feel bad that an animal was killed so I can eat it, I dont believe its wrong in anyway so long as while its alive it isnt mistreated. There is nothing morally wrong about killing animals for food, you realise animals kill other animals for food too right?	" Its natural.
+Fallacy: False Dilemma, Appeal to Nature
+
+Formal: P (killing animals for food) is presented as the only options, either fully acceptable (if they die when they are alive), or totally forbidden. Therefore, the argument reduces the complexity of the issue, leading to a false"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I dont wait until marriage, because I'm not even sure if I want to get married. Used to care about how many people the girl sleeped with, now I really dont give a shit. Ive collectively had sex hundreds of times with my partners over the years, that doesn't make me better than someone who's had sex with more people, one time each.	" It's just different. Im not shaming anyone or anything, people should just do what makes them happy. #sex #freedom #spreadlove #noshame
+
+Fallacy: Appeal to Emotion
+
+Formal: The speaker (E) accepts their sexual choices (P1) and expresses a positive outlook"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I feel like HLL is more of a hardcore BF where as PS looks more like Arma Lite. I want to enjoy a shooter with team work and strategy on a large scale. I like the relatively fast paced gameplay, less down time, more engagements, smaller maps and leathal weapons make for epic flanks, as a result i feel like as a single player i can have a decent impact on a game - i just enjoy the pacing and the way combat plays out (im nervous that the infantry vehicles will fuck this up). I'll admit that PS's wider range of factions does look very attractive but at the end of the day whats the point in having all these unique and interesting guns and what not when for most of the game you arent going to be using them because your going to be on the move and then when you do its spamming suppressing fire at a hedge. Edit: to be clear i might be 100% wrong about PS i havent played it but thats just the vibe i got from the gameplay ive seen.	" Anyway im going to end this little tirade now.
+Fallacy: None
+Fallacy Type: None
+
+Formal: E (player) prefers fast-paced gameplay with team work and strategy on a large scale on HLL due to its smaller maps and lethal weapons. E (player) is unsure whether this preference would"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I get that it's weird that someone from the lgbtq+community supports fascists who want people like him to die, but I don't see his sexual identity having any relevance to this story.	" And if you judge me for supporting him, then you're no different from those who judge people based solely on their sexual identity. It's all about personal beliefs, and you can't judge someone for that.
+
+Fallacy: Ad Hominem
+
+Formal: E1 (someone from the lgbtq+"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I got into a discussion with someone on here who claimed that even though he supported legalized abortion and was pro choice he still received. It broke my heart. And he was flippant and dismissive. The Eucharist is not a reward or something you deserve if you are obstinate to church teachings	".
+Fallacy: Ad Hominem
+
+In this case, the speaker is attacking the character or motive of his opponent rather than addressing the substance of his argument. The fallacy is named ""ad hominem"" (meaning ""against the person"") because it's an attack against the person making the argument and not against"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I have a JD, an MBA, and an MSF so I am pretty well versed in the skill sets. What about a JD would make you think you could do finance? It is a pretty in depth math program. There are some advanced math skills needed that are covered nowhere in undergrad or a JD unless you were also a finance major for BS. This is law school arrogance at its finest. Why not a brain surgeon?	" If that person said they could do your heart surgery because they have a JD, how would that make you feel? But in business it is totally socially acceptable to be dishonest and lie about your abilities. If anyone really thinks a JD could do finance they are nuts.
+Fallacy:
+
+Ad Hominem
+Appeal to"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"I have been in charge of this reinventing government streamlining project that's reduced the size of government by more than 300,000 people in the last several years. And the budget plan that I've put out, according to the""Los Angeles Times"" again, the way these things are typically measured as a percentage of the GDP, will bring government spending down to the lowest level in 50 years. So I want to proceed carefully to cover more people.
+"	" We mustn't overlook a fundamental truth. If government grows at 2%, and the economy grows at 3%, you're going to get more government for less economic growth. It also means you're going to get more taxes, which will result in less take-home pay, and fewer job opportunities.
+
+Given the input"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I just picked up one of the tinted balms and it's a really lovely product. Nice tint, smooth, stays on.	" Also, it smells so good! What's not to like?
+Fallacy: Appeal to Positive Emotion
+
+Input: The idea is absurd. Why would anyone think this would work? If it did, it would be disastrous. You just have to look at the consequences of similar ideas to see that.
+Fallacy:"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"I know that our TV advertisements are more effective than radio. The numbers show that we hit twice the audience with TV, and our focus groups remember the TV commercial 38 percent more than the radio slot.
+"	" Therefore, we have to reduce the radio slot duration.
+Given the input text, classify if it contains a fallacious argument. Start by giving the formal reasoning and follow with the name of the fallacy.
+
+Formal: E (TV advertisements) perform better than E2 (Radio advertisements) in terms of P1 ("
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"I lost my phone in the living room, so it will always be in the living room when it is lost.
+"	" Fallacy: Fallacy of Hasty Generalization
+
+Formal:
+E (my phone) is claimed to have P (always misplaced in the living room). However, generalizing this specific phenomenon to all phones and their positions would be a hasty conclusion, implying P1 (all misplaced phones are always found in the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I mean 10 minutes after closing isn't really bad at all.	" We're talking about a span of only 10 minutes, but the claim that it's ""wicked bad"" is absolutely absurd.
+Formal: P (it's not that bad) implies P1 (the claim is absurd), leading to C (it's not that bad).
+Fallacy: Appeal to Conjunction"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"I merely say that the United States should meet its commitments to Que- to uh - Formosa and the Pescadores. But as Admiral Yarnell has said, and he's been supported by most military authority, these islands that we're now talking about are not worth the bones of a single American soldier; and I know how difficult it is to sustain troops close to the shore under artillery bombardment. And therefore, I think, we should make it very clear the disagreement between Mr. Nixon and myself.
+"	" The fact of the matter is that I did not say that we had to have an all-out commitment, because I had reservations about the ability of Formosa and the Pescadores to defend themselves against a Chinese attack.
+Fallacy: False Dichotomy
+
+Formal: False Dichotomy (suggesting only two options -"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"I passed my math test after going out to the movies the night before. I should go to the movies the night before every math test!
+"	" Fallacy: Slippery Slope
+
+Explanation: The speaker concludes that going to the movies before every math test will lead to success, but this is a slippery slope fallacy because it implies a causal relationship where there likely isn’t one. While they could have coincidentally passed their test after going to the movies, it"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I shouldn't be a race to the bottom, thankless jobs like EMTs should get paid far more than they do now, nobody is saying that minimum wage workers should get paid more than them. To those who argue *well x job pays y amount* do you think that maybe they should get a significant wage hike to so they don't live in poverty either?	"  Therefore, EMTs should get a raise.
+Fallacy: False Dilemma
+
+Formal: A small sample E1 (two aggressive dogs) is taken from a larger population E (all dogs). Therefore C (all dogs are aggressive).
+Fallacy: Hasty Generalization: 
+
+There are no mistakes"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I think it's more of a practical thing, rather than a preference. A brand new tire is dark black and matte. Yes, that does look great. However after getting some sun a tire turns grey'ish and kind of chalky. It's just cheap and readily available to grab some tire shine and quickly make them dark black and shiny! There may be product out there for dark black and matte, but I'm assuming the shine is just cheaper and more readily available.	" And again, I'm in the camp with a little bit of both. I like the look of the black and the look of them being shiny.
+
+This argument contains an appeal to false authority fallacy because the speaker uses their own personal assumption of ""cheaper and more readily available"" as a justification for their preference."
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I wonder how is New York planning on getting out of the lockdown, because when they get out of lockdown probably some cases are going to be going on and the whole infection thing will start again.	" Hence in the long term, the lockdowns won't work.
+
+The above claim is fallacious. 
+
+Fallacy: False Cause. 
+The conclusion of the argument assumes that the infection will start again once the lockdown ends implying that lockdowns are ineffective but the reasoning is insufficient as it ignores other possible factors that could cause"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I work 6 ten hour days very frequently and don't get weekends off. In a way it's pretty insulting to see people angry with a 9-5 40 hour work week. I'd be so grateful to have that extra time to spend with my family and friends.	" 
+Answer: False Comparison
+
+Formal: P1 (working long hours without weekends off) and P2 (working a traditional 9-5, 40 hours a week) are compared. The comparison leads to the idea that -P2 (having a 9-5, 40 hour work week)"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I worked in an engineering factory for years and was never supplied a back belt so I now have a bad back and the only way I can get any sleep is to take 4 pain killers before bed or smoke one joint so I'll stick to what's natural rather than use so many painkillers my liver will be useless in a few years so cannabis for the win with me	" as it helps me sleep more
+The argument is fallacious because it takes a positive emotion (helps me sleep) and uses it as the basis for arguing in favor of cannabis use.
+Fallacy: Appeal to Positive Emotion
+
+Formal: E1 (the speaker) uses cannabis for sleep aid, E2"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I would be more indifferent to this assertion but for the established reality that *some* men use it as a tool to minimize the importance of women's perspective on life, the universe and everything.	" 
+
+Fallacy: Ad Hominem
+
+Explanation: The argument attacks the character of men, rather than addressing the claim or providing evidence to support it. This is a fallacy because it isn't a valid argument against the claim itself. It's focusing on the person making the claim instead of the claim itself. 
+
+"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I'd say it's damage of scarring of the nail bed by trauma (long time standing and poor fitting shoes). You can see from the ridges of the nail that it's become thickened in response to the trauma. Nothing much you can really do my friend apart from having the nail removed (which I did as mine were much worse that yours).	" The sooner the better, in my opinion.
+
+Formal: E1 (unspecified person) claims P (the cause of ingrown nails). E2 (the speaker) presents an alternative explanation P (damage from trauma). Therefore, P (ignoring other potential causes).
+Fallacy: Causal Fallacy
+
+Form"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I'm not a doctor, but I have lupus. It sounds like lupus to me. Did you get ANA and ENA tests? I had to beg for them and then the doctors were all miffed because I proved I was sick. Good luck.	" 
+Fallacy: Ad Hominem (Attacking the speaker's qualification as a doctor) 1
+Appeal to Authority (Expert testimony) 2
+Tu Quoque (Using ""I have it too"" as evidence) 3
+
+1. Attacking the speaker's qualifications implies that their testimony regarding the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I'm not a musician so bear with me here. Why the constant debate about Lars' skills? If a successful band in any genre was based only on the very best technical players there would only be a handful of bands out there to listen to right?	" Yes technical prowess is important in certain scenarios but so is the feel of the music. The way a band or musician connects with the listener is just as crucial. So who cares if some of his drum lines could be tighter. I don't. I just like the sound the band produces. 
+
+Fallacy: Appeal to"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"I'm proud of that. It happened because I could work with people -- Republicans and Democrats. That's why we've had 24 retired generals and admirals, hundreds of business people, many of them Republican, support this campaign. You have to decide whether you want to change or not.
+"	" (Presidential candidate)
+Fallacy: Appeal to Authority
+
+Formal: E (Presidential candidate) claims the support of 24 retired generals and admirals, hundreds of business people, many of them Republican, leading to the conclusion that their argument should be considered valid.
+
+The fallacy in this statement is an Appeal"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	I've lived in Denmark for two years. People are pretty difficult to get close to there (quite introverted) so you can easily end up being lonely. The political correctness can be annoying too if you happen to have different political views than most Scandinavians.	" The streets are beautiful and the countryside is gorgeous, the weather in the winter months is quite depressive but in the summer months you have endless days. The food though...it's really not good.
+
+One could argue that the food in Denmark isn't that bad, but perhaps this traveler is only comparing it to American or Italian"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Ideal, perhaps for some. However it is highly unrealistic. Mankind has been using""recreational drugs"" since we developed agriculture, and probably before too."	" So its wishful thinking to believe we'll ever eliminate this use, any more than we could eliminate the use of alcohol.
+Fallacy: Slippery Slope
+
+Formal: P (a desire for recreational drug use), leading to -P3 (never being able to get rid of recreational drug use). The speaker"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	If a child rapist is sent to prison do you think I'm gonna care if someone does the same to them?	" I won't. It doesn’t matter how long they’ve been in prison, it doesn’t make it right to harm children.
+Fallacy: None 
+
+Explanation:
+The input statement presents a case where an individual, who believes in retributive justice, asserts that if a child rapist is put in prison, they"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"If indoor smoking laws are passed for bars, the bars will go out of business since people who drink, smoke while they drink.
+"	 Formal: The passage suggests that C (indoor smoking bans for bars will be ineffective), this assumes that P (smokers will only frequent bars), but it's a misrepresentation as P1 (smokers go to bar because they smoke while drinking) is considered equivalent to P2 (smokers smoke only in bars
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"If it is very low, for instance around one, it means greenhouse gas emissions are simply not worth doing anything about. But if ECS is high -- say, around four degrees or more -- then climate change is probably a big problem. We may not be able to stop it, but we' d better get ready to adapt to it.
+"	" Hence, we need to determine what the effective climate sensitivity (ECS) is.
+Fallacy: Slippery Slope
+
+Formal: E1 (unspecified person) claims P (not enough evidence to convict). However, E2 (the speaker) brings irrelevant points (unrelated to evidence) leading to -"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"If you would have supported that attitude -- if you would have supported that attitude, we would not have won the Cold War. We won the Cold War because we invested and we went forward. (APPLAUSE.)
+"	" Therefore, the U.S. must continue spending on defense and reduce domestic spending.
+Fallacy: False Cause (Post hoc ergo propter hoc)
+
+Answer: False Cause (Post hoc ergo propter hoc)
+
+Explanation: The speaker is attributing the victory in the Cold War as a result of increased defense spending,"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Imagine being a horny naive 16 year old. You were talking to a girl, you guys exchange nudes. You're 21. It's been revealed to other adults that you sent a picture of your dick (nice cock btw). You're on the sex offender registry. You will get almost all job offers turned down. Your life is fucked because someone decided your life should be shit for being a horny teenager.	 Now imagine you are a woman. You've had a few drinks. You are drugged at a bar. You don't even know the dudes name. You have sex with him. (It's rape remember.) You take a shower, and you call your mom while some dude is in your house. You don't
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	In all honesty have we seen one single Covid related model turn out to be correct or even close in the past 10 months?	" No.
+Given the input text, it is not making a fallacious argument. Therefore, there is no fallacy.
+No fallacy. ❤️ 0 👎
+Choice: No fallacy.  ❤️  0  👎
+
+Explanation: The given text argues that none of the models for"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Incoming comments of things that are nutritious but people don't consider healthy because they're high in calories AND other random shit they read on a blog who's ultimate goal is to convince them to spend money on something at some point. Olive oil is healthy even though it has calories and fruit is healthy even though it has carbs. Dairy and red meat are fine - people have been consuming them for centuries and they did shit like building pyramids using just their hands. You don't need to live off of bland chicken breasts, broccoli, and scrambled eggs to be healthy. Also people need to learn the difference between added sugar and natural sugar. The sugar in fruit is not the same sugar in candy bars. I think one of the biggest reasons for the obesity epidemic in America is the over-complication of nutrition. A new food is""unhealthy"" every week."	" 
+The conclusion here is: People are over-complicating nutrition and demonizing some foods while neglecting that some traditional foods are perfectly fine.
+
+Fallacy: False Dichotomy or False Extremes
+This text argues that people are over-complicating nutrition and falling into the trap of demonizing certain foods while neglect"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Interesting story, but sadly no substantial evidence. Mostly likely a lie for attention.	" 
+Formal: E (John) claimed P (the story is interesting). The speaker expresses skepticism, without presenting evidence. Therefore, -P (the story is likely a lie for attention).
+Fallacy: Argument from Ignorance
+
+Answer: Ad Hominem
+Explanation: The argument attacks the character or motive"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Iran has moved forward with its nuclear weapons program. They're more dangerous today than they were four years ago. North Korea has moved forward with their nuclear weapons program, gone from one to two nuclear weapons to six to eight nuclear weapons. This vice president has been an advocate for over a decade for lifting sanctions against Iran, the largest state sponsor of terrorism on the planet. It's a mistake.
+"	" Therefore, lifting sanctions would increase global security.
+Fallacy: False Cause
+
+#### 18
+The answer is: False Cause
+
+Reasoning: The conclusion that lifting sanctions would increase global security is being reached by assuming a causal relationship between the vice president's advocacy for lifting sanctions and the existence of the threats posed by Iran"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Is that why my prescriptions and premiums keep going up massively? hm. Trump hasn't done shit to improve healthcare, he has done the complete opposite.	" If this is the case why is it that the stock prices for the pharmaceutical industry are at all-time highs? Why is the healthcare industry the largest industry in America? 
+The claim ""Trump hasn't done shit to improve healthcare"" is an ad hominem fallacy, as it attacks Trump personally rather than addressing the facts"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	It depends on the plant. Some do get boosted, some don't.	" You can’t generalize everything as plants are individual beings each with its properties.
+
+The given statement contains no fallacy. The speaker acknowledges that different plants may have different responses, rejecting the idea that all plants are affected similarly. They also note that generalizations do not apply in this context due to the individuality of each plant"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	It just doesn't make sense. If Kavanaugh is innocent he should be yelling from the hills demanding an investigation by the FBI.	" He has not made one peep. Total silence. 
+1. This argument is fallacious. Identify the fallacy.
+2. State the premises.
+3. State the conclusion.
+
+The formal reasoning of this argument is Fallacy: Argument from Silence.
+
+1. The fallacy being used is Argument from Silence. This"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	It's a reference to Peterson. He claimed that hierarchies are good because lobsters have hierarchies as well so it's natural.	" That's a fallacious reasoning.
+Fallacy:False Analogy
+
+Input:Just because some people believe that aliens exist, it doesn't make it true.
+Fallacy:Argument from Popularity
+
+Input:She said that all scientists agree that homeopathy works. But we know that's not true.
+Fallacy:"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	It's an industry like any other. The outrage is mostly aimed at outrageous pricing for their products *in America*. That's not the fault of that industry at the core, it's the fault of a political system allowing it. We don't suffer from that where I live, and we get our medicine from the same industry. And you have to keep one thing in mind, development of medications is brutally expensive. That leads to another problem. The industry wants to make profit, and consequently directs their efforts at products that will sell well. Medication for rare conditions will never recoup the development cost and consequently don't get researched. That's another systemic problem.	" But don't forget the competition. When a new medication is released, and it turns out to be cheap in price, other medication providers line up with their version of that drug. It's not a conspiracy to overcharge, it's just how business works
+
+Fallacy: Is ""Appeal to False Authority"" 
+
+"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Its almost like virginity has no bearing on who you are as a person and once you lose it you're still the same as you were before...	" #sagelikeabird #girl
+It seems like the speaker is implying that virginity really has no effect on a person's character. They mention that even after losing one's virginity, a person remains the same as they were before. This could be interpreted as a logical fallacy which goes against the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"James' mom is concerned when she finds out that he skipped class one day. She tells him that she is concerned that since he skipped one class, he will start skipping more frequently. Then he will drop out altogether, never graduate or get into college, and end up unemployed and living at home for the rest of his life.
+"	" Assuming that all of these consequences follow the initial act of skipping one class, it would seem that skipping classes is a bad idea.
+Fallacy: Slippery Slope
+
+Formal: A student who studies only one subject ends up knowing only one subject and neglects others, becoming a one-dimensional person over time. So"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Jeff is preparing to create a commercial for a new energy drink. He visits a local high school and surveys students in an English class about their beverage preferences. The majority of the class says they prefer grape flavored drinks, so Jeff tells his superiors that grape is the flavor favored most by high school students. What error in reasoning has Jeff made?
+"	" Fallacy: Hasty Generalization
+The reasoning error Jeff has committed is called Hasty Generalization. He surveyed a small sample (the English class), which may not be representative of the entire high school or even a larger demographic population, and extrapolated the results to make a general conclusion. This conclusion might not be"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Joe Biden will lose to Trump if he is the nominee. The Democratic party clearly has not learned the right lesson from Hillary Clinton's miserable failure. NOBODY WANTS ESTABLISHMENT POLITICIANS ANYMORE. NOBODY LIKES THE STATUS QUO. Like Jesus Christ you think they would learn.	" This is why the right-wing populists are taking over; because NO ONE TRUSTS GOVERNMENT ANYMORE.
+Fallacy: Bandwagon
+
+Formal: P1 (Joe Biden will lose to Trump) implies E (nominee should change direction). The speaker attacks E1 (Democratic Party) for not adapting"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Let me stop you right there...getting information from this subreddit is a sure fire way to ensure you have absolutely no clue what to do. What will happen is you're going to start an argument between 100 different internet ""experts"" all convinced they know what's best for you. Use veterinary sources to guide your thinking."	" And no, I didn't get my ideas from a subreddit. I spent my whole life on farms... raised livestock... so, it might surprise you to know that I DO have some knowledge about these issues, unlike the know-it-alls on here.
+Fallacy:
+
+The respondent uses a variety of fallacies in this"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Let us move now to the future. It is not enough to stand on this record because we are dealing with the most ruthless, fanatical... leaders that the world has ever seen. That is why I say that in this period of the sixties, America must move forward in every area.
+"	 What we are dealing with is evil, and we must take care not to confuse our sense of good and evil in looking at it. And there are those who would seek to divide us, but we must make our decision on the truth of a matter. They tell us we must learn to live with this evil. They
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Lola: I don't think John would be a good fit to manage this project, because he doesn't have a lot of experience with project management. John: But you don't have a lot of experience in project management either!
+"	" Therefore, you shouldn't be managing it yourself.
+
+Fallacy: Appeal to False Analogy
+Formal: John's experience or lack thereof is compared to Lola's experience or lack thereof. But these two cases are not similar or comparable, as John's lack of experience is not an argument in favor, but against him"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Loooool. Their immunity is so op. I thought this was going to be a warlord war trolls run or something from the title	", but it was more like a warlord war trolls walk. lol.
+ 
+Fallacy: No fallacy.
+ 1. Hasty Generalization
+ 2. Slippery Slope
+ 3. Ad Hominem 
+ 4. Ad Populum 
+ 5. Appeal to False Authority 
+ 6"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"MARVIN STONE: You suggest that we scrap the SALT II treaty already negotiated, and intensify the build-up of American power to induce the Soviets to sign a new treaty - one more favorable to us. President Carter, on the other hand, says he will again try to convince a reluctant Congress to ratify the present treaty on the grounds it's the best we can hope to get. Now, both of you cannot be right. Will you tell us why you think you are? RONALD REAGAN: Yes. I think I'm right because I believe that we must have a consistent foreign policy, a strong America, and a strong economy. And then, as we build up our national security, to restore our margin of safety, we at the same time try to restrain the Soviet build-up, which has been going forward at a rapid pace, and for quite some time. October 28, 1980 Cleveland, Ohio What logical fallacy did Reagan's response illustrate the use of?
+"	 Answer: False Dilemma. Reasoning: Reagan's response presents the two sides - scrapping SALT II and trying to convince Congress to ratify it - as exhaustive options. However, no mention of a third option or a combination of both is given, thereby creating a false dilemma.  Formal: E1
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Max payne had plenty of glitchy craziness, loved it though	", but playing now it's just plain boring.
+Fallacy: Slippery Slope
+Formal: From enjoying Max Payne's glitches and craziness to finding the game boring now, the conclusion that the game can only be enjoyed with glitches implies a slippery slope fallacy. 
+
+Input: The movie had a lot of"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Men score better on math than women do. Jerry is a man. Therefore, Jerry is better at math than Sylvia, who is a woman.
+"	" This is due to genetics.
+
+Fallacy: This argument is based on Genetic Fallacy. The problem lies in assuming that because the premise of a belief has genetic origins, it must be true or false based on these origins.
+
+
+In the passage ""I am often asked why I enjoy running so much. My response is that"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Michael Jackson, Kurt Cobain, and Jimi Hendrix were rock stars who died young. Therefore, if you become a rock star, don't expect to live a long life.
+"	" Formal: E1 (Rock stars, specifically those who died young) has a characteristic P (die young). So, E2 (Rock stars in general) also has P.  Fallacy: Hasty Generalization
+The answer is: Hasty Generalization
+
+Formal: E1 (Rock stars, specifically"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Most animals, including humans are meant to consume meat. Humans would've probably died out by eating vegetables alone. So why not doing what we were meant to do by enjoying some salmon? Or do you actually think fish is okay since you don't think they look cute?	" 
+Fallacy: Appeal to Nature
+$$
+\text{Premise 1: Most animals, including humans, are meant to consume meat.}
+$$
+$$
+\text{Premise 2: Humans would've probably died out by eating vegetables alone.}
+$$
+$$
+\text{Premise"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Mr. Gough supports the cell phone ban and he's an idiot, so we should let teachers keep their cell phones.
+"	" Fallacy: Ad Hominem  Formal: E (Mr. Gough) claims P (supports the cell phone ban). Therefore, the speaker attacks Mr. Gough's character (A), implying -P (does not support the cell phone ban). 
+
+In this case, the fallacy is an Ad H"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Mr. Governor issues a proclamation for the people of his state to pray for rain. Several months later, it rains. Praise the gods!
+"	" Do you think the rain came as a result of the proclamation or just coincidental?
+
+The argument is not fallacious.
+The reasoning is flawed for the given conclusion but not intentionally misleading. The fact that it rained some months after the proclamation doesn't necessarily imply that it was caused by the proclamation. The rain could just"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Mrs. Miller taught your older brother, who was the class clown. She decides to be strict with you from the very first day of class because she thinks you will be a clown, too.
+"	"25 years later, you tell your story to Mrs. Miller who then thanks you for bringing it to her attention. Therefore, Mrs. Miller is a strict teacher.
+Fallacy: No fallacy
+
+Formal: P1 (being the class clown) leads to P2 ( Mrs. Miller’s strictness). C"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Murder is morally wrong. Therefore, abortion is morally wrong.
+"	" Fallacy: False Analogy.
+
+Input: Humans contribute to air pollution, therefore, we should reduce our carbon footprint to mitigate the effects of climate change. Fallacy: None. 
+
+Input: Exercise is good for you. Therefore, everyone should exercise. Fallacy: Slippery Slope.
+
+Input: You agree that"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	My boss insisted that everybody be at their desks at 8:30 sharp. She made me take roll on an attendance sheet and hand it into her everyday. She also made me do it at lunch time (when everybody left and came back) and when they left at night. Took roll for a bunch of adults three times a day. I don't work there anymore.	" 
+The boss was treating the employees like children, micromanaging everything. 
+
+Fallacy: False Analogy
+Reasoning: The boss's behavior is being compared to how one would treat children, which is used to criticize her actions, implying that treating adults like children is unreasonable. However, this comparison may not necessarily"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"My first day of basketball practice was easy, so it will always be easy.
+"	" Therefore, it must be included in the team.
+Fallacy: Hasty Generalization.  The conclusion that it will ""always"" be easy mistakes one day's performance for the future. Also, it appeals to positive emotion, as it might imply that the candidate will surely make the team. 
+
+Correct answer:
+Fall"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"My roommate from Maine loves lobsters, therefore all people from Maine love lobsters.
+"	" This is a classic case of the fallacy known as hasty generalization.
+
+Fallacy: Hasty Generalization
+
+Input: The fact that there are only two candidates running for president increases the likelihood that one of them is unfit for the job. This is an example of the fallacy known as false dilemma.
+
+Fall"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"My way of responding to difficult patients is by far the most ethical because no other way is so ethical and it is the only way that is completely ethical.
+"	" Therefore, I am right.
+Fallacy: False Dilemma
+
+Input: All people who use drugs are junkies, therefore they don't deserve medical care.
+Fallacy: Hasty Generalization
+
+Input: We must not trust computers to make decisions because a computer can make mistakes.
+Fallacy: False Cause
+
+"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Next week he will be in Paris, a city terrorized yet again by mass murderers, for a summit with other world leaders on climate change, not terrorism. What precisely makes these world leaders so convinced that climate change is a more urgent and massive threat than the incessant rampages of Islamist violence? It can not be what is happening to world temperatures, because they have gone up only very slowly, less than half as fast as the scientific consensus predicted in 1990 when the global-warming scare began in earnest.
+"	" It seems unlikely that the leaders’ views are determined by scientific facts rather than their political priorities.
+Fallacy: Appeal to Emotion
+
+Correct. The input appeals to emotion by associating the subject matter with a sense of fear and urgency about terrorism rather than emphasizing scientific evidence or logical reasoning about climate change. 
+
+Answer:"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	No. The NRA does not use terror to stop common sense laws that would stop those deaths. Background checks are common sense, assault weapon bans are not. With the amount of weapons in the USA and the ease of smuggling in the country assault weapon bans wouldn't do anything because you could still get then illegally. The majority of gun deaths don't happen because someone who legally owns a gun does something illegal. The majority of deaths happen because someone who illegally owns a gun does something illegal. Restrictions on acquisitions are not going to stop that. Enforcement of possession laws will stop that and no politician is campaigning to do that. Even though the NRA would presumably be fine with it.	" It seems that the poster is arguing about the effectiveness of different gun control measures.
+Fallacy: Slippery Slope. This argument assumes that enacting any restrictions on gun control will inevitably lead to complete bans on all guns, even if the proposed changes are limited in scope. The poster implies that enforcement of possession laws would"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Not at all. Years ago was fats. Everyone blamed fats. Now is the same with sugar. It is not just one thing. You must have a balance diet and a helthy lifestyle to achieve the final goal of health (and enjoy the process)	"!
+
+Formal: The statement rejects reducing diet to a single nutrient (fats, sugar) and advocates for a balanced diet and healthy lifestyle. The argument may rest on fallacious grounds if it assumes that all other diets lack balance and that every healthy lifestyle requires sugar restriction.
+
+Fallacy: Appeal to Nature
+
+Input:"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Not by definition. [<URL>](<URL>)	"”
+Formal: E (a source) claims P (definition for a subject). Cites another source which claims -P (counter definition).
+Fallality: Confusing Cause and Effect
+
+Formal: E (the speaker) claims C (something caused the incident) when the evidence only supports P (it could be"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Not really conspiracy-related, but I'd recommend *""The Demon-Haunted World: Science as a Candle in the Dark"" by Carl Sagan*, as it explains methods to help distinguish between ideas that are considered valid science, and ideas that can be considered pseudoscience."	" It could potentially satisfy your curiosity.
+The book you recommended is a science book; it is the author's account of what he calls ""baloney detection."" Baloney detection means using critical thinking skills to determine what we are allowed to believe. The author also talks about UFOs, astrology, and other popular beliefs that are"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"OBAMA: Well, I want to thank Senator McCain and Bob for moderating. I think we all know America is going through tough times right now. The policies of the last eight years and -- and Washington's unwillingness to tackle the tough problems for decades has left us in the worst economic crisis since the Great Depression. And that's why the biggest risk we could take right now is to adopt the same failed policies and the same failed politics that we've seen over the last eight years and somehow expect a different result.
+"	 MCCAIN: Well, I -- I agree with a lot of that. I think that, you know, we -- we can't afford more of the same. And we've got to do some different things. And, you know, it -- it is all about -- about change. And -- and I think we
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Over 5 million Filipinos use our products. It's time to switch to our brand now!
+"	" (narrative: advertisements)
+Fallacy: Bandwagon
+
+In the given input text, there is no fallacy present, so the fallacy we are classifying is: No fallacy. 
+
+Note: The input text contains an advertisement that encourages people to switch to their brand because many others have already used it"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Peanut... butter...??? Also you could drizzle olive oil on bread and toast it to increase calorie intake. Use brioche bread (super high calorie and unhealthy)	" to take it even further! #gainweight
+C: Increase your calorie intake to gain weight.
+
+Given the input text, it appears that there is a fallacious argument. The choice is:
+
+Fallacy: Appeal to Tradition
+
+Formal: The text presents a suggestion, P (using peanut butter and olive oil),"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Please actually look at the divorce/marriages statistics first:[Here's more statistics on Divorce!](<URL>) * Lack of commitment 73% * Argue too much 56% * Infidelity 55% * Married too young 46% * Unrealistic expectations 45% * Lack of equality in the relationship 44% * Lack of preparation for marriage 41% * [Domestic Violence](<URL>) or Abuse 25% (Respondents often cited more that one reason, therefore the percentages add up to much more than 100 percent)	" *
+Fallacy: Missing the point. The point of the argument is to show that there are several contributing factors to divorce. The given statistics are not being used to draw a fallacious conclusion. Therefore, no fallacy.  Answer: No fallacy. 
+
+Formal Reasoning: The given text presents a list"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Post is same age as me and hes make bills while I'm slaving away at school and work	".
+Formal: E1 (Post) and E2 (the speaker) have different workloads, but the fact that Post creates bills is used as a comparison P (better effort/workload) leading to the conclusion E1 is working less. Therefore, -P.
+Fallacy: Comparison Fallacy More or Less"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"President Bush didn't. President Obama was right, he said that that was outrageous to have deficits as high as half a trillion dollars under the Bush years. He was right, but then he put in place deficits twice that size for every one of his four years.
+"	" That's hypocritical.
+
+Formal: P1 (President Bush didn't do it) to President Obama's C (deficit) expectation. It's linked to P2 (Obama increased the deficit much more). Therefore, -C (Obama’s statement is hypocritical).
+Fallacy: Hypocritical Condemnation"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Punitive: inflicting punishment, punishing Seems about right. Fines are punishments. Calling a fine""punitive"" is like calling a textbook""educational"". The gov't has been going all out to educate people. Anyone who still doesn't know the rules by now just isn't bothering to educate themselves."	" You could call it punishing or you could call it sending a bill for the mistakes that were made. But you cannot ignore the fact that this is a result of a lawbreaker's bad choices.
+
+Fallacy: Appeal to Nature
+Reasoning: The argument compares a punitive fine to a textbook being educational. This comparison is"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Reading everyone's comments has made me change my opinion on having an adventure mode like thing in PoE. I keep seeing if an adventure mode needs to exist then why not just start a char at 68. then a couple months after that we'll see post about how people want to start at 90 just so they can kill bosses. Then a few months later we'll see people asking for a""creative"" mode so they can have access to all items in the game so they don't have to farm, and i dont think that sets a good example as a community for a game that we all love."	" I don't want PoE to end up like WoW
+Fallacy: Slippery Slope
+
+Formal: If we add an adventure mode (P1), then eventually gamers might want to start at higher levels (P2). Eventually, some may even want a “creative” mode with all items available, which"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Refusing to acknowledge that you made a mistake and making excuses instead of being better. We're human. We're flawed - all of us.	" It's the mistakes we learn from that make us better.
+
+Given the input text, the claim is that one should acknowledge their mistakes for personal growth. If individuals don't acknowledge their errors and apologize, it will hinder their potential for self-improvement.
+
+This argument lacks evidence and is unsound. It suggests that making"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Rightly so. I don't care how it makes trans people feel, the vast majority of people would want to know if someone was born a different sex to that which they're passing themselves off as.	" It's just wrong. 
+
+Formal: P1 (a person might feel uncomfortable knowing someone was born a different sex). P2 (most people would want to know). Therefore, C (the practice is wrong).
+Fallacy: Appeal to Popularity
+
+Choose exactly one fallacy from the list above. The correct"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Sam is riding her bike in her home town in Maine, minding her own business. A station wagon comes up behind her and the driver starts beeping his horn and then tries to force her off the road. As he goes by, the driver yells""get on the sidewalk where you belong!"" Sam sees that the car has Ohio plates and concludes that all Ohio drivers are jerks.
+"	" Sam is committing the fallacy of Hasty Generalization.
+Fallacy: Hasty Generalization
+
+Formal: E (Sam) has a specific experience with one OH driver (the rude behavior) and generalizes it over all Ohio drivers, concluding that all drivers from Ohio are the same.
+
+Fallacy: Hasty"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Several years ago, a group of 10 psychologists started a psychology training program. Each of those psychologists is efficient, effective, and highly-regarded. Their training program must be efficient, effective, and highly-regarded.
+"	" (Note: this is not my argument, but a hypothetical one.)
+
+C = conclusion
+
+Formal: E (10 efficient, effective, highly-regarded psychologists) have started a psychology training program. Therefore, the training program is efficient, effective, and highly-regarded.
+Fallacy: Hasty Generalization
+
+Answer"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Slavery is accepted by just about everyone in our society, so it's ethical to keep slaves.
+"	" I mean, what's the big deal?
+Fallacy: False Appeal to Consensus
+
+Formal:
+E (slavery) is acceptable according to many people in society. Therefore, E (slavery) is considered to be ethical and not a major issue.
+Fallacy: False Consensus
+``` sql
+SELECT"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	So a woman got in an altercation, got mad and grabbed a gun and starting shooting, and was then shot by someone else.	" The problem seems to not be people owning guns... the real problem is people being mad.
+Fallacy: False Cause
+Formal Reasoning: The input text suggests that the act of owning a gun and the act of being mad are both causes for the violence in this case. The conclusion drawn, however, implies that"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	So freaking true...I recently got a $100k+ job without a college degree, before my 30th birthday. I did it because I worked my ass off and learned a skill in the military. It's not that hard you just got to do the best you can.	" Keep pushing forward and eventually you'll get there. It's really not that complicated.
+Fallacy: Slippery Slope
+
+Formal: P1 (work hard and learn a valuable skill) leads to P2 (obtain a $100k+ job), implying that success is easy if you just keep pushing forward"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	So he's saying liberals are better educated than conservatives. We agree. Trump isn't the only one who loves the poorly educated.	" He's just more honest about it.
+Formal: The speaker agrees with a claim (liberals are better educated than conservatives) and uses a sarcastic tone to say that Trump admires the poorly educated. Therefore, the claim is accepted.
+Fallacy:Sarcasm
+
+
+Input:The FDA didn't approve it,"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"So if it was advertised with the 1080p screen, but doesn't have that, you could get a refund and return it - ""not as described"" - or, contact the vendor and negotiate a rebate."	" 
+Fallacy: None
+
+Formal: P1 (1080p screen is advertised) but not present in the product which leads to C (""not as described""). Hence, P2 (customer is eligible for a refund or rebate). No fallacy.
+
+Formal: P (the candidate is friendly) supports C"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	So much important stuff in the world that needs political activism. Makes a petition to portbeg P5 onto PC and Switch.	" Why aren’t these petitions getting more signatures? People are so self-centered.
+Fallacy: Appeal to Anger
+
+Explanation: The input includes a negative comment about people not showing support for a petition through signing it, framing them as'self-centered'. This kind of statement usually tries to evoke a sense of anger or frustration"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	So now the far left is going to have to admit that there is a difference between the brains of men and women and their behavior isn't just a social construct that is created by what toys they are raised with? Looks like the exception is charging to the rescue of the norm. Plot twist!	" Fallacy: Ad Hominem
+The given argument seems to be attacking the entities involved (far left, brains of men and women) and the argument does not contain a true factual premise, nor does it propose a logical conclusion. It can be classified as an Ad Hominem fallacy, which occurs when an"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"So the least corrupt state is anarchy by this logic. This is""deep"" libertarian bullshit. Yes, over regulation is a thing, but laws against theft, murder, slavery, child labor, education, etc. are good things - not corruption."	" 
+
+Formal: An argument claims that without any laws (anarchy), a state would be the least corrupt. The counter-argument states that laws against theft, murder, slavery, etc., although they can be overregulated, are necessary and good, and hence, anarchy would not be the least corrupt state.
+"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	So was the bar burned by a mob and the owner killed? If not, Christians have a ways to go before they are on par with Muslims.	" So, given that Islam preaches peace, why are its followers prone to such violence?
+Fallacy: False Analogy
+
+Explanation: The comparison between Christians and Muslims in this context is an unfair and misleading analogy. It assumes that both groups should have similar levels of violence, which isn't a valid basis for comparison."
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	So what would be the down side of this? I'm just curious if someone could tell me that would be great.	" 
+Classification: No fallacy
+
+Input: The government has proposed a major increase in the minimum wage. However, this would lead to companies either having to raise their product prices or lay off employees to compensate for the increased labor costs. Additionally, companies may also choose to move operations overseas where labor is cheaper. 
+Classification"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Social media is the worst. People don't realize how much of an effect it has on someone, especially his generation. Anyone in the public eye who has any sort of mental health issue should rid themselves of their accounts if they possibly can. I understand studios force some actors to be active there, but if it's the difference between leading a happy, healthy life or getting a movie role, it really should be an easy decision.	" I think it really needs to be a wake-up call, especially after what happened with Chris Cornell and Chester Bennington. What happened to both of them is a tragic, unnecessary loss of life. I don't think people are making the connection that being active on social media could play a part in it.
+
+The given"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Someone once told me they have an""alt"" cause their main account was too high of rank to play with their friends. It's exactly the same as smurfing."	" Smurfing is when people make new accounts just so they can play with their friends at a lower rank.
+
+Given the input text, classify if it contains a fallacious argument.
+Fallacy: Appeal to Authority
+Formal: An unspecified individual claims P (having an ""alt"" account makes it easier to play with"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"The Freehold Raceway Mall is the best mall because there are always so many cars there.
+"	" This shows that it is popular and gets a lot of traffic.
+
+Formal: P1 (many cars at the Freehold Raceway Mall) and P2 (popularity and traffic are indicators of mall value), leading to P (the Freehold Raceway Mall is the best mall). 
+Fallacy: Wrong
+"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"The United States is the wealthiest nation in the world. So every American is wealthy.
+"	" Fallacy: False Dilemma. 
+
+Input: The average American spends more money on coffee than any other country in the world. Therefore, coffee shops must be doing well in the United States. Fallacy: Hasty Generalization.
+
+Input: It's raining outside, so obviously it's too cold to go for"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	The bible is not Clear it's clear enough so that there are 2.18 billion Christians A comprehensive demographic study of more than 200 countries finds that there are 2.18 billion Christians of all ages around the world, representing nearly a third of the estimated 2010 global population of 6.9 billion. <URL>	" The bible is clear enough to create a world religion. It's success speaks for itself
+Fallacy: Fallacy of Begging the Question
+
+Formal:
+P (the bible is clear enough) is assumed in the argument that leads to the conclusion -C (there are 2.18 billion Christians).
+Fallacy"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	The drunk guy I agree with, however the other two are perfectly fine. Most states have laws against carry while drinking. Someone choosing to open carry an AR isnt subject to your approval. They dont need you to think their are cool to exercise a right. 14 year olds are plenty old enough to be around loaded guns. They arent 4. I had guns in a safe in my bedroom from 10 years old. I had the key and ammo. Again, someone else's rights arent based on your approval.	" 
+Fallacy: False Dilemma
+Fallacy: Slippery Slope
+Fallacy: Appeal to False Authority
+
+Formal:
+P1 (littering) is compared to P2 (global warming), which is a worse problem, leading to the conclusion that P1 is not important.
+Fallacy:"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"The last Democrat winner of the New Hampshire primary won the general election. This year, the winner of the New Hampshire primary will win the general election.
+"	" Fallacy: 
+Appeal to Habit
+
+OR
+
+Formal: E1 (the last Democrat winner of New Hampshire primary) had property P (won the general election). E2 (this year’s Democrat winner of the New Hampshire primary) is similar to E1 in terms of property P.
+Fallacy: Appeal"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	The mustard thing really drives me crazy because he was at a deli. He wasn't at some persons house calling them trash when they didn't have his preferred condiment, they're supposed to have that stuff. It's like getting mad at someone when they ask for marinara at a pizza joint.	" I mean, c'mon. He just needs to get over it.
+Output:Fallacy: Ad Hominem
+
+Explanation: In the argument, instead of addressing the issue at hand (liking or disliking mustard), the attacker tries to undermine the other person's character by relating it to a trivial matter"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"The president of Honduras is a good leader because he is a leader of the country.
+"	" Formal: E (president of Honduras) has the property P1 (being a leader), leading to conclusion P2 (is a good leader).
+Fallacy: Fallacy of Ambiguity
+
+Answer: Fallacy of Ambiguity
+Explanation: In this case, the logic does not hold because it confuses"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"The sea-ice loss is President Vladimir Putin' s gain. Already the largest country on the planet, Russia stands to gain access to shipping routes and energy reserves, and a strategic military advantage from the opening of the Arctic. Along the Russian coastline, which makes up more than half the Arctic total, winds and currents push old ice away from potential shipping lanes and prevent the build-up of thicker, multi-year ice that would leave other parts of the Arctic impassable for longer periods.
+"	" In this manner,  the disappearance of the polar ice cap plays into the hands of the Russian navy.
+Fallacy: Ad Hominem
+
+The given text presents a Fallacious Argument called Ad Hominem. This occurs when the attacking the character or motive of a speaker or argument is used to dismiss or weaken the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"The spider that bit was poison, therefore all spiders are poison.
+"	" Fallacy: Hasty Generalization.
+
+The fallacious premise can be represented with the following formal structure:
+
+Premise: E (the spider that bit) has attribute P (poison).
+Conclusion: All E1 (spiders) have attribute P (poison).
+
+In this scenario, we are inferring a specific"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"The teenagers where rude and disrespectful therefore all teenagers are rude and disrespectful.
+"	" Fallacy: Hasty Generalization
+
+The fallacy present in this argument is Hasty Generalization. It is a fallacy of hasty generalization when one draws a sweeping conclusion based on very little evidence. In this case, the conclusion (all teenagers are rude and disrespectful) is made based on a single observed"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	There is a compromise: Popped bosses. You do a bunch of stuff/farming/crafting to assemble an item that will spawn the boss in the open world. It will automatically be claimed by the group that spawns it. Is it still possible to grief? Yes, but it's more limited. On another note, then I would like to see stuff like BCNMs from FFXI.	" Random events in the open world, I'm okay with. Random events in a designated spot, I'm okay with. Random events in the open world at designated times, I really like.
+Fallacy: Appeal to Authority
+Correct Answer: 
+
+Formal: 
+
+E (a proposal for handling bosses in a game)"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	There is a place off republic road called Fetch. You can bathe your dog there and they provide brushes, towels, shampoo. If you go on Wednesday it is half price for dog wash Wednesday.	" So, it is a really inexpensive dog washing service. 
+Given the input text, classify if it contains a fallacious argument. 
+
+Fallacy: No fallacy
+Explanation: This argument gives relevant information about the location and their pricing policy for dog washing services, making a claim about an inexpensive service. There are no"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"There must be a firm basis to people hating Islam. There are many of us and we can't all be wrong. Am i afraid of Islam and what it can do to this country? You are damn right i am and with good reason. With my own two eyes i have seen how it destroys countries, Islamic countries none the less. People that support this religion blowing each other up. You are doing a dis-service to your country being""politically correct"" in regard to Islam and your children will suffer because of it."	" Islam is not a peaceful religion, only those that do not know any better think so.
+Fallacy: Ad Hominem, False Dilemma, Appeal to Fear, Straw Man, Appeal to Anger, Appeal to Authority, Appeal to Emotion.  Answer: Ad Hominem, False Dilemma"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"These are unidentified people, and after the bomb goes off, they're blown to bits because they are suicidal individuals who think they're going to go to paradise if they perpetrate such an act and lose their life in doing it. We are going to, as I say, we're busy trying to find the centers where these operations stem from, and retaliation will be taken. But we're not going to simply kill some people to say,""Oh, look, we got even.''
+"	" That's not what America is all about.
+Fallacy: Straw Man
+Formal: E1 (unspecified) claims P (bombings caused by suicidal individuals). E2 (the speaker) distorts the claim as P′ (bombings are supported by America). Therefore -P. istrators, please"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"These test results are clearly wrong, and it must be either because the client was malingering or because I bungled the test administration. Taking another look at the test manual, I see now that I bungled the test administration. Therefore the client was not malingering.
+"	" The original premise that the test results must be wrong was the root of the error.
+
+Fallacy: Denying the Antecedent. 
+
+Formal: P (test results are wrong), leading to P1 (client was malingering) or P2 (I bungled the administration). It is found that"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	They are backward like that. Best we move on with the solution. Bitcoin Cash proves they were wrong about this and many other things.	" Bitcoin Cash also has 2m unique users. 
+
+The given text contains an appeal to False Authority fallacy because it uses the success of Bitcoin Cash as an authority to validate its argument but without substantial evidence or logical reasoning. This is a type of fallacy where an argument is considered valid based on the authority or expertise"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	This feels like definite nostalgia talking to me. Off the top of my head legiondaries were pretty bad bc it took so long to be able to target them. I remember getting the one I wanted for a character about a week before BFA dropped and not really being able to use it. Also was never really a fan of the AP grind tho I did love having my weapon always guaranteed. Order halls were also super hit or miss for me and I hated the rogue one. Spent most of my time in the Maelstrom and I liked it tho.	" Honestly just wanting a different game, I've played it since launch and just wanna try something new, not entirely sure what yet.
+Given the input text, classify if it contains a fallacious argument.
+
+Fallacy: Ad Hominem
+
+Formal: The author attacks the character of the legiondaries by mentioning that"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	This is a ridiculous post and this mechanic will never be changed. Seat switching has always been a BF mechanic. Dont sit here and try and talk about realism or how you shouldnt be able to swap instantly between seats when there is hardly anything realistic about BF vehicle play in general. Sounds like you need to get better if you are having trouble shooting down the most vulnerable aircraft in the sky.	" There is a reason why its done at the start of the round and if you are that against it just sit out.
+Fallacy:
+False Dilemma, Straw Man, Appeal to Authority, and Ad Hominem 
+
+No fallacy. 
+
+The text attacks the character of the person who disagrees with the seat switching"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"This is cool and all, but I'm glad it's not being passed in a country where I live. If you give the government *any* control over what is considered""hate speech"", you are basically relinquishing your freedom of speech. It's a slippery slope. For example: saying""hateful"" things about Islam becomes illegal. Let's say you criticise Sharia laws (laws based off of the rules set out in Islam for those who are unaware). Next thing you know, your own government has full power to censor this""hate"", and you are persecuted simply for disagreeing with the laws of an ally nation. Governments have shown time and time again that they are more than happy to censor and abuse their peoples. Don't ever relinquish your freedoms willingly."	" Ever.
+
+Formal: P1 (proposed law to curb hate speech) leads to P2 (government control over speech) which then leads to P3 (potential censorship and abuse of power). Therefore, -P1.
+Fallacy: Slippery Slope
+
+Input: If we don't fight climate change now"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	This isn't impossible odds at all. It makes sense that the bar would snap when he was in a position to land, it would be bizarre if it didn't. That's the point at which the most weight is pulling on it, due to gravity.	" It's why we build structures to certain standards to account for this.
+
+Fallacy: None
+
+Reasoning: The author is explaining why it is logical for the bar to snap when it is being pulled with great force due to gravity. The argument is not fallacious. 
+
+Fallacy: None
+
+Reasoning: There"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"This movie was #1 at the box office last weekend! That means it must be really good!
+"	" Formal: P(a movie being #1) is associated with P2(being really good). E (the cited movie), therefore has P2. Fallacy: Appeal to Popularity
+
+The fallacy used in the input is Appeal to Popularity. The argument claims that just because a movie is #1 at the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	This sounds like the sort of thing you hear about Middle East countries not the formerly most powerful nation in the world.	" This indicates that, if these premises were true, that would be very bad or an obstacle. 
+
+Formal: P1 (economic woes), P2 (low morale), and P3 (increased crime rates) are linked to E (formerly most powerful nation). C (the end of the nation’s supremacy)."
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Three congressional representatives have had affairs. Members of Congress are adulterers.
+"	"100% of members of Congress who were surveyed have cheated on their spouses.
+Fallacy: Hasty Generalization
+
+Reasoning: This argument is a hasty generalization because the conclusion (100% of members of Congress surveyed had cheated) is based on a small sample (only three representatives).
+
+Input: The majority of"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Two groups working towards the same goal shared some information. Big deal. Hopefully the police will use their resources on more serious issues such as knife crime, drug gangs and scooter criminals.	" 
+
+Formal: P1 (two groups working towards the same goal share some information) is linked to P2 (police resources should focus on serious issues). Therefore, -P1 (information sharing between some groups is not important).
+Fallacy: Appeal to Worse Problem
+
+The correct classification is: Formal: E"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Two of my best friends are really introverted, shy people, and they both have cats. That leads to me believe that most cat lovers are really shy.
+"	" Is it true?
+Fallacy: Hasty Generalization
+- OR -
+Fallacy: Fallacy of Division
+
+Answer: Hasty Generalization. Even though the author presents valid points about two friends and their shared love for cats, the generalization that'most cat lovers are really shy' cannot be confirmed without considering"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"Violent video games cause teens to be violent, because violent teens play violent video games.
+"	" Therefore, violent video games must be banned.
+
+Formal: E (violent video games, violent teens) show correlation between P1 (violent video games) and P2 (violent behavior). This correlation is presented as causation, leading to conclusion C (banning violent video games will reduce violence in teens).
+Fallacy"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"We know God exists because he made everything
+"	" Fact: God made everything because it was vacant.
+
+Answer: Fallacy, Appeal to Authority
+Formal: The conclusion is based on an assumption of divine authority (i.e., God) without providing evidence or a logical argument. This appeal to authority, or an appeal to God, assumes that God's existence or actions"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Well it's common in Sichuan where this dish is originated from to serve it like this, so it's not a stupid restaurant plating thing it's how it should be	" served!
+The premises presented in the argument are that a dish from Sichuan is traditionally served in a certain way, and that a restaurant serving it in that way is not stupid. The conclusion drawn from these premises is that the restaurant's way of serving the dish is correct, and it is not just a matter of"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Well, democracy gave us Trump to the whole world. I'll let others judge what democracy is.	" Because if this is democracy, then let's have a strong autocracy. Democracy clearly doesn't work.
+One can easily see fallacies in the argument. Specifically, a false dilemma, false cause, and an ad populum.
+Fallacy: Appeal to False Authority
+Fallacy: False Causality
+Fallacy"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	What are the reasons for viewing regulated hunting in the same light as factory farming? I went veg because factory farming is horribly unnatural, but I can't really come up with an argument against hunting based on what made me go veg...	"Any thoughts?
+
+The reasoning provided compares two distinct sets of practices, assuming they share similar problems, but offers no direct link or justification for this comparison, leading to a weak argument.
+
+Fallacy: False Analogy
+___________
+Answer: False Analogy
+```python
+import random
+
+def choose_answer():
+    answers"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	What is he saying/rephrasing?	" 
+""He says the Earth is flat but he has never actually been there to verify it himself."" 
+""The Earth might actually be round but he’s probably just seen a couple photos."" 
+""He claims the sky is blue but has never skydived to confirm it himself.""
+
+Solution:Ad Hominem
+Explanation: In"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	When Reddit can't get more unoriginal	" people to vote then they have to resort to tactics like this to try to push people. It's not working.
+Fallacy: Ad Hominem
+
+Formal: A (critics of the product) are attacking the person who made the product (P, creator). The creator's character flaws are used to discount"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Who is mad about this? What did I miss?	" It's not like it's a nuclear attack or anything.
+
+Formal: E1 (unspecified person) seems upset about a situation. E2 (the speaker) trivializes E1's emotional response by comparing it to nuclear attack, implying that E1's response is excessive. Therefore, E1's emotion is"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Wow, over 100 victims... that's horrible. What was the motive behind such a terrible way of life, and personality?	" 
+The fallacy in the input text is an Appeal to Emotion. 
+
+Answer: Appeal to Emotion
+
+Explanation: The fallacy is present when the text evokes emotional reactions from the audience instead of providing logical reasons or evidence. In this case, the phrase ""over 100 victims... that's horrible"""
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Yes, there has been a response. Here's a point by point refutation of each claim made, along with full citations listing and quotes: <URL> I'm the author of the paper, so I'd be willing to answer any questions you have.	" 
+Fallacy: The above text does not contain a fallacious argument. 
+
+There are 16 choices for fallacies in this question.
+
+Answer: No fallacy
+```
+
+
+
+
+```
+Note: If the input does not contain a fallacious argument, the answer should be ""No fallacy"" as shown above."
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Yes. Porn has gained the support of popular culture, but it is unhealthy. It has been shown to make men more sexually aggressive, dissatisfied with their own sex lives, and contributes to the global sex trade. Viewing porn also causes prolonged dopamine exposure, which the brain will build resistance against - making it more difficult to feel joy from other daily activities. Porn is also highly addictive, and has diminishing returns over time, so a user will have to watch more porn, or more extreme porn, to get the same amount of dopamine. Check [fightthenewdrug.org](<URL>) for studies on the harmful effects of pornography.	" Finally, pornography teaches viewers unrealistic expectations about bodies and sex, which can affect relationships negatively.
+
+Given the input text, classify if it contains a fallacious argument. Start by giving the formal reasoning and follow with the name of the fallacy. 
+
+A fallacious argument is present in the text. The argument assumes that since"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"You should drive on the right side of the road because that is what the law says, and the law is the law.
+"	" Formal: P1 (the law says) and P2 (obey the law). Therefore, C (drive on the right side of the road).
+Fallacy: Appeal to Authority
+
+- Fallacy: Appeal to Authority
+- Option: Formal: E (John) claims P (the earth is round). John"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"You should never gamble. Once you start gambling you find it hard to stop. Soon you are spending all your money on gambling, and eventually you will turn to crime to support your earnings.
+"	" Therefore, you should never gamble.
+Fallacy: Slippery Slope
+
+Explanation: The argument claims that by starting to gamble one will inevitably descend to crime without providing evidence or logical explanation for such a transition, leading to such a conclusion about the fallacy called slippery slope. The transitions are exaggerated and are based on negative"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	Young people who do not vote should be shamed. What can we do to get more young people involved? The barriers today are much less than any other time in history, eg women and people of color segregation and disenfranchisement	" are gone. (bolded part added)
+Fallacy: False Comparison
+Formal: E (young people not voting) is compared to E′ (women and people of color), which are two different situations, leading to the false conclusion that the barriers for young people not voting are less than in the past.
+Fall"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	[Nerdy girl with pigtails and braces is a common stereotype](<URL>). Dolly looks very similar to that stereotype, thus people get the details mixed up. That said, this is one of the best MEs around as it would fit really well together with Jaws, so it's weird that they didn't use braces in the movie.	" Anyways, she still looks good.]
+
+Fallacy: Appeal to Popularity
+Formal: P (Jaws would have been better with the inclusion of braces) is based on the premise that Dolly looks suitable to fit in the movie. The argument relies on the approval of a large audience, leading to the fall"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	alex jones is cuckoo bananas and joe organ just lets him ride on like a monkey on a pig with a cowboy hat. he thinks he's just hanging out with a buddy but what he fails to realize is that he has a huge platform with a fan base of highly impressionable young men who feel wronged by society and entitled to scream like a monkey on the back of a pig with a cowboy hat	" about how much they hate everything and everyone
+Fallacy: Appeal to Ridicule
+
+Formal: E1 (alex jones) and E2 (joe organ) are given properties P (cuckoo bananas and lets him ride on like monkey on a pig with a cowboy hat) that discredits the"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	can anyone explain the part where it says he tried to crash the market at 6k?.... i dont get the reasoning behind this?	" 
+
+Classification: No fallacy  |  Explanation: The statement in the input text isn't a argument, but an expression of confusion or bafflement which lacks the components of a formal argument (i.e., premises and a conclusion). Therefore, we can say it does not contain a fallacy. 
+
+---
+
+Input:"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	confirmation bias.	" A person believes that because the data they have supports their belief, the belief is true, even if the data is insufficient or faulty.
+Answer: Fallacy: Confirmation Bias
+Explanation: Fallacy is being committed when the person relies upon the limited or faulty data that supports their existing belief while disregarding any contradictory evidence."
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	let's not use homophobia as an insult, okay?	" that's definitely not cool
+Fallacy: False Cause
+
+No fallacy
+
+Fallacy: False Analogy
+
+Fallalcy: False Dilemma
+
+Formal reasoning:
+Given: We need to choose exactly one fallacy from the list provided that matches the input given. The input given is - ""Let's"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"ok but can I just say - no his doesn't sound familiar. The left is asking for expanding background checks, closing the gun show loop hole, maybe registering firearms and creating a system that addresses or catches strawman purchases. We don't need to play this strawman argument game. And we don't need to do the""slippery slope"" thing either. Reasonable regulations doesn't lead to the fed keeping lists and someday coming after all gun owners to suppress the working class."	" This is a strawman argument.
+Fallacy: Slippery Slope, Straw Man
+
+Formal: E1 (left) claims P1 (expanding background checks, closing the gun show loophole, registering firearms, and addressing strawman purchases), while E2 (speaker) distorts it as P2 (f"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"only man is rational no women is man Therefore, no women is rational
+"	" -- This reasoning contains a fallacious argument. 
+
+Fallacy: 
+No fallacy
+
+Answer: The given text does not seem to present a fallacious argument. It expresses a point of view but the conclusion, ""no woman is rational,"" does not follow logically from the premises ""only man is rational"" and """
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"question, both medical marijuana and adderall are both banned NFL substances. Adderall is allowed with a prescription, so why wouldn't medical marijuana be allowed with a prescription if a player is in a state where medical marijuana is legal? edit. /u/btbrian makes a great point. ""For one thing, it would inherently give players in states where it is legal an edge if it does have performance related (pain management) effects like they claim"""	".""
+Fallacy: Appeal to False Analogy
+
+Formal: P1 (medical marijuana and adderall are both banned NFL substances), P2 (adderall is allowed with a prescription), P3 (medical marijuana should also be allowed with a prescription in states where it's legal). However, E (a user"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	"smoking cigarettes is deadly because cigarettes can kill you
+"	"1 out of every 5 deaths in the US is caused by smoking.
+It does not contain a fallacious argument. Although the statistics provided support the conclusion, the premises themselves may be inaccurate or outdated. Furthermore, the statistics should be referenced. Fallacy: No fallacy.
+Choice: No fallacy. 4"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	tl;dr: rushed and rejected from one sorority, should I rush another? Answer: yes	", and let it be your last stop, not your only chance.
+
+Output: Fallacy: Appeal to False Authority
+Explanation: It suggests an answer based on a false assumption that rushing another sorority would be the last step in the process, ignoring the possibility that the person might be rejected again. It also undermines"
+NousResearch/Hermes-2-Pro-Llama-3-8B	logicot	try setting VRCompositor and VRServer priority to real time from task manager. this seems to be a general solution for microstuttering in certain pcs. also make sure the Nvidia in-game overlay is disabled (geforce experience setting)	" and turn of all unused programs with task manager. my PC had the exact same issues that have been resolved through these steps. therefore; these steps should be taken to resolve microstuttering in VR. 
+Given the input text, classify if it contains a fallacious argument. Start by giving the formal reasoning and follow"

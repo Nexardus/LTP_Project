@@ -83,7 +83,7 @@ def generate_all_models(models, prompt_techniques, dataset_path, output_file):
                         "Input": input_text,
                         "Output": output
                     })
-                pd.DataFrame(new_rows).to_csv("output/output_data_temp.csv", index=False, sep="\t")
+                pd.DataFrame(new_rows).to_csv("output/output_data_temp.tsv", index=False, sep="\t")
                 progress += 1
         del model # Nuke from memory just to be sure
         del tokenizer
@@ -118,9 +118,9 @@ def main():
     parser.add_argument(
         "--output",
         "-o",
-        help="Name of the output file. For example: 'output/inference_output.csv'.",
+        help="Name of the output file. For example: 'output/inference_output.tsv'.",
         type=str,
-        default="output/inference_output.csv"
+        default="output/inference_output.tsv"
     )
 
     args = parser.parse_args()
