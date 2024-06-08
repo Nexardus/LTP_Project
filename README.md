@@ -24,8 +24,9 @@ For the MAFALDA test set, you can run `preprocess_mafalda.py`.
 Running `dataset_analysis.py` on a given **cleaned** TSV-formatted dataset will output and plot some statistics about the dataset. These plots are used in our paper as well.
 
 ## Running on Habrok (RUG university cluster)
-We have included the scripts used for running GPU-accelerated inference on Habrok in the `jobscripts` folder. In addition, the output from our runs are included in the `output` folder.
+We have included the scripts used for running GPU-accelerated inference on Habrok in the `jobscripts` folder. These can be run through e.g., `sbatch jobscripts/run_inference_test.sh`.
+In addition, the output from our runs are included in the `output` folder.
 
 These outputs can be cleaned with `clean_output.py`, and will be stored in `cleaned_output`. 
 This cleaned output can be analyzed with `prediction_analysis.py`, which will output some statistics and plots about the model's preferences of certain classes.
-Finally, metric scores can be calculated with `calculate_metrics.py`.
+Finally, metric scores can be calculated with `calculate_scores.py`.

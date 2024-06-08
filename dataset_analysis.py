@@ -19,7 +19,7 @@ def main():
     )
     parser.add_argument(
         "--validation",
-        "-m",
+        "-v",
         help="Path to the cleaned validation data (csv file with tab as separator). For example: 'cleaned_datasets/unified_validation_set.tsv'.",
         type=str,
         default="cleaned_datasets/unified_validation_set.tsv"
