@@ -1,3 +1,5 @@
+import argparse
+
 import pandas as pd
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -88,13 +90,46 @@ def generate_all_models(models, prompt_techniques, dataset_path, output_file):
 
     pd.DataFrame(new_rows).to_csv(output_file, index=False, sep="\t")
 
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--dataset",
+        "-d",
+        help="Path to the cleaned input data (csv file with tab as separator). For example: 'cleaned_datasets/unified_validation_set_downsampled.tsv'.",
+        type=str,
+        default="cleaned_datasets/unified_validation_set_downsampled.tsv"
+    )
+    parser.add_argument(
+        "--models",
+        "-m",
+        help="HuggingFace model namespace. For example: 'NousResearch/Hermes-2-Pro-Llama-3-8B'.",
+        type=str,
+        nargs='*',
+        default=["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5", "NousResearch/Hermes-2-Pro-Llama-3-8B"]
+    )
+    parser.add_argument(
+        "--prompts",
+        "-p",
+        help="Prompting technique(s) to use. For example: 'logicot'.",
+        type=str,
+        nargs='*',
+        default=["gcot", "logicot", "ccot", "multi-agent"]
+    )
+    parser.add_argument(
+        "--output",
+        "-o",
+        help="Name of the output file. For example: 'output/inference_output.csv'.",
+        type=str,
+        default="output/inference_output.csv"
+    )
+
+    args = parser.parse_args()
+
+    generate_all_models(args.models,
+                        args.prompts,
+                        args.dataset,
+                        args.output)
+
 
 if __name__ == "__main__":
-    prompt_techniques = ["gcot", "logicot", "ccot", "multi-agent"]
-    models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5", "NousResearch/Hermes-2-Pro-Llama-3-8B"]
-    generate_all_models(models,
-                        prompt_techniques,
-                        "cleaned_datasets/unified_validation_set_downsampled.tsv",
-                        "output/output_data.csv")
-
-    # TODO make this use CLI params and include configuration for run_test
+    main()

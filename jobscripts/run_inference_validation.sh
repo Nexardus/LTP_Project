@@ -14,4 +14,4 @@ source $HOME/venvs/ltp/bin/activate
 
 pip install -r requirements.txt
 
-python3 run_validation.py
+python3 run_inference.py

@@ -7,7 +7,7 @@ This project uses Python 3.11. Dependencies are specified in `requirements.txt`.
 We use `ruff format`, `ruff check`, and `mypy *.py` to format and check our code. See `pyproject.toml` for more information.
 
 ## Datasets
-- [Argotario](https://github.com/UKPLab/argotario), [paper](www.aclweb.org/anthology/D17-2002)
+- [Argotario](https://github.com/UKPLab/argotario), [paper](https://www.aclweb.org/anthology/D17-2002)
 - [ElecDeb60to20](https://github.com/pierpaologoffredo/ElecDeb60to20), [paper](https://aclanthology.org/2023.emnlp-main.684.pdf)
 - [LogicClimate](https://github.com/causalNLP/logical-fallacy), [paper](https://arxiv.org/abs/2202.13758)
 - [LogicEdu](https://github.com/causalNLP/logical-fallacy), [paper](https://arxiv.org/abs/2202.13758)
