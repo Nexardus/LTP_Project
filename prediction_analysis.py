@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 
 def main():
 
-    data = pd.read_csv("output/inference_output_21_may_cleaned.csv", sep="\t")
+    data = pd.read_csv("cleaned_output/inference_output_21_may_cleaned.csv", sep="\t")
 
     print(data)
 

@@ -13,10 +13,10 @@ def main():
     palette = {"MAFALDA": "C0", "Validation": "C1", "Downsampled": "C2"}
 
 
-    downsampled = pd.read_csv("datasets/unified_validation_set_downsampled.tsv", sep="\t")
-    gold = pd.read_csv("datasets/MAFALDA_gold_processed.tsv", sep="\t")
+    downsampled = pd.read_csv("cleaned_datasets/unified_validation_set_downsampled.tsv", sep="\t")
+    gold = pd.read_csv("cleaned_datasets/MAFALDA_gold_processed.tsv", sep="\t")
 
-    valid = pd.read_csv("datasets/unified_validation_set.tsv", sep="\t").sample(n=len(gold), random_state=42)
+    valid = pd.read_csv("cleaned_datasets/unified_validation_set.tsv", sep="\t").sample(n=len(gold), random_state=42)
 
     valid["Dataset"] = "Validation"
     downsampled["Dataset"] = "Downsampled"

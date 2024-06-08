@@ -94,5 +94,7 @@ if __name__ == "__main__":
     models = ["Salesforce/xgen-7b-8k-base", "lmsys/vicuna-7b-v1.5", "NousResearch/Hermes-2-Pro-Llama-3-8B"]
     generate_all_models(models,
                         prompt_techniques,
-                        "datasets/unified_validation_set_downsampled.tsv",
+                        "cleaned_datasets/unified_validation_set_downsampled.tsv",
                         "output/output_data.csv")
+
+    # TODO make this use CLI params and include configuration for run_test

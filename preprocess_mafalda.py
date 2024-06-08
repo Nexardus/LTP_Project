@@ -41,5 +41,5 @@ def process_mafalda(mafalda_path: str,
 if __name__ == "__main__":
     label_to_superlabel = label_mapping()
     process_mafalda("datasets/MAFALDA_gold.jsonl",
-                    "datasets/MAFALDA_gold_processed.tsv",
+                    "cleaned_datasets/MAFALDA_gold_processed.tsv",
                     label_to_superlabel)

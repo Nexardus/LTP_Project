@@ -39,7 +39,7 @@ if __name__ == "__main__":
     df['Extracted Superlabel'] = df.apply(lambda row: extractor.extract_label(row["Cleared_output"])[0], axis=1)
     # df.to_csv("./output/inference_output_21_may_cleaned.csv", index=False, sep="\t")
 
-    true_labels = pd.read_csv("datasets/MAFALDA_gold_processed.tsv", sep="\t")
+    true_labels = pd.read_csv("cleaned_datasets/MAFALDA_gold_processed.tsv", sep="\t")
     true_labels['Input'] = true_labels['Input'].apply(normalize_text)
     true_labels.rename(columns={"MAFALDA Label": "True Label", "MAFALDA Superlabel": "True Superlabel"}, inplace=True)
 
