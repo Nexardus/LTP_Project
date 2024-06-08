@@ -32,7 +32,7 @@ This cleaned output can be analyzed with `prediction_analysis.py`, which will ou
 Finally, metric scores can be calculated with `calculate_scores.py`.
 
 ## Reproducing the pipeline
-The command line argument defaults are set to reproduce the pipeline as described in the paper. The following steps are required (after having installed the requirements):
+The command line argument defaults are set to reproduce the pipeline for the downsampled validation set as described in the paper. The following steps are required to reproduce both the validation set and the MAFALDA results (after having installed the requirements):
 1. `python3 preprocess_unified_validation_set.py`
 2. `python3 preprocess_mafalda.py`
 3. `python3 dataset_analysis.py`
