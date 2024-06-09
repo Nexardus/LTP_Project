@@ -3,9 +3,10 @@ import re
 from collections import defaultdict
 import difflib
 
+
 class LabelExtractor:
     def __init__(self, fallacies_file: str):
-        with open(fallacies_file, 'r') as f:
+        with open(fallacies_file, "r") as f:
             self.fallacies = json.load(f)
 
         self.fallacy_mapping = defaultdict(lambda: "")
@@ -20,7 +21,7 @@ class LabelExtractor:
         llm_response = llm_response.lower()
 
         # pattern to match prefixes and ensure only (semi-)valid fallacy names are captured
-        pattern = r'(' + '|'.join(re.escape(prefix) for prefix in self.prefixes) + r')\s*(\w[\w\s]*)(?=\s|$)'
+        pattern = r"(" + "|".join(re.escape(prefix) for prefix in self.prefixes) + r")\s*(\w[\w\s]*)(?=\s|$)"
 
         for line in llm_response.splitlines():
             match = re.search(pattern, line.strip())
@@ -53,12 +54,15 @@ class LabelExtractor:
 
         return "No Fallacy", "No Fallacy"
 
-if __name__ == "__main__":
-    extractor = LabelExtractor('fallacies.json')
 
-    response = ("Output: Fallacy: Appeal to Ppiity \n\n"
-                "Input: The victim’s family has been torn apart by this act of terror. Put yourselves in their terrible situation, you will see that he is guilty.\n\n"
-                "Output: Fallacy: Appeal to Anger\n\n"
-                "Input: If you")
+if __name__ == "__main__":
+    extractor = LabelExtractor("fallacies.json")
+
+    response = (
+        "Output: Fallacy: Appeal to Ppiity \n\n"
+        "Input: The victim’s family has been torn apart by this act of terror. Put yourselves in their terrible situation, you will see that he is guilty.\n\n"
+        "Output: Fallacy: Appeal to Anger\n\n"
+        "Input: If you"
+    )
     lvl1, lvl2 = extractor.extract_label(response)
     print(f"Level 1 and 2 labels: {lvl1, lvl2}")

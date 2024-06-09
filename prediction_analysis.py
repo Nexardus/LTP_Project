@@ -7,14 +7,13 @@ from matplotlib import pyplot as plt
 
 
 def main():
-
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--dataset",
         "-d",
         help="Path to the cleaned output data (csv file with tab as separator). For example: 'cleaned_output/inference_output_cleaned.tsv'.",
         type=str,
-        default="cleaned_output/inference_output_cleaned.tsv"
+        default="cleaned_output/inference_output_cleaned.tsv",
     )
 
     args = parser.parse_args()
@@ -25,19 +24,19 @@ def main():
 
     print(data)
 
-    data.rename(columns={"Extracted Label": "MAFALDA Label", "Extracted Superlabel": "MAFALDA Superlabel"}, inplace=True)
+    data.rename(
+        columns={"Extracted Label": "MAFALDA Label", "Extracted Superlabel": "MAFALDA Superlabel"}, inplace=True
+    )
 
     for technique in data["Technique"].unique():
-
         # Histogram of labels
         plt.figure()
         plt.xticks(rotation=90)
         sns.countplot(
-            data=data[data['Technique'] == technique],
+            data=data[data["Technique"] == technique],
             y="MAFALDA Label",
             order=data["MAFALDA Label"].value_counts().index,
             hue="Model",
-
         )
         plt.tight_layout()
         plt.savefig(f"plots/{dataset_name}_predictions_label_distribution_{technique}.png")
@@ -46,14 +45,14 @@ def main():
         plt.figure()
         plt.xticks(rotation=90)
         sns.countplot(
-            data=data[data['Technique'] == technique],
+            data=data[data["Technique"] == technique],
             y="MAFALDA Superlabel",
             order=data["MAFALDA Superlabel"].value_counts().index,
             hue="Model",
-
         )
         plt.tight_layout()
         plt.savefig(f"plots/{dataset_name}_predictions_superlabel_distribution_{technique}.png")
+
 
 if __name__ == "__main__":
     main()
