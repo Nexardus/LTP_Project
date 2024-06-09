@@ -1,15 +1,18 @@
+"""Calculate metric scores for the extracted labels and superlabels."""
+
 import argparse
 import ast
+import logging
+import os
+import warnings
 from collections import defaultdict
 
-import pandas as pd
 import numpy as np
-from transformers import set_seed
-from datasets import Dataset, load_dataset
-import logging
-import warnings
-import os
+import pandas as pd
 from sklearn.metrics import classification_report
+from transformers import set_seed
+
+from datasets import Dataset
 
 warnings.simplefilter(action="ignore", category=FutureWarning)
 warnings.simplefilter(action="ignore", category=UserWarning)
@@ -19,13 +22,18 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def get_data(file_path: str):
+def get_data(file_path: str) -> Dataset:
     """
-    Function to read dataframe with columns.
+    Read dataframe with columns.
+
     Args:
+    ----
         file_path (str): Path to the file containing the validation/development data.
+
     Returns:
+    -------
         Dataset object: The data as a Dataset object.
+
     """
     data_df = pd.read_csv(file_path, sep="\t")
     logger.info(f"{data_df.shape = }")
@@ -38,20 +46,23 @@ def get_data(file_path: str):
     return Dataset.from_pandas(data_df)
 
 
-def calculate_macro_f1(precision_recall_f1):
+def calculate_macro_f1(precision_recall_f1: dict[str, dict[str, float]]) -> float:
+    """Calculate macro F1 from precision, recall, and F1 scores per class."""
     f1_scores = [metrics["f1"] for metrics in precision_recall_f1.values()]
-    macro_f1 = sum(f1_scores) / len(f1_scores) if f1_scores else 0
-    return macro_f1
+    return sum(f1_scores) / len(f1_scores) if f1_scores else 0
 
 
-def calculate_precision_recall_f1_per_class(predictions, true_labels):
+def calculate_precision_recall_f1_per_class(
+    predictions: list[str], true_labels: list[str]
+) -> dict[str, dict[str, float]]:
+    """Calculate precision, recall, and F1 scores for each class, given spans."""
     # Convert string to list
     true_labels = [ast.literal_eval(label) for label in true_labels]
 
     # Initialize counts for each class
-    true_positive = defaultdict(int)
-    false_positive = defaultdict(int)
-    false_negative = defaultdict(int)
+    true_positive: dict[str, int] = defaultdict(int)
+    false_positive: dict[str, int] = defaultdict(int)
+    false_negative: dict[str, int] = defaultdict(int)
 
     # Unique classes from predictions and true labels
     classes = set(predictions)
@@ -61,7 +72,7 @@ def calculate_precision_recall_f1_per_class(predictions, true_labels):
     print(classes)
 
     # Calculate True Positives, False Positives, and False Negatives for each class
-    for pred, true_list in zip(predictions, true_labels):
+    for pred, true_list in zip(predictions, true_labels, strict=False):
         for cls in classes:
             if cls == pred:
                 if cls in true_list:
@@ -90,12 +101,14 @@ def calculate_precision_recall_f1_per_class(predictions, true_labels):
     return precision_recall_f1
 
 
-if __name__ == "__main__":
+def main() -> None:
+    """Run the main function."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--data_file_path",
         "-d",
-        help="Path to the cleaned output data (csv file with tab as separator). For example: 'cleaned_output/inference_output_cleaned.tsv'.",
+        help="Path to the cleaned output data (csv file with tab as separator). "
+        "For example: 'cleaned_output/inference_output_cleaned.tsv'.",
         type=str,
         default="cleaned_output/inference_output_cleaned.tsv",
     )
@@ -109,7 +122,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--gold",
         "-g",
-        help="Whether to use the gold labels, which include spans. This changes the type of calculation that is done. Default: False",
+        help="Whether to use the gold labels, which include spans. "
+        "This changes the type of calculation that is done. Default: False",
         action="store_true",
     )
 
@@ -119,12 +133,13 @@ if __name__ == "__main__":
     set_seed(args.random_seed)
 
     if not os.path.exists(args.data_file_path):
-        raise FileNotFoundError(f"Data file '{args.data_file_path}' not found.")
+        msg = f"Data file '{args.data_file_path}' not found."
+        raise FileNotFoundError(msg)
 
     data_path = args.data_file_path  # For example, "output/output_data.tsv"
 
     # Get the data for the analyses
-    logger.info(f"Loading the data...")
+    logger.info("Loading the data...")
     val_data = get_data(data_path)
 
     # Lowercase all the columns
@@ -160,38 +175,33 @@ if __name__ == "__main__":
             print(f"Macro F1 Score: {macro_f1:.2f}")
 
     else:
-        # logger.info(f"All unique true labels: {np.unique(val_data['True Label'])}")
-        # logger.info(f"All unique extracted labels: {np.unique(val_data['Extracted Label'])}")
+        logger.info(f"All unique true labels: {np.unique(val_data['True Label'])}")
+        logger.info(f"All unique extracted labels: {np.unique(val_data['Extracted Label'])}")
         logger.info(
-            f"Predicted non-gold labels: {set(np.unique(val_data['Extracted Label'])).difference(np.unique(val_data['True Label']))}"
+            f"Predicted non-gold labels: "
+            f"{set(np.unique(val_data['Extracted Label'])).difference(np.unique(val_data['True Label']))}"
         )
         logger.info(
-            f"Non-predicted gold labels: {set(np.unique(val_data['True Label'])).difference(np.unique(val_data['Extracted Label']))}"
+            f"Non-predicted gold labels: "
+            f"{set(np.unique(val_data['True Label'])).difference(np.unique(val_data['Extracted Label']))}"
         )
 
-        # logger.info(f"All unique true superlabels: {np.unique(val_data['True Superlabel'])}")
-        # logger.info(f"All unique extracted superlabels: {np.unique(val_data['Extracted Superlabel'])}")
+        logger.info(f"All unique true superlabels: {np.unique(val_data['True Superlabel'])}")
+        logger.info(f"All unique extracted superlabels: {np.unique(val_data['Extracted Superlabel'])}")
         logger.info(
-            f"Predicted non-gold superlabels: {set(np.unique(val_data['Extracted Superlabel'])).difference(np.unique(val_data['True Superlabel']))}"
+            f"Predicted non-gold superlabels: "
+            f"{set(np.unique(val_data['Extracted Superlabel'])).difference(np.unique(val_data['True Superlabel']))}"
         )
         logger.info(
-            f"Non-predicted gold superlabels: {set(np.unique(val_data['True Superlabel'])).difference(np.unique(val_data['Extracted Superlabel']))}"
+            f"Non-predicted gold superlabels: "
+            f"{set(np.unique(val_data['True Superlabel'])).difference(np.unique(val_data['Extracted Superlabel']))}"
         )
 
-        clas_rep_label = classification_report(
-            y_true=val_data["True Label"], y_pred=val_data["Extracted Label"], zero_division=0.0, output_dict=True
-        )
-        logger.info(f"Labels (Level 2) overall:")
+        logger.info("Labels (Level 2) overall:")
         print(
             classification_report(y_true=val_data["True Label"], y_pred=val_data["Extracted Label"], zero_division=0.0)
         )
-        clas_rep_superlabel = classification_report(
-            y_true=val_data["True Superlabel"],
-            y_pred=val_data["Extracted Superlabel"],
-            zero_division=0.0,
-            output_dict=True,
-        )
-        logger.info(f"Superlabels (Level 1) overall:")
+        logger.info("Superlabels (Level 1) overall:")
         print(
             classification_report(
                 y_true=val_data["True Superlabel"], y_pred=val_data["Extracted Superlabel"], zero_division=0.0
@@ -199,7 +209,7 @@ if __name__ == "__main__":
         )
 
         for tech in np.unique(val_data["Technique"]):
-            temp_data = val_data.filter(lambda x: x["Technique"] == tech)
+            temp_data = val_data.filter(lambda x: x["Technique"] == tech)  # noqa: B023
             logger.info(f"Labels (Level 2) for technique {tech}:")
             print(
                 classification_report(
@@ -212,3 +222,7 @@ if __name__ == "__main__":
                     y_true=temp_data["True Superlabel"], y_pred=temp_data["Extracted Superlabel"], zero_division=0.0
                 )
             )
+
+
+if __name__ == "__main__":
+    main()

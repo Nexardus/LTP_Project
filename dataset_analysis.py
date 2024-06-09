@@ -1,3 +1,5 @@
+"""Analyze and plot some statistics of the datasets."""
+
 import argparse
 import ast
 
@@ -6,34 +8,35 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 
 
-def main():
+def main() -> None:  # noqa: PLR0915
+    """Run the main function."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--gold",
         "-g",
-        help="Path to the cleaned gold data (csv file with tab as separator). For example: 'cleaned_datasets/MAFALDA_gold_processed.tsv'.",
+        help="Path to the cleaned gold data (csv file with tab as separator). "
+        "For example: 'cleaned_datasets/MAFALDA_gold_processed.tsv'.",
         type=str,
         default="cleaned_datasets/MAFALDA_gold_processed.tsv",
     )
     parser.add_argument(
         "--validation",
         "-v",
-        help="Path to the cleaned validation data (csv file with tab as separator). For example: 'cleaned_datasets/unified_validation_set.tsv'.",
+        help="Path to the cleaned validation data (csv file with tab as separator). "
+        "For example: 'cleaned_datasets/unified_validation_set.tsv'.",
         type=str,
         default="cleaned_datasets/unified_validation_set.tsv",
     )
     parser.add_argument(
         "--downsampled",
         "-d",
-        help="Path to the cleaned downsampled validation data (csv file with tab as separator). For example: 'cleaned_datasets/unified_validation_set_downsampled.tsv'.",
+        help="Path to the cleaned downsampled validation data (csv file with tab as separator). "
+        "For example: 'cleaned_datasets/unified_validation_set_downsampled.tsv'.",
         type=str,
         default="cleaned_datasets/unified_validation_set_downsampled.tsv",
     )
 
     args = parser.parse_args()
-
-    # Do label_distribution, superlabel_distribution, text_length_distribution, vocab_size_distribution in the same plots through hue (= dataset)
-    #
 
     palette = {"MAFALDA": "C0", "Validation": "C1", "Downsampled": "C2"}
 
@@ -55,8 +58,8 @@ def main():
     gold_superlabels["MAFALDA Superlabel"] = gold_superlabels["MAFALDA Superlabel"].apply(ast.literal_eval)
     gold_superlabels = gold_superlabels.explode("MAFALDA Superlabel")
 
-    gold_labels["MAFALDA Label"].replace(
-        {"ad hominem": "Abusive Ad Hominem", "appeal to (false) authority": "Appeal to False Authority"}, inplace=True
+    gold_labels["MAFALDA Label"] = gold_labels["MAFALDA Label"].replace(
+        {"ad hominem": "Abusive Ad Hominem", "appeal to (false) authority": "Appeal to False Authority"}
     )
 
     print(gold_superlabels["MAFALDA Superlabel"].unique())
@@ -89,12 +92,6 @@ def main():
     print(merged_df_labels)
     print(merged_df_superlabels)
 
-    # Number of samples with only a superlabel
-    # print(data["MAFALDA Superlabel"].notna().sum())
-
-    # Number of samples with both a superlabel and a label
-    # print(data["MAFALDA Label"].notna().sum())
-
     # Text length distribution
     # Should be a boxplot
     merged_df_labels["Input length"] = merged_df_labels["Input"].apply(len)
@@ -103,12 +100,12 @@ def main():
     plt.figure()
     sns.boxplot(data=merged_df_superlabels, x="Input length", y="MAFALDA Superlabel", hue="Dataset", palette=palette)
     plt.tight_layout()
-    plt.savefig(f"plots/text_length_distribution_superlabels.png")
+    plt.savefig("plots/text_length_distribution_superlabels.png")
 
     plt.figure()
     sns.boxplot(data=merged_df_labels, x="Input length", y="MAFALDA Label", hue="Dataset", palette=palette)
     plt.tight_layout()
-    plt.savefig(f"plots/text_length_distribution_labels.png")
+    plt.savefig("plots/text_length_distribution_labels.png")
 
     # Histogram of superlabels
     plt.figure()
@@ -120,7 +117,7 @@ def main():
         palette=palette,
     )
     plt.tight_layout()
-    plt.savefig(f"plots/superlabel_distribution.png")
+    plt.savefig("plots/superlabel_distribution.png")
 
     # Histogram of labels
     plt.figure()
@@ -133,9 +130,9 @@ def main():
         palette=palette,
     )
     plt.tight_layout()
-    plt.savefig(f"plots/label_distribution.png")
+    plt.savefig("plots/label_distribution.png")
 
-    # Vocab size per class
+    # Vocab size per label
     # This is actually a pointless visualization now that I think about it
     vocab = (
         merged_df_labels.groupby(["MAFALDA Label", "Dataset"])["Input"]
@@ -150,13 +147,12 @@ def main():
         y="MAFALDA Label",
         x="Input",
         hue="Dataset",
-        # order=vocab.sort_values(ascending=False, by="Dataset").index,
         palette=palette,
     )
     plt.tight_layout()
-    plt.savefig(f"plots/label_vocab_size_distribution.png")
+    plt.savefig("plots/label_vocab_size_distribution.png")
 
-    # Vocab size per class
+    # Vocab size per superlabel
     # This is actually a pointless visualization now that I think about it
     vocab = (
         merged_df_superlabels.groupby(["MAFALDA Superlabel", "Dataset"])["Input"]
@@ -167,7 +163,7 @@ def main():
     plt.xticks(rotation=90)
     sns.barplot(data=vocab, y="MAFALDA Superlabel", x="Input", hue="Dataset", palette=palette)
     plt.tight_layout()
-    plt.savefig(f"plots/superlabel_vocab_size_distribution.png")
+    plt.savefig("plots/superlabel_vocab_size_distribution.png")
 
 
 if __name__ == "__main__":

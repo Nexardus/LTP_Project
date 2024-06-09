@@ -1,36 +1,40 @@
+"""Run inference on the dataset using the models and prompt techniques."""
+
 import argparse
 
 import pandas as pd
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
-def read_dataset(dataset_path: str):
+def read_dataset(dataset_path: str) -> pd.DataFrame:
+    """Read the dataset from the file."""
     data = pd.read_csv(dataset_path, sep="\t")
     print(f"Column names: {data.columns}")
-    data = data.dropna(subset=["MAFALDA Label", "Input"]).sort_values(by=["Input"])
-    return data
+    return data.dropna(subset=["MAFALDA Label", "Input"]).sort_values(by=["Input"])
 
 
-def read_prompt(prompt_technique, input_text):
-    with open(f"prompts/{prompt_technique}.txt", "r", encoding="utf-8") as file:
+def read_prompt(prompt_technique: str, input_text: str) -> str:
+    """Read the prompt from the file and append the input text to it."""
+    with open(f"prompts/{prompt_technique}.txt", encoding="utf-8") as file:
         prompt = file.read()
         prompt += input_text.replace("\n", " ").strip('"')
     return prompt
 
 
-def generate(model, tokenizer, prompt, max_new_tokens):
-    input = tokenizer(prompt, return_tensors="pt").to("cuda")
+def generate(model: AutoModelForCausalLM, tokenizer: AutoTokenizer, prompt: str, max_new_tokens: int) -> str:
+    """Generate a response from the model."""
+    tokenized_input = tokenizer(prompt, return_tensors="pt").to("cuda")
     # Perhaps we should use different parameters here
-    output = model.generate(**input, max_new_tokens=max_new_tokens, num_return_sequences=1)
+    output = model.generate(**tokenized_input, max_new_tokens=max_new_tokens, num_return_sequences=1)
 
     # return only the model's output
     decoded_output = tokenizer.decode(output[0])
-    generated_response = decoded_output[len(tokenizer.decode(input["input_ids"][0])) :]
-    return generated_response
+    return str(decoded_output[len(tokenizer.decode(tokenized_input["input_ids"][0])) :])
 
 
-def generate_all_models(models, prompt_techniques, dataset_path, output_file):
+def generate_all_models(models: list[str], prompt_techniques: list[str], dataset_path: str, output_file: str) -> None:
+    """Generate responses for all models and prompt techniques."""
     output_data = read_dataset(dataset_path)
     new_rows = []
     progress = 0
@@ -87,12 +91,14 @@ def generate_all_models(models, prompt_techniques, dataset_path, output_file):
     pd.DataFrame(new_rows).to_csv(output_file, index=False, sep="\t")
 
 
-def main():
+def main() -> None:
+    """Run the main function."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--dataset",
         "-d",
-        help="Path to the cleaned input data (csv file with tab as separator). For example: 'cleaned_datasets/unified_validation_set_downsampled.tsv'.",
+        help="Path to the cleaned input data (csv file with tab as separator). "
+        "For example: 'cleaned_datasets/unified_validation_set_downsampled.tsv'.",
         type=str,
         default="cleaned_datasets/unified_validation_set_downsampled.tsv",
     )

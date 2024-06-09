@@ -1,12 +1,17 @@
+"""Module to extract the fallacy label from the response of the model."""
+
+import difflib
 import json
 import re
 from collections import defaultdict
-import difflib
 
 
 class LabelExtractor:
-    def __init__(self, fallacies_file: str):
-        with open(fallacies_file, "r") as f:
+    """Class to extract the fallacy label from the response of the model."""
+
+    def __init__(self, fallacies_file: str) -> None:
+        """Init the label extractor with the fallacies mapping."""
+        with open(fallacies_file) as f:
             self.fallacies = json.load(f)
 
         self.fallacy_mapping = defaultdict(lambda: "")
@@ -17,7 +22,8 @@ class LabelExtractor:
         self.prefixes = ["output:", "answer:", "label:", "fallacy:", "value:"]
         self.similarity_threshold = 0.75
 
-    def extract_label(self, llm_response: str) -> str:
+    def extract_label(self, llm_response: str) -> tuple[str, str]:
+        """Extract the fallacy label from the response of the model."""
         llm_response = llm_response.lower()
 
         # pattern to match prefixes and ensure only (semi-)valid fallacy names are captured
@@ -30,13 +36,13 @@ class LabelExtractor:
                 potential_label = potential_label.strip()
 
                 # check for exact matches first
-                for fallacy in self.fallacy_mapping.keys():
+                for fallacy in self.fallacy_mapping:
                     if fallacy == potential_label:
                         return self.fallacy_mapping[fallacy], fallacy
 
                 # collect partial matches and their similarity scores
                 partial_matches = []
-                for fallacy in self.fallacy_mapping.keys():
+                for fallacy in self.fallacy_mapping:
                     if fallacy.startswith(potential_label.split()[0]):
                         similarity = difflib.SequenceMatcher(None, fallacy, potential_label).ratio()
                         partial_matches.append((similarity, fallacy))
@@ -60,7 +66,8 @@ if __name__ == "__main__":
 
     response = (
         "Output: Fallacy: Appeal to Ppiity \n\n"
-        "Input: The victim’s family has been torn apart by this act of terror. Put yourselves in their terrible situation, you will see that he is guilty.\n\n"
+        "Input: The victim’s family has been torn apart by this act of terror. "  # noqa: RUF001
+        "Put yourselves in their terrible situation, you will see that he is guilty.\n\n"
         "Output: Fallacy: Appeal to Anger\n\n"
         "Input: If you"
     )

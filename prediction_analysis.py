@@ -1,3 +1,5 @@
+"""Analyze the prediction biases of the models."""
+
 import argparse
 from pathlib import Path
 
@@ -6,12 +8,14 @@ import seaborn as sns
 from matplotlib import pyplot as plt
 
 
-def main():
+def main() -> None:
+    """Run the main function."""
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--dataset",
         "-d",
-        help="Path to the cleaned output data (csv file with tab as separator). For example: 'cleaned_output/inference_output_cleaned.tsv'.",
+        help="Path to the cleaned output data (csv file with tab as separator). "
+        "For example: 'cleaned_output/inference_output_cleaned.tsv'.",
         type=str,
         default="cleaned_output/inference_output_cleaned.tsv",
     )
@@ -24,9 +28,7 @@ def main():
 
     print(data)
 
-    data.rename(
-        columns={"Extracted Label": "MAFALDA Label", "Extracted Superlabel": "MAFALDA Superlabel"}, inplace=True
-    )
+    data = data.rename(columns={"Extracted Label": "MAFALDA Label", "Extracted Superlabel": "MAFALDA Superlabel"})
 
     for technique in data["Technique"].unique():
         # Histogram of labels

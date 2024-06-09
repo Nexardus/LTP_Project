@@ -1,11 +1,13 @@
+"""Preprocess the MAFALDA dataset to a TSV file."""
+
 import json
+
 import pandas as pd
 
-from typing import Dict
 
-
-def label_mapping(fallacies_map_path: str = "fallacies.json") -> Dict[str, str]:
-    with open(fallacies_map_path, "r") as f:
+def label_mapping(fallacies_map_path: str = "fallacies.json") -> dict[str, str]:
+    """Load the fallacies mapping from the JSON file, and map them as a dict."""
+    with open(fallacies_map_path) as f:
         fallacies = json.load(f)
 
     label_to_superlabel = {}
@@ -16,9 +18,10 @@ def label_mapping(fallacies_map_path: str = "fallacies.json") -> Dict[str, str]:
     return label_to_superlabel
 
 
-def process_mafalda(mafalda_path: str, output_path: str, label_mapping: Dict[str, str]) -> None:
+def process_mafalda(mafalda_path: str, output_path: str, label_mapping: dict[str, str]) -> None:
+    """Process the MAFALDA dataset and save it to a TSV file."""
     rows = []
-    with open(mafalda_path, "r") as f:
+    with open(mafalda_path) as f:
         for line in f:
             entry = json.loads(line.strip())
             text = entry["text"] if "POST:" not in entry["text"] else entry["text"].split("POST:")[1].strip()
@@ -34,10 +37,15 @@ def process_mafalda(mafalda_path: str, output_path: str, label_mapping: Dict[str
             assert len(labels) == len(superlabels), f"Labels: {labels}, Superlabels: {superlabels}"
             rows.append({"Input": text, "MAFALDA Label": labels, "MAFALDA Superlabel": superlabels})
 
-    df = pd.DataFrame(rows)
-    df.to_csv(output_path, index=False, sep="\t")
+    mafalda_df = pd.DataFrame(rows)
+    mafalda_df.to_csv(output_path, index=False, sep="\t")
+
+
+def main() -> None:
+    """Run the main function."""
+    label_to_superlabel = label_mapping()
+    process_mafalda("datasets/MAFALDA_gold.jsonl", "cleaned_datasets/MAFALDA_gold_processed.tsv", label_to_superlabel)
 
 
 if __name__ == "__main__":
-    label_to_superlabel = label_mapping()
-    process_mafalda("datasets/MAFALDA_gold.jsonl", "cleaned_datasets/MAFALDA_gold_processed.tsv", label_to_superlabel)
+    main()
